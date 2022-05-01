@@ -1,0 +1,1151 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>三维建模技术上课笔记汇总 | 张时贰</title><meta name="keywords" content="3ds Max"><meta name="author" content="张时贰"><meta name="copyright" content="张时贰"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1 界面🌴 2022.2.28 早十  1.1 3ds Max 2020工作界面 1.2 三维物体的显示方式 线框覆盖&#x2F;线框F3：当多个物体相互遮挡时，线框模式显示不会遮挡 默认明暗处理：显示比较清除 边面&#x2F;线框+实体F4：既有实体，又有线框 边界框：当物体很多时，场景显示很复杂，用边框显示就只是一个框，不会有压力 半透明ALT+X 1.3 视图布局  英文输入法下操作  默">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三维建模技术上课笔记汇总">
+<meta property="og:url" content="http://gc-zf.github.io/posts/47125/index.html">
+<meta property="og:site_name" content="张时贰">
+<meta property="og:description" content="1 界面🌴 2022.2.28 早十  1.1 3ds Max 2020工作界面 1.2 三维物体的显示方式 线框覆盖&#x2F;线框F3：当多个物体相互遮挡时，线框模式显示不会遮挡 默认明暗处理：显示比较清除 边面&#x2F;线框+实体F4：既有实体，又有线框 边界框：当物体很多时，场景显示很复杂，用边框显示就只是一个框，不会有压力 半透明ALT+X 1.3 视图布局  英文输入法下操作  默">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picsum.photos/seed/zhjbkssjmjws/470/315">
+<meta property="article:published_time" content="2022-03-11T01:42:37.000Z">
+<meta property="article:modified_time" content="2022-05-01T15:02:12.183Z">
+<meta property="article:author" content="张时贰">
+<meta property="article:tag" content="3ds Max">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/seed/zhjbkssjmjws/470/315"><link rel="shortcut icon" href="/Hexo_img/favicon.jpg"><link rel="canonical" href="http://gc-zf.github.io/posts/47125/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 张时贰","link":"链接: ","source":"来源: 张时贰","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '三维建模技术上课笔记汇总',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-01 23:02:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Hexo_img/avatar.jpg" onerror="onerror=null;src='/Hexo_img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/history/"><i class="fa-fw fa-regular fa-clock"></i><span> 建站史</span></a></div><div class="menus_item"><a class="site-page" href="/wall/"><i class="fa-fw fa-solid fa-money-bill-1-wave"></i><span> 赞助墙</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picsum.photos/seed/swjmjsskbjhz/1920/942')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">张时贰</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/history/"><i class="fa-fw fa-regular fa-clock"></i><span> 建站史</span></a></div><div class="menus_item"><a class="site-page" href="/wall/"><i class="fa-fw fa-solid fa-money-bill-1-wave"></i><span> 赞助墙</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">三维建模技术上课笔记汇总</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-11T01:42:37.000Z" title="发表于 2022-03-11 09:42:37">2022-03-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-01T15:02:12.183Z" title="更新于 2022-05-01 23:02:12">2022-05-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/">三维建模技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">10.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>30分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="三维建模技术上课笔记汇总"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-界面"><a href="#1-界面" class="headerlink" title="1 界面"></a>1 界面</h1><h1 align="center">🌴 2022.2.28 早十</h1>
+
+<h2 id="1-1-3ds-Max-2020工作界面"><a href="#1-1-3ds-Max-2020工作界面" class="headerlink" title="1.1 3ds Max 2020工作界面"></a>1.1 3ds Max 2020工作界面</h2><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF8.png" alt="三维建模技术8"></p>
+<h2 id="1-2-三维物体的显示方式"><a href="#1-2-三维物体的显示方式" class="headerlink" title="1.2 三维物体的显示方式"></a>1.2 三维物体的显示方式</h2><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF1.png" alt="三维建模技术1"></p>
+<p><strong>线框覆盖&#x2F;线框</strong><code>F3</code>：当多个物体相互遮挡时，线框模式显示不会遮挡</p>
+<p><strong>默认明暗处理</strong>：显示比较清除</p>
+<p><strong>边面&#x2F;线框+实体</strong><code>F4</code>：既有实体，又有线框</p>
+<p><strong>边界框</strong>：当物体很多时，场景显示很复杂，用边框显示就只是一个框，不会有压力</p>
+<p><strong>半透明</strong><code>ALT+X</code></p>
+<h2 id="1-3-视图布局"><a href="#1-3-视图布局" class="headerlink" title="1.3 视图布局"></a>1.3 视图布局</h2><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF2.png" alt="三维建模技术2"></p>
+<blockquote>
+<p>英文输入法下操作</p>
+</blockquote>
+<p><strong>默认下有四种</strong>：顶视图<code>T</code>，前视图<code>F</code>，左视图<code>L</code>，透视图<code>P</code></p>
+<p><strong>另外</strong>：底视图<code>B</code>，右视图<code>R</code>，后视图<code>K</code>，用户视图<code>U</code>，摄像机视图<code>C</code></p>
+<h2 id="1-4-视图背景"><a href="#1-4-视图背景" class="headerlink" title="1.4 视图背景"></a>1.4 视图背景</h2><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF3.png" alt="三维建模技术3"></p>
+<p><strong>网格的显示&#x2F;隐藏</strong>：<code>G</code></p>
+<p><strong>视图背景调入</strong>：<code>视图→视口背景→配置视口背景</code>。快捷键<code>ALT+B</code></p>
+<h2 id="1-5-物体的隐藏"><a href="#1-5-物体的隐藏" class="headerlink" title="1.5 物体的隐藏"></a>1.5 物体的隐藏</h2><blockquote>
+<p>右击物体</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF4.png" alt="三维建模技术4"></p>
+<blockquote>
+<p>或点小眼睛</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF5.png" alt="三维建模技术5"></p>
+<h2 id="1-6-工具栏"><a href="#1-6-工具栏" class="headerlink" title="1.6 工具栏"></a>1.6 工具栏</h2><blockquote>
+<p>常用的工具栏</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF6.png" alt="三维建模技术6"></p>
+<blockquote>
+<p>区别镜像中的功能</p>
+</blockquote>
+<p><strong>复制</strong>：得到的2个物体是独立的，修改任何1个都不影响另外1个<br><strong>实例</strong>：得到的2个物体是相关联的， 修改其中任何1个，另1个也会有相应改变<br><strong>参考</strong>：得到的2个物体是主次关系，修改源物体会影响复制体 ，而修改复制体则不会影响源物体</p>
+<blockquote>
+<p>渲染，即保存图片效果</p>
+</blockquote>
+<p>目的是为了快速预览，图片本体小。但不能进行二次编辑。<code>先选中四个视角中的一个窗口并调整视角，再保存</code></p>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF15.gif" alt="三维建模技术15"  />
+
+<h2 id="1-7-视图控制区"><a href="#1-7-视图控制区" class="headerlink" title="1.7 视图控制区"></a>1.7 视图控制区</h2><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF7.png" alt="三维建模技术7"></p>
+<table>
+<thead>
+<tr>
+<th>缩放单视口</th>
+<th>四个视口同时缩放</th>
+<th>最大化显示选定对象</th>
+<th>所有视图最大化显示选定对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>视觉&#x2F;视野缩放</td>
+<td>平移视觉</td>
+<td>视角旋转</td>
+<td>视口最大化 <code>ALT+W</code></td>
+</tr>
+</tbody></table>
+<h2 id="1-8-菜单栏常用命令"><a href="#1-8-菜单栏常用命令" class="headerlink" title="1.8 菜单栏常用命令"></a>1.8 菜单栏常用命令</h2><p>1.重置命令：当新建文件，坐标系是保留以前的。重置命令，使用默认坐标系。<code>文件→重置</code></p>
+<p>2.组：成组和解组，类似PS里的组。<code>组→组/解组</code></p>
+<p>3.视图：显示变换<strong>Gizmo</strong>。<code>视图→显示变换Gizmo</code></p>
+<h2 id="1-9-3DS-Max-2020基本设置"><a href="#1-9-3DS-Max-2020基本设置" class="headerlink" title="1.9 3DS Max 2020基本设置"></a>1.9 3DS Max 2020基本设置</h2><blockquote>
+<p>自定义用户界面，一般保持默认状态</p>
+</blockquote>
+<p>用户可以自定义用户界面，并将定义好的界面以文件的形式进行保存，以便于在不同情况下调用不同界面布局。</p>
+<p><code>菜单栏→自定义→自定义用户界面</code>包括对<strong>键盘、鼠标、工具栏、四元菜单、菜单、颜色</strong>的自定义</p>
+<blockquote>
+<p>加载自定义用户界面</p>
+</blockquote>
+<p><code>菜单栏→自定义→加载自定义用户界面方案</code>，调背景使用</p>
+<ul>
+<li>ame-dark.ui</li>
+<li>ame-light.ui</li>
+<li>DefaultUI.ui</li>
+</ul>
+<blockquote>
+<p>单位设置，一般用毫米</p>
+</blockquote>
+<p><code>菜单栏→自定义→单位设置</code></p>
+<h1 align="center">🌴 2022.3.7 早十</h1>
+
+<h1 id="2-三维建模的主体思路"><a href="#2-三维建模的主体思路" class="headerlink" title="2 三维建模的主体思路"></a>2 三维建模的主体思路</h1><h2>🚀 堆砌建模</h2>
+
+<blockquote>
+<p>堆砌建模长用来建造**非曲面体(建筑、机械、机器零件、机器人)**，建模流程是将复杂体拆分为一些基础的零部件，再用基础成型命令，将这些小零件制作出来，最后堆砌在一起(类似乐高)</p>
+</blockquote>
+<h2>🚀 细分建模</h2>
+
+<blockquote>
+<p>细分建模是<strong>编辑多边形建模或编辑网格</strong>.建模流程是用基本几何体，先完成物体的大型，然后通过编辑多边形或编辑网格工具对模型细分</p>
+</blockquote>
+<h2>🚀 区别</h2>
+
+<blockquote>
+<p>堆砌建模与细分建模是MAX最重要的两种建模方法，各有特色互为补充</p>
+<p><strong>堆砌建模</strong>适合创建能够被拆解开的物体(建筑、机械装置、家具)。<strong>细分建模</strong>适合创建不能拆分的物体(卡通人物、流线型汽车外壳)</p>
+</blockquote>
+<h2 id="2-1-场景对象操作建模"><a href="#2-1-场景对象操作建模" class="headerlink" title="2.1 场景对象操作建模"></a>2.1 场景对象操作建模</h2><blockquote>
+<p>对象复制的多种方式：克隆复制、变换复制、镜像复制、间隔复制、快照复制、阵列变换复制</p>
+</blockquote>
+<h3 id="2-1-1-克隆复制"><a href="#2-1-1-克隆复制" class="headerlink" title="2.1.1 克隆复制"></a>2.1.1 克隆复制</h3><blockquote>
+<p>克隆出来的对象与原对象<strong>重合</strong>在一起，需要用移动命令移开</p>
+<p><code>工具栏→编辑→克隆</code></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF9.png" alt="三维建模技术9"></p>
+<blockquote>
+<p><strong>复制</strong>：得到的2个物体是独立的，修改任何1个都不影响另外1个<br><strong>实例</strong>：得到的2个物体是相关联的， 修改其中任何1个，另1个也会有相应改变<br><strong>参考</strong>：得到的2个物体是主次关系，修改源物体会影响复制体 ，而修改复制体则不会影响源物体</p>
+</blockquote>
+<h3 id="2-1-2-变换复制"><a href="#2-1-2-变换复制" class="headerlink" title="2.1.2 变换复制"></a>2.1.2 变换复制</h3><blockquote>
+<p>变换复制可以设置副本数量</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF10.png" alt="三维建模技术10"></p>
+<h4>🚀 移动变换复制</h4>
+
+<blockquote>
+<p><code>shift+选择并移动工具</code>选中物体并拖动</p>
+</blockquote>
+<h4>🚀 旋转变换复制</h4>
+
+<blockquote>
+<p><code>shift+旋转工具</code>或<code>shift+旋转工具+角度捕捉</code>选中物体并拖动</p>
+</blockquote>
+<h3 id="2-1-3-镜像复制"><a href="#2-1-3-镜像复制" class="headerlink" title="2.1.3 镜像复制"></a>2.1.3 镜像复制</h3><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF6.png" alt="三维建模技术6"></p>
+<blockquote>
+<p>1.6 写过</p>
+</blockquote>
+<h3 id="2-1-4-间隔复制"><a href="#2-1-4-间隔复制" class="headerlink" title="2.1.4 间隔复制"></a>2.1.4 间隔复制</h3><blockquote>
+<p><code>菜单栏→工具→对齐→间隔工具</code>，先选择<strong>路径</strong>再设置拾取点</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF11.png" alt="三维建模技术11"></p>
+<h3 id="2-1-5-阵列复制"><a href="#2-1-5-阵列复制" class="headerlink" title="2.1.5 阵列复制"></a>2.1.5 阵列复制</h3><blockquote>
+<p>用于<strong>大批量对象</strong>的复制，可以把对象<strong>沿着某个方向、按不同距离</strong>进行等比例复制，复制后对象在三维空间成矩形排列</p>
+<p><code>菜单栏→工具→阵列</code></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF12.png" alt="三维建模技术12"></p>
+<h2 id="2-2-3D-Max建模方法"><a href="#2-2-3D-Max建模方法" class="headerlink" title="2.2 3D Max建模方法"></a>2.2 3D Max建模方法</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    基础建模--&gt;内置模型建模;</span><br><span class="line">    基础建模--&gt;三维形体建模;</span><br><span class="line">    基础建模--&gt;挤出建模;</span><br><span class="line">    基础建模--&gt;车削建模;</span><br><span class="line">    基础建模--&gt;倒角建模;</span><br><span class="line">    基础建模--&gt;复合物体建模;</span><br><span class="line">    </span><br><span class="line">    高级建模--&gt;多边形建模;</span><br><span class="line">    高级建模--&gt;面片建模;</span><br><span class="line">    高级建模--&gt;NURBS;</span><br><span class="line">    </span><br><span class="line">    特殊建模建模--&gt;如置换贴图;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-基本体建模"><a href="#2-3-基本体建模" class="headerlink" title="2.3 基本体建模"></a>2.3 基本体建模</h2><h3 id="2-3-1-标准基本体"><a href="#2-3-1-标准基本体" class="headerlink" title="2.3.1 标准基本体"></a>2.3.1 标准基本体</h3><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF13.png" alt="三维建模技术13"></p>
+<h3 id="2-3-2-扩展基本体"><a href="#2-3-2-扩展基本体" class="headerlink" title="2.3.2 扩展基本体"></a>2.3.2 扩展基本体</h3><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF14.png" alt="三维建模技术14"></p>
+<h4>🚀 异面体</h4>
+
+<blockquote>
+<p>创建各种具有奇特表面的多面体，利用它的参数调节，可以创建出种类繁多的奇特造型，如钻石、卫星</p>
+</blockquote>
+<h4>🚀 环形节</h4>
+
+<blockquote>
+<p>这是扩展基本体中最复杂的一个工具，可控制的参数众多，组合产生的效果多不胜数，制作的造型也时千奇百怪.它常用于制作管状、缠绕、带袁肿类的造型，也可以将环形节造型转化为Nurbs表面物体</p>
+</blockquote>
+<h4>🚀 切角长方体</h4>
+
+<blockquote>
+<p>切角长方体是长方体的扩展物体，可以快速创建具有<strong>倒角或圆形边</strong>的长方体</p>
+</blockquote>
+<h4>🚀 切角圆柱体</h4>
+
+<blockquote>
+<p>切角圆柱体是圆柱体的扩展物体，可以快速创建具有<strong>倒角或圆形边</strong>的圆柱体</p>
+</blockquote>
+<h4>🚀 油罐</h4>
+
+<blockquote>
+<p>创建带有球状凸出顶部的柱体，<strong>油桶、帐篷、飞碟、药片</strong>等模型都可以通过它来完成</p>
+</blockquote>
+<h4>🚀 胶囊</h4>
+
+<blockquote>
+<p>使用“胶囊”可创建带有半球状端点封口的圆柱体</p>
+</blockquote>
+<h4>🚀 纺锤</h4>
+> 创建两端带有圆锥尖顶的柱体，在生活中也是比较常见的，如**砖石、笔尖、纺锤**等物体，都可以用“纺锤”去创建模型
+
+<h4>🚀 L-Ext (L形挤出)</h4>
+
+<blockquote>
+<p>可以建立L.形夹角的立体墙模型，主要用于建筑快速建模</p>
+</blockquote>
+<h4>🚀 球棱柱</h4>
+
+<blockquote>
+<p>创建一个带有棱角的柱体模型，可以设置圆角面边参数，来创建挤出的规则面多边形</p>
+</blockquote>
+<h4>🚀 C-Ext(C形挤出)</h4>
+
+<blockquote>
+<p>可以建立C形夹角的立体墙模型，主要用于建筑快速建模</p>
+</blockquote>
+<h4>🚀 环形波</h4>
+
+<p>使用“环形波”来创建一个环形，可选项是不规则内部和外部边，它的图形可以设置为<strong>动画</strong>。也可以设置环形波对象增长动画，也可以使用关键帧来设置所有数字设置动画。使用各种特效动画的“环形波”</p>
+<h4>🚀 软管</h4>
+
+<p>软管对象是一个<strong>能连接两个对象的弹性对象</strong>，因而能反映这两个对象的运动。可以指定软管的总直径和长度、圈数以及其“线”的直径和形状</p>
+<h1 align="center">🌴 2022.3.14 早十</h1>
+
+<h2 id="2-5-二维图形建模"><a href="#2-5-二维图形建模" class="headerlink" title="2.5 二维图形建模"></a>2.5 二维图形建模</h2><h3>🚀 二维图形建模方法</h3>
+
+<blockquote>
+<p>对于<strong>简单的图形</strong>，可以直接使用<strong>样条线或扩展样条线</strong>绘制。并通过参数的调整形成二维模型</p>
+<p>对于比较<strong>复杂的图形</strong>，可先由样条线绘制，然后使用“编辑样条线”修改器，对次对象进行编辑处理。需要特别指出的是:利用“线”工具可以绘制出任何复杂的二维图形，可以先画出大致的轮廓，然后通过顶点调整形状和位置，最后得到一个复杂的二维模型</p>
+</blockquote>
+<h3 id="2-5-1-创建样条线"><a href="#2-5-1-创建样条线" class="headerlink" title="2.5.1 创建样条线"></a>2.5.1 创建样条线</h3><blockquote>
+<p>样条线，即平面二维图</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF16.png" alt="三维建模技术16"></p>
+<h3 id="2-5-2-二维图形的渲染"><a href="#2-5-2-二维图形的渲染" class="headerlink" title="2.5.2 二维图形的渲染"></a>2.5.2 二维图形的渲染</h3><blockquote>
+<p><strong>二维对象</strong>的渲染是比较特殊的，因为二维对象只有形状，没有体积，系统默认情况下是<strong>不能被渲染着色</strong>而显示出来的</p>
+<p>如果要对<strong>二维对象进行渲染着色</strong>，首先要勾选“在渲染中启用”复选框，然后设定“厚度”值。“厚度”用来定义构成二维对象的线的宽度</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF17.png" alt="三维建模技术17" style="zoom:50%;" />
+
+<h3 id="2-5-3-编辑样条线"><a href="#2-5-3-编辑样条线" class="headerlink" title="2.5.3 编辑样条线"></a>2.5.3 编辑样条线</h3><blockquote>
+<p>利用“线”工具可以绘制出任何复杂的二维图形，绘制时首先画出大致的轮廓，然后使用“编辑样条线”修改对次对象进行编辑处理。通过顶点调整形状和位置，最后得到一个复杂的二维模型。</p>
+</blockquote>
+<p>编辑样条线有两种进入方式</p>
+<ul>
+<li>选中“图形”按钮创建的二维物体,点修改，修改列表后选择“编辑样条线”</li>
+<li>选中“图形”按钮创建的二维物体，右击鼠标，转换为“转换为可编辑样条线”。【注意:两种方法的区别】</li>
+</ul>
+<blockquote>
+<p>转换后的样条线有3级子对象，分别是<strong>顶点、线段、样条线</strong>。每一个次级对象都能够进行相应的编辑</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF18.png" alt="三维建模技术18" style="zoom:67%;" />
+
+<table>
+<thead>
+<tr>
+<th align="center">样条线</th>
+<th align="center">顶点</th>
+<th align="center">线段</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">附加</td>
+<td align="center">优化</td>
+<td align="center">隐藏</td>
+</tr>
+<tr>
+<td align="center">分离</td>
+<td align="center">断开</td>
+<td align="center">删除</td>
+</tr>
+<tr>
+<td align="center">轮廓</td>
+<td align="center">焊接</td>
+<td align="center">拆分</td>
+</tr>
+<tr>
+<td align="center">布尔</td>
+<td align="center">圆角</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">切角</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h4>🚀 样条线</h4>
+
+<p><strong>附加:<strong>把</strong>多根</strong>样条线结合成一个物体。</p>
+<p><strong>附加多个:<strong>可以一次性的在列表中把符合条件的二维物体都附加进来，比较适合</strong>大量附加</strong>的时候使用</p>
+<p><strong>分离:<strong>分离</strong>和附加正好相反</strong>，它在样条线里面，我们选择某一根，可以把它分离出去</p>
+<p>**轮廓:**就是在样条线级别，选择这条样条线，把它向外或向内收缩，形成一个轮廓线</p>
+<p><strong>布尔:<strong>布尔操作指的是样条线和样条线之间进行</strong>相加、相减或相交的运算</strong>(必须先做附加，效果类似soildworks的裁剪)</p>
+<h4>🚀 顶点</h4>
+
+<p><strong>优化:<strong>当我们顶点数量不够的时候，可以通过优化命令来</strong>增加顶点的数量</strong></p>
+<p>**断开:**指的是将原本相连的两个顶点或一个顶点，把它断成两个顶点</p>
+<p><strong>焊接:<strong>指的是两个顶点，原本是</strong>不挨在一起的，将它们接在一起</strong></p>
+<p><strong>圆角:<strong>指的是把一个本来是</strong>直角的拐角，把它变成圆角</strong></p>
+<p><strong>切角:<strong>可以把它切成一个</strong>硬边儿的拐角</strong></p>
+<blockquote>
+<p>顶点的四种状态，必须在编辑样条线中选中顶点，再右击图形(贝斯角点移动一侧另一侧不影响，贝斯两侧都影响)</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF19.png" alt="三维建模技术19"></p>
+<h4>🚀 线段</h4>
+
+<p>**隐藏:**用于隐藏选定的线段。要隐藏样条线的分段，需要先选择一个或多个线段，然后单击隐藏按钮，即可将选择的样条线分段隐藏(之前1.5节隐藏不起作用，因为右击是对三维作用)</p>
+<p>**删除:**选择需要删除的线段,，再单击删除按钮,即可将需要删除的边删除(同<code>Delete</code>)</p>
+<p>**拆分:**通过添加由微调器指定的顶点数来细分所选线段。方法是,选择一条或多条线段，设置“拆分”微调器，然后单击拆分按钮，即可将选择的样条线线段拆分</p>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><h2 id="3-1-复合几何体建模概述"><a href="#3-1-复合几何体建模概述" class="headerlink" title="3.1 复合几何体建模概述"></a>3.1 复合几何体建模概述</h2><blockquote>
+<p>Q:什么又是复合几何体建模，或什么是复合对象建模呢?</p>
+<p>A:是指必须要两个或两个以上的物体复合在一起形成一个新的物体。<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF20.png" alt="三维建模技术20"></p>
+</blockquote>
+<p>复合几何体建模最常用：放样建模，布尔建模，散布建模</p>
+<h2 id="3-2-放样建模"><a href="#3-2-放样建模" class="headerlink" title="3.2 放样建模"></a>3.2 放样建模</h2><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF23.png" alt="三维建模技术23"></p>
+<h3>🚀 放样建模要素分析</h3>
+
+<blockquote>
+<p>放样指的是将<strong>一个或多个二维图形沿着某个路径进行扫描</strong>，进而形成复杂的三维对象。从放样概念可知，放样物体必须具备两个<strong>要素，截面图形和路径曲线</strong>(放样与solidworks一样，都是通过一个图形扫描路径)</p>
+<p>路径和截面图形也是有要求:<strong>路径必须是唯一的</strong>，它可以是一条直线，也可以是一条曲线;截面图形不是唯一的，不受限制的，可以有很多种的截面图形，但是截面图形有一个要求，就是<strong>截面图形里的样条线的数量是要一样多</strong>，不能拿一个圆放样成两圆，又放成三个圆，那是不允许</p>
+</blockquote>
+<h3>🚀 基本放样</h3>
+
+<blockquote>
+<p>创建截面和路径图形,应用放样工具</p>
+</blockquote>
+<blockquote>
+<p>示例：先画出螺旋线与长方形，然后对螺旋线进行放样(即让长方形沿螺旋形路径旋转)</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF21.png" alt="三维建模技术21"></p>
+<h3>🚀 多截面放样</h3>
+
+<blockquote>
+<p>多截面放样即在路径上放置多个截面，以创建更加复杂的模型</p>
+</blockquote>
+<blockquote>
+<p>炮弹示例：使用样条线在俯视图依次画出五角星，三个圆圈，在正视图画出一条直线。之后利用直线做路径，从下向上依次获取图形五角星，三个圆圈</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF22.png" alt="三维建模技术22" style="zoom: 67%;" />
+
+<h1 align="center">🌴 2022.3.21 早十</h1>
+
+<h2 id="3-2-放样建模-1"><a href="#3-2-放样建模-1" class="headerlink" title="3.2 放样建模"></a>3.2 放样建模</h2><h3>🚀 多截面放样</h3>
+
+<blockquote>
+<p>接上节内容，罗马柱示例：与炮弹示例如法炮制，所以简述了</p>
+<ol>
+<li>准备，首先在俯视图做出俩圆，正视图绘制一条直线，其中一个圆周围通过旋转复制8个得到图三。通过附加、布尔差值，最后得到图一图二。</li>
+<li>在复合对象中通过放样，路径参数0，10选取图一，20，80选取图二，90，100选取图一，最终得到图五</li>
+<li>通过缩放，得到图六(缩放功能位置与参数见下图)</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF24.png" alt="三维建模技术24"></p>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF25.png" alt="三维建模技术25" style="zoom: 67%;" />
+
+<h2 id="3-3-布尔建模"><a href="#3-3-布尔建模" class="headerlink" title="3.3 布尔建模"></a>3.3 布尔建模</h2><blockquote>
+<p>前面学习了布尔运算，同样布尔也可以运用在三维物体中</p>
+<p>布尔建模是<strong>两个或多个</strong>相交的物体，通过并集、交集、差集，以及剪切等运算生成新的复合体对象的建模方法</p>
+</blockquote>
+<blockquote>
+<p>烟灰缸示例：</p>
+<ol>
+<li>首先绘制两个切角圆柱体，高相同，半径一大一小</li>
+<li>通过平移、对齐得到图二(小的嵌在大的上面)</li>
+<li>通过布尔运算得到图三</li>
+<li>重复123，绘制圆柱，平移、对齐得到图四，通过布尔运算得到图五</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF26.png" alt="三维建模技术26"></p>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF27.png" alt="三维建模技术27" style="zoom: 67%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF28.png" alt="三维建模技术28" style="zoom:67%;" />
+
+<h2 id="3-4-散布建模"><a href="#3-4-散布建模" class="headerlink" title="3.4 散布建模"></a>3.4 散布建模</h2><blockquote>
+<p>散布复合对象能够将选择对象分布于另一个目标对象的表面</p>
+<p>在创建“散布”组合对象时，<strong>场景</strong>中必须有用作<strong>源对象的网格对象和作为目标对象的分布对象</strong>，而且需要注意这些<strong>对象不能是二维图形</strong></p>
+</blockquote>
+<blockquote>
+<p>草坪示例：在菜单中选中散布，拾取画好的圆锥，通过散布，达到如图效果</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF29.png" alt="三维建模技术29"></p>
+<blockquote>
+<p>山地，顾名思义，就是绘制山体呗</p>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF31.png" alt="三维建模技术31" style="zoom:67%;" />
+</blockquote>
+<blockquote>
+<p>山体示例：</p>
+<ol>
+<li>在俯视图中利用直线(平滑)，绘制等差线得到图一</li>
+<li>在俯视图中从外向内选取紫色线条，在前视图中按住<kbd>ALT</kbd>向上拖动。同理选取最内侧图形重复操作，得到图二</li>
+<li>选中最外侧的线条，点击地形，利用拾取运算对象，依次从外向内选取</li>
+<li>在海拔上色中点击创建默认值，即可得到下图效果</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF30.png" alt="三维建模技术30"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF32.png" alt="三维建模技术32"></p>
+<h1 align="center">🌴 2022.3.28 早十</h1>
+
+<h1 id="4"><a href="#4" class="headerlink" title="4"></a>4</h1><h2 id="4-1-修改器建模综述"><a href="#4-1-修改器建模综述" class="headerlink" title="4.1 修改器建模综述"></a>4.1 修改器建模综述</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR;</span><br><span class="line">    修改--&gt;标准基本体;</span><br><span class="line">    修改--&gt;扩展基本体;</span><br><span class="line">    修改--&gt;二维图形;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-2-修改器命令面板"><a href="#4-2-修改器命令面板" class="headerlink" title="4.2 修改器命令面板"></a>4.2 修改器命令面板</h2><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF47.png" alt="三维建模技术47"></p>
+<blockquote>
+<p>1.锁定堆栈工具(例如画了两个长方体，如果对其中一个锁定，修改面板就不能修改另一个的参数，所以一般不用)</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF49.gif" alt="三维建模技术49" style="zoom:50%;" />
+
+<blockquote>
+<p>2.显示最终结果开&#x2F;关切换(默认是开启的，例如画了一个长方体，对它进行了其它参数修改，如果最终结果设置为关，那么就不会显示修改的结果)</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF50.gif" alt="三维建模技术50" style="zoom:50%;" />
+
+<blockquote>
+<p>3.使唯一(前面学习了复制时选择实例，如果取消<strong>使唯一</strong>，则修改一个另一个不会有影响)</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF51.gif" alt="三维建模技术51" style="zoom:50%;" />
+
+<blockquote>
+<p>4.从堆栈中删除修改器(即取消修改)</p>
+</blockquote>
+<blockquote>
+<p>5.配置修改器集(自定义修改器列表)</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF48.png" alt="三维建模技术48"></p>
+<h2 id="4-3-二维图形编辑修改器"><a href="#4-3-二维图形编辑修改器" class="headerlink" title="4.3 二维图形编辑修改器"></a>4.3 二维图形编辑修改器</h2><blockquote>
+<p>在4.2的修改器面板里，主要有挤出、倒角和车削等修改器，它们都是作用于<strong>二维对象</strong>，通过对其进行转换为三维模型</p>
+<ul>
+<li><strong>挤出:<strong>是以</strong>封闭</strong>的二维图形为截面，沿垂直方向挤出，生成形状相同、但厚度可调的三维模型(类似solidworks的拉伸，即把一个二维图形拉伸成三维图形)</li>
+<li>**倒角:**可对二维图形挤出，同时在边界上加入方形或圆形倒角。一般用来制作立体文字和LoGo标志(与solidworks的倒角相同，把轮廓转换为直角)</li>
+<li>**车削:**就是先画物体侧面轮廓，只画一半轮廓，再绕着一根中心轴旋转而成(类似solidworks的旋转，效果相同)</li>
+</ul>
+<p>【注意】挤出过的物体是不会有倒角的，成型工具(如挤出、车削、倒角），因为它们都已经成三维物体了，所以只能用一次</p>
+</blockquote>
+<h3>🚀 挤出</h3>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF52.png" alt="三维建模技术52"></p>
+<h3>🚀 车削</h3>
+
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF53.png" alt="三维建模技术53" style="zoom: 67%;" />
+
+<h2 id="4-4-三维图形编辑修改器"><a href="#4-4-三维图形编辑修改器" class="headerlink" title="4.4 三维图形编辑修改器"></a>4.4 三维图形编辑修改器</h2><h3 id="4-4-1弯曲修改器"><a href="#4-4-1弯曲修改器" class="headerlink" title="4.4.1弯曲修改器"></a>4.4.1弯曲修改器</h3><blockquote>
+<p>**弯曲(bend):**将三维物体弯曲一下</p>
+<p>**注意:**弯曲的时候必须要用段数，段数是物体要增加细节的时候才使用的</p>
+</blockquote>
+<blockquote>
+<p>相同角度，不同段数效果示例(Bend中的限制效果指弯曲作用的起止点，默认全部)</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF54.gif" alt="三维建模技术54" style="zoom:50%;" />
+
+<h3 id="4-4-2锥化修改器"><a href="#4-4-2锥化修改器" class="headerlink" title="4.4.2锥化修改器"></a>4.4.2锥化修改器</h3><blockquote>
+<p>**锥化(taper) :**把一个物体变成锥形</p>
+<p>锥化修改器的作用是对物体轮廓建模进行锥化修改。可以在创建的基础建模上加入锥化修改器，使物体产生新的建模</p>
+</blockquote>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF55.gif" alt="三维建模技术55" style="zoom:50%;" />
+
+<h3 id="4-4-3扭曲修改器"><a href="#4-4-3扭曲修改器" class="headerlink" title="4.4.3扭曲修改器"></a>4.4.3扭曲修改器</h3><blockquote>
+<p>**扭曲(twist):**把物体进行扭曲</p>
+<p>利用扭曲修改器可以使物体沿任意轴位进行扭曲变形</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF56.gif" alt="三维建模技术56" style="zoom: 50%;" />
+
+<h3 id="4-4-4-FFD修改器-自由变形"><a href="#4-4-4-FFD修改器-自由变形" class="headerlink" title="4.4.4 FFD修改器(自由变形)"></a>4.4.4 FFD修改器(自由变形)</h3><blockquote>
+<p>FFD修改器用于<strong>修改对象的外形</strong>。就是在模型的外轮廓上加入一些控制点。控制点的移动就会影响模型的形状</p>
+<p>FFD修改器有FFD2<em>2</em>2、FFD3<em>3</em>3、FFD4<em>4</em>4。这里的2、3、4分别代表了它在长、宽、高控制点的数量，2<em>2</em>2就代表了X、Y、Z轴都是两个控制点，3<em>3</em>3就代表了X、Y、Z轴都是三个控制点，以此类推，FFD除了这个之外，还有FFD的长方体、FFD圆柱形。其实就是说我们可以来设定它在X、Y、Z轴控制点的数量。所以说它是一个特别人性化的变形修改工具</p>
+</blockquote>
+<blockquote>
+<p>苹果示例：先画出主体，并使用修改器调整，做出凹槽。再使用锥化，调整</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF57.gif" alt="三维建模技术57" style="zoom:50%;" />
+
+<blockquote>
+<p>利用弯曲和锥化，做苹果的柄</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF58.gif" alt="三维建模技术58" style="zoom:50%;" />
+
+<h1 id="5"><a href="#5" class="headerlink" title="5"></a>5</h1><h2 id="5-1-世界空间修改器概述"><a href="#5-1-世界空间修改器概述" class="headerlink" title="5.1 世界空间修改器概述"></a>5.1 世界空间修改器概述</h2><blockquote>
+<p>世界空间修改器所产生的效果<strong>作用世界空间而不是对象空间</strong>(即:对象空间修改器直接影响对象空间中的几何体;而世界空间修改器类似于空间扭曲绑定到对象上,不随对象本身坐标的改变而改变)</p>
+<p>世界空间修改器的使用方法和对象空间修改器一样，在修改器列表中世界空间修改器是用<strong>星号或修改器名称旁边的“(WSM)’</strong>文本表示的</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF59.png" alt="三维建模技术59" style="zoom:60%;" />
+
+<h2 id="5-2-路径变形修改器"><a href="#5-2-路径变形修改器" class="headerlink" title="5.2 路径变形修改器"></a>5.2 路径变形修改器</h2><blockquote>
+<p>可以根据<strong>二维样条线来变形对象</strong>，该修改器对于制作环绕的文字，或者沿路径生长的动画比较有帮助</p>
+<p>参数卷展栏包含“路径变形”和“路径变形轴”两个选项组。其中:</p>
+<ul>
+<li>“路径变形”选项卡<ul>
+<li>“百分比”参数表示根据路径长度的百分比,沿着Gizmo路径移动对象</li>
+<li>“拉伸”参数以对象的轴点位中心进行缩放</li>
+<li>“旋转”参数可以沿着路径旋转文字对象</li>
+<li>“扭曲”参数可以使对象在围绕路径产生扭曲变形</li>
+</ul>
+</li>
+<li>“路径变形轴”选项组主要用来控制路径以哪个轴向来产生变形效果</li>
+</ul>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF60.png" alt="三维建模技术60"></p>
+<blockquote>
+<p>示例</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF61.gif" alt="三维建模技术61" style="zoom:50%;" />
+
+<h2 id="5-2-毛发修改器"><a href="#5-2-毛发修改器" class="headerlink" title="5.2 毛发修改器"></a>5.2 毛发修改器</h2><blockquote>
+<p>Hair and Fur(毛发)修改器可以在对象表面生成毛发效果，可以模拟人的头发或者动物的毛发，以及毛毯等多种效果</p>
+</blockquote>
+<blockquote>
+<p>示例：这里是利用导向，对皮毛进行梳理、修建。也可以直接选择某些面来保留毛发</p>
+</blockquote>
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF62.gif" alt="三维建模技术62" style="zoom:50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF63.gif" alt="三维建模技术63" style="zoom:50%;" />
+
+<h1 align="center">🌴 2022.04.04 早十</h1>
+
+<h1 id="6-可编辑多边形-高级建模"><a href="#6-可编辑多边形-高级建模" class="headerlink" title="6 可编辑多边形(高级建模)"></a>6 可编辑多边形(高级建模)</h1><blockquote>
+<p>高级建模适合那些<strong>不能被拆分</strong>的物体，尤其是一些生物或是曲面物体</p>
+<p>高级建模的工作流程是:</p>
+<ol>
+<li>创建基础模型(基本形体、大型正确)</li>
+<li>是编辑模型(细分模型、加工造型)</li>
+<li>是网格平滑（进一步自动细分)</li>
+</ol>
+</blockquote>
+<p>高级建模的主要工具	</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">	编辑网格--&gt;加工工具细分</span><br><span class="line">	编辑多边形--&gt;加工工具细分</span><br><span class="line">	网格平滑--&gt;A[&quot;平滑工具(平滑多边形)&quot;]</span><br></pre></td></tr></table></figure>
+
+<h3>🚀 概述编辑多边形建模</h3>
+
+<h4>🚁 多边形建模的基本原理</h4>
+
+<blockquote>
+<p>点构成边，边构成面，面构成多边形，多边形构成三维模型<br>编辑多边形是高级建模的<strong>核心</strong>。编辑多边形能将多边形或三维模型编辑成我们想要的任何形状<br>编辑多边形有很多针对顶点、边和多边形的命令。如:挤出、倒角、插入和分离</p>
+</blockquote>
+<h4>🚁 创建可编辑多边形的方法</h4>
+
+<blockquote>
+<ul>
+<li>右击转换为可编辑多边形</li>
+<li>修改器列表中选择可编辑多边形</li>
+</ul>
+<p>右击转换的不能删除，修改器列表可以对编辑删除</p>
+</blockquote>
+<h2 id="6-1-多边形的子对象介绍"><a href="#6-1-多边形的子对象介绍" class="headerlink" title="6.1 多边形的子对象介绍"></a>6.1 多边形的子对象介绍</h2><blockquote>
+<p>编辑多边形（(editpoly)有5个子对象（子层级)∶<br><strong>顶点、边、边界（也叫封套)、多边形和元素(也叫三维模型）</strong>，快捷键分别是1、2、3、4、5</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF64.png" alt="三维建模技术64"></p>
+<h3 id="6-2-1-顶点对象"><a href="#6-2-1-顶点对象" class="headerlink" title="6.2.1 顶点对象"></a>6.2.1 顶点对象</h3><blockquote>
+<p>“编辑顶点”卷展栏包含用于编辑顶点的命令。主要包括:</p>
+<ul>
+<li><p>**移除:**可删除选择的顶点，并接合使用它们的多边形<br>如果选择顶点,按下Delete键删除顶点,在网格中会创建一个或多个洞;而”移除”顶点时不会创建孔洞</p>
+</li>
+<li><p>**断开:**在选定顶点相连的每个多边形上创建一个新顶点，使多边形的转角相互分开，使它们不再相连于原来的顶点上</p>
+</li>
+<li><p><strong>挤出:<strong>选择顶点后</strong>垂直拖动</strong>，就可以挤出此顶点</p>
+</li>
+<li><p>**焊接:**对指定的阈值范围内选定的连续顶点进行合并。使用”焊接′前，要设置”焊接阈值”,<br>[提示]如果几何体区域有很多非常接近的顶点，可使用焊接进行自动简化;要焊接相对较远的顶点，则使用”目标焊接””</p>
+</li>
+<li><p>**目标焊接:**可以选择一个顶点，并将它焊接到相邻目标顶点</p>
+</li>
+<li><p>**切角:**选择并拖动顶点，在该顶点处生成切角。</p>
+</li>
+<li><p>移除孤立顶点:移除没有面和边的点</p>
+</li>
+</ul>
+</blockquote>
+<h4>🚀 移除</h4>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF65.png" alt="三维建模技术65"></p>
+<h4>🚀 断开</h4>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF66.gif" alt="三维建模技术66"></p>
+<h4>🚀 挤出</h4>
+
+<blockquote>
+<p>点击加号可以多次叠加(多了电脑会卡)</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF68.gif" alt="三维建模技术68"></p>
+<h4>🚀 焊接</h4>
+
+<blockquote>
+<p>焊接可以通过旁边的长方形设置参数</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF70.gif" alt="三维建模技术70"></p>
+<h4>🚀 目标焊接</h4>
+
+<blockquote>
+<p>目标焊接通过鼠标拉线</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF71.gif" alt="三维建模技术71"></p>
+<h4>🚀 切角</h4>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF69.png" alt="三维建模技术69"></p>
+<h4>🚀 移除孤立点</h4>
+
+<blockquote>
+<p>建模过程中移除多余的点</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF67.gif" alt="三维建模技术67"></p>
+<h3 id="6-2-2-边对象"><a href="#6-2-2-边对象" class="headerlink" title="6.2.2 边对象"></a>6.2.2 边对象</h3><blockquote>
+<p>边对象中移除，挤出，焊接，切角，目标焊接与点类似，单独看一下<strong>连接</strong></p>
+</blockquote>
+<h4>🚀 连接</h4>
+
+<blockquote>
+<p>通过边细分更多的面</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF72.gif" alt="三维建模技术72"></p>
+<h3 id="6-2-3-边界对象"><a href="#6-2-3-边界对象" class="headerlink" title="6.2.3 边界对象"></a>6.2.3 边界对象</h3><blockquote>
+<p>边界是指<strong>面的边缘</strong></p>
+<p>例如：球体没有边界，所以先Delete一部分，出现空洞</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF73.gif" alt="三维建模技术73"></p>
+<h3 id="6-2-4-多边形对象"><a href="#6-2-4-多边形对象" class="headerlink" title="6.2.4 多边形对象"></a>6.2.4 多边形对象</h3><blockquote>
+<ul>
+<li>**挤出:**单击”挤出”，垂直拖动多边形</li>
+<li><strong>轮廓:</strong>“轮廓”命令用于增加或减小每组连续的选定多边形的外边。(即:原地变大变小)<br>执行”挤出”或”倒角”操作后，通常可以使用”轮廓”调整挤出面的大小</li>
+<li>**倒角:**单击”倒角”，然后垂直拖动多边形，将其挤出。释放鼠标按钮，然后垂直拖动鼠标光标，设置挤出轮廓。单击以完成设置。也可单击”轮廓”按钮右侧的”设置”按纽，在视图中设置”高度”和命令值<br>“倒角”命令&#x3D;”挤出”命令＋”轮廓”命令</li>
+<li>**插入:**选择多边形，单击”插入”命令,垂直拖动多边形，插入多边形</li>
+<li>**桥:**使用”桥”命令可连接对象的两个选定多边形</li>
+<li>**从边旋转:**使”从边旋转”命令可沿指定的边旋转选定的多边形</li>
+<li>**沿样条线挤出:**使用”沿样条线挤出”命令可沿样条线挤出当前选定的多边形</li>
+</ul>
+</blockquote>
+<h4>🚀 插入顶点 挤出 轮廓 倒角</h4>
+
+<blockquote>
+<p>倒角相当于挤出+轮廓</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF74.gif" alt="三维建模技术74"></p>
+<h4>🚀 桥</h4>
+
+<blockquote>
+<p>连接两个平面</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF75.gif" alt="三维建模技术75"></p>
+<h4>🚀 从边旋转</h4>
+
+<blockquote>
+<p>面绕选定边旋转</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF76.gif" alt="三维建模技术76"></p>
+<h4>🚀 沿样条线挤出</h4>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF77.gif" alt="三维建模技术77"></p>
+<h4>🚀 塌陷</h4>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF78.gif" alt="三维建模技术78"></p>
+<h4>🚀 平面化</h4>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF79.gif" alt="三维建模技术79"></p>
+<h3 id="6-2-4-元素对象"><a href="#6-2-4-元素对象" class="headerlink" title="6.2.4 元素对象"></a>6.2.4 元素对象</h3><blockquote>
+<p>最常用的是来设置物体的材质ID号。用法是场景中有多个面</p>
+</blockquote>
+<p>以茶壶为例，一般修改颜色会将整个颜色都改变</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF80.gif" alt="三维建模技术80"></p>
+<h2 id="6-3-编辑网格"><a href="#6-3-编辑网格" class="headerlink" title="6.3 编辑网格"></a>6.3 编辑网格</h2><blockquote>
+<p>编辑网格约等于编辑多边形，它属于max早期版本的一个唯一的编辑命令<br>编辑网格中有一些命令是编辑多边形所没有的。主要包含:</p>
+<ul>
+<li>在“面”的级别的炸开命令，可以把一个面炸成很多碎的表面。这是编辑网格所独有</li>
+<li>在“边”的级别，我们可以把边变为可见或者不可见，这也是只有编辑网格才有的</li>
+</ul>
+<p>所以我们在制作的时候，如果发现有一些命令在编辑多边形里面没有，我们可以用编辑网格来补充它</p>
+</blockquote>
+<h4>🚀 炸开</h4>
+
+<blockquote>
+<p>可以单独对每一个面移动</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF81.gif" alt="三维建模技术81"></p>
+<h4>🚀 可见</h4>
+
+<blockquote>
+<p>三维图形面的最小单位时三角形而不是四边形，可以通过可见属性设置</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF82.png" alt="三维建模技术82"></p>
+<h2 id="6-4-多边形细分"><a href="#6-4-多边形细分" class="headerlink" title="6.4 多边形细分"></a>6.4 多边形细分</h2><h4>🚀 细分原理</h4>
+
+<blockquote>
+<p>细分表面是多边形建模光滑模型的一套模型精度增加的解决方案，采用网格平滑的方式，对低精度模型进行平滑细分</p>
+</blockquote>
+<h4>🚀 细分方法</h4>
+
+<blockquote>
+<ol>
+<li>**细分曲面:**是可编辑多边形自带的圆滑方式</li>
+<li>**网格平滑:**是max早期版本的细分解决方案</li>
+<li><strong>涡轮平滑</strong>:max7版本后增加的细分解决方案。它与网格平滑的相比，运用了提高性能的极端优化平滑算法。在相同模型相同设置的情况下，运算速度要快于网格平滑算法</li>
+</ol>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF83.png" alt="三维建模技术83"></p>
+<blockquote>
+<p>什么是迭代次数？</p>
+<p>设置为0时，不进行平滑计算<br>设置为1，指的是平滑一次。意思是每条边之间切割开<br>设置为2，指的是平滑二次。意思是每条边之间再次切割开<br>即每平滑一次，就比上一次的面数要增加4倍。所以一般我们的迭代次数不超过2次(显卡燃烧！)</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF84.png" alt="三维建模技术84"></p>
+<blockquote>
+<p>可以在顶点下通过设置”控制级别”显示顶点，方便之后对点和面二次编辑</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF85.gif" alt="三维建模技术85"></p>
+<h1 align="center">🌴 2022.4.25 早十</h1>
+
+<h1 id="7-材质和贴图"><a href="#7-材质和贴图" class="headerlink" title="7 材质和贴图"></a>7 材质和贴图</h1><h2 id="7-1-材质基础"><a href="#7-1-材质基础" class="headerlink" title="7.1 材质基础"></a>7.1 材质基础</h2><h3 id="7-1-1-材质的基本原理"><a href="#7-1-1-材质的基本原理" class="headerlink" title="7.1.1 材质的基本原理"></a>7.1.1 材质的基本原理</h3><blockquote>
+<p>材质是指<strong>物体表面的特性</strong>（如：玻璃、布料、皮革等）。材质反应的是物体表面的质感，如对象表面的反光程度、调整对象的光亮度、控制对象表面的凹凸效果等</p>
+<p>贴图是<strong>材质的一种图像属性</strong>，贴图图像一般是标准的位图文件，如*.jpg*.tif*.tga等。贴图服务于材质，为材质提供可视化的图像信息，如右图所示，两个对象同样是大理石材质，但表面可以贴上不同的贴图，显示不同的花纹</p>
+<p>一种物体可以赋予一种或多种贴图图像,并且这些贴图图像都通过通道来实现。3dsMax的材质编辑器中有<strong>12种贴图通道,<strong>每个贴图通道分别由</strong>颜色、亮度、贴图</strong>加载按钮3部分组成</p>
+<p>材质与贴图的区别在于:材质是渗透到三维对象内部的一种效果;而大多数贴图是二维图像,可以包裹在物体表面。材质中可以包含贴图,也可以不包含贴图,而贴图一般可以由几种材质组成,在材质编辑器的样本槽中出现的材质和贴图被显示为二维图像。贴图是材质的一种图像属性</p>
+</blockquote>
+<h3 id="7-1-2-材质编辑器"><a href="#7-1-2-材质编辑器" class="headerlink" title="7.1.2 材质编辑器"></a>7.1.2 材质编辑器</h3><blockquote>
+<p> 在3ds Max中,材质编辑器是用户编辑修改材质的工具,场景中的所有材质和贴图都在这里编辑生成</p>
+<p> 打开材质编辑器：<br> 1.菜单操作“渲染”→“材质编辑器”<br> 2.工具栏上的材质编辑器按钮<img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF110.png" alt="三维建模技术110"><br> 3.快捷键M</p>
+<p> 3ds Max提供了两种材质编辑器，一种是精简材质编辑器,另一种是平板材质编辑器</p>
+</blockquote>
+<h3>🚀 精简材质编辑器</h3>
+
+<blockquote>
+<p>默认情况下只有6个示例球。要显示多个示例球,可以在示例球上右击,在弹出的快捷菜单中选择<strong>“5×3示例窗”或者“6×4示例窗”</strong>命令,即可调节示例窗显示的材质示例球数量</p>
+</blockquote>
+<h3>🚀 平板材质编辑器</h3>
+
+<blockquote>
+<p>也叫板岩材质编辑器,它使用节点、列表和关联的方法将材质显示在活动视图中,使材质的编辑变得更为简便和直观</p>
+<p>平板材质编辑器窗口包含菜单栏、工具栏、材质&#x2F;贴图浏览器、状态栏、活动视图、视图导航、参数编辑器、导航器</p>
+</blockquote>
+<blockquote>
+<p>(1)材质&#x2F;贴图浏览器。要编辑材质,可将其从材质&#x2F;贴图浏览器拖到视图中。要创建新的材质或贴图,可将其从“材质”组或“贴图”组中拖出。也可以双击材质&#x2F;贴图浏览器中的材质或贴图,将其添加到活动视图中</p>
+<p>(2)活动视图。在活动视图中,可以通过将贴图或控制器与材质组件关联来构造材质树。可以为场景中的材质创建一些视图,并从中选择活动视图</p>
+<p>(3)参数编辑器。在参数编辑器中,可以调整贴图和材质的详细设置</p>
+<p>(4）工具栏</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF111.png" alt="三维建模技术111"></p>
+<h2 id="7-2-标准材质"><a href="#7-2-标准材质" class="headerlink" title="7.2 标准材质"></a>7.2 标准材质</h2><h3 id="7-2-1-Blinn基本参数"><a href="#7-2-1-Blinn基本参数" class="headerlink" title="7.2.1 Blinn基本参数"></a>7.2.1 Blinn基本参数</h3><blockquote>
+<p>分为4个区域,分别是颜色控制区、高光控制区、自发光控制区、透明度控制区</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF112.png" alt="三维建模技术112"></p>
+<p>颜色控制区:场景中物体的颜色不仅取决于物体本身的颜色,还有环境光颜色、漫反射光颜色、高光颜色、发光度颜色(自发治)、滤光颜色(扩展参数)等因素</p>
+<ul>
+<li>环境光:物体受光照时,材质阴影部分的颜色</li>
+<li>漫反射:材质的基调色</li>
+<li>高光反射:材质高光部分的颜色</li>
+</ul>
+<p>高光控制区:场景中的物体受到光的照射时,受光的一面较亮,背光的一面较暗。物体的受光区可以分为高光区、阴影区、漫反射区、环境光区</p>
+<ul>
+<li>高光级别:调节高光反射的光亮度</li>
+<li>光泽度:控制高光的范围</li>
+<li>柔化:降低高光强度或增加高光区域来减弱高光</li>
+</ul>
+<p>自发光控制区:有些材质会自发光,可以调整自发光颜色。例如灯,就可以设置灯能够自发光,并设置自发光的颜色</p>
+<ul>
+<li>自发光:使材质产生一种白炽灯的发光效果</li>
+</ul>
+<p>透明度控制区:不透明度是指物体阻挡光线穿透的程度,通常以百分数来衡量。若不透明度为0,则物体完全透明;若不透明度为100,则物体不允许任何光线透过。透明度与不透明度正好相反,是指物体允许光线穿透的程度。一般情况下使用不透明度来代替透明度</p>
+<ul>
+<li>不透明度:控制物体的透明效果。</li>
+</ul>
+<h3 id="7-2-2-明暗器基本参数"><a href="#7-2-2-明暗器基本参数" class="headerlink" title="7.2.2 明暗器基本参数"></a>7.2.2 明暗器基本参数</h3><blockquote>
+<p> Max中包含8种明暗器模式，能够设置各种复杂质感的材质</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF113.png" alt="三维建模技术113"></p>
+<ul>
+<li>线框:将材质显示为线框形态</li>
+<li>双面:对材质进行双面渲染，双面渲染是指当材质透明时可以显示背面</li>
+<li>面贴图:材质将贴到物体的每一个面</li>
+<li>面状:使面棱角化</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF114.png" alt="三维建模技术114"></p>
+<h3 id="7-2-3-各向异性明暗器"><a href="#7-2-3-各向异性明暗器" class="headerlink" title="7.2.3 各向异性明暗器"></a>7.2.3 各向异性明暗器</h3><h4> 🚀 各向异性明暗器</h4>
+
+<blockquote>
+<p>各向异性(Anisotropic)明暗器使<strong>模型表面产生长条高光区</strong>,适合模拟高反差表面物体及流线型表面物体,如<strong>头发、玻璃、工业造型及汽车外壳</strong>等</p>
+</blockquote>
+<ul>
+<li>高光级别：调节高光反射的光亮度</li>
+<li>光泽度：控制高光的范围</li>
+<li>各向异性：控制高光模式为圆形或是椭圆形</li>
+<li>方向：控制高光部分的受光角度</li>
+</ul>
+<h4> 🚀 Blinn明暗器</h4>
+
+<blockquote>
+<p>Blinn明暗器是系统默认的高光模式,可以<strong>使模型表面反光比较柔和</strong>,适合模拟光线柔软、质感坚硬的物体,如<strong>塑料、瓷砖、橡皮</strong>等,它的高光是圆面光滑的,当加大“柔化”参数值时,高光是尖锐的。它的反光也是圆形的。这种材质较适合表现冷色的坚硬材质</p>
+</blockquote>
+<h4>🚀 金属明暗器</h4>
+
+<blockquote>
+<p>金属(Metal)明暗器<strong>使模型表面的高光更加尖锐</strong>,适合<strong>模拟金属材质</strong>。它提供了金属所具有的强烈反光</p>
+</blockquote>
+<h4>🚀 多层明暗器</h4>
+
+<blockquote>
+<p>多层(multi-layer)明暗器组合了<strong>两层 Anisotropic(非圆形高光),每一层都可以拥有不同的颜色和角度,适用于表现明亮的表面特殊效果</strong>,例如<strong>丝绸和油漆</strong>等。其中粗糙度值为0时,与使用Blinn明暗器效果一样,不同的是多层明暗器有两层高光,有不同的参数控制区,可模拟不同方向的反射</p>
+</blockquote>
+<h4>🚀 Oren-Nayar-Blinn明暗器</h4>
+
+<blockquote>
+<p>Oren-Nayar-Blinn明暗器<strong>是基于Blinn明暗器的更高级的明暗器,是Blinn明暗器的变种,看起来更柔和,更适合产生较为粗糙的效果</strong>。它多用于表现纺织品的质感,通常也可以用于模拟<strong>陶器、土坯和人的皮肤</strong>等的效果</p>
+</blockquote>
+<h4>🚀 Phong明暗器</h4>
+
+<blockquote>
+<p>Phong材质常用于<strong>表现玻璃制品、塑料等非常光滑的表面</strong>,它所呈现的反光是柔和的,这一点与Blinn的圆形高光不同。Blinn明暗器是比Phong明暗器更高级的明暗器。Phong材质的高光是发散的,反光呈梭形,且影响范围大,更<strong>适合表现暖色,柔和的材质</strong></p>
+</blockquote>
+<h4>🚀 Strauss明暗器</h4>
+
+<blockquote>
+<p>Strauss明暗器也用于金属材质,它是金属明暗器的简化版,参数较少。但它<strong>比金属明暗器产生的金属质感要好,制作的材质比较逼真</strong>。它不能调整自发光。Strauss明暗器同金属明暗器一样用于表现金属质感,但更适合表现暗金属效果</p>
+</blockquote>
+<h4>🚀 半透明明暗器</h4>
+
+<blockquote>
+<p>半透明明暗器专用于<strong>表现半透明的物体表面</strong>,例如<strong>蜡烛、玉饰品、彩绘玻璃</strong>等。其参数如图所示</p>
+</blockquote>
+<h2 id="7-3-贴图及贴图坐标"><a href="#7-3-贴图及贴图坐标" class="headerlink" title="7.3 贴图及贴图坐标"></a>7.3 贴图及贴图坐标</h2><blockquote>
+<p>贴图原理：<strong>在材质表面包裹一层真实的纹理</strong>。将材质指定给对象后，对象表面将显示纹理并且被渲染。还可以通过贴图的明度变化模拟出对象的凹凸效果、反射效果、折射效果</p>
+<p>贴图的作用：用于模拟对象表面的真实纹理效果。贴图可以在合理的材质物理属性上增加外观的真实感，还可以使用贴图创建环境或者创建灯光投射</p>
+<p><strong>在设置材质时，只有与材质相符合的表面纹理，才能得到更加逼真的材质效果</strong>。表面纹理贴图是使用最多的一种贴图类型，代表物体表面的颜色和纹理，例如布料的纹理、大理石的纹理是不一样的，就需要使用不同的贴图来表现</p>
+</blockquote>
+<h3 id="7-3-1-贴图类型"><a href="#7-3-1-贴图类型" class="headerlink" title="7.3.1 贴图类型"></a>7.3.1 贴图类型</h3><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF116.png" alt="三维建模技术116"></p>
+<h4>🚀 位图贴图</h4>
+
+<blockquote>
+<p>在标准材质中，一些参数的后面都有一个按钮，是对应参数的贴图通道</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF115.png" alt="三维建模技术115"></p>
+<h4>🚀 2D贴图</h4>
+
+<blockquote>
+<p>2D贴图：没有深度的二维图像，可以包裹在物体表面上，也可以作为场景背景的环境贴图，2D贴图包括平铺贴图、棋盘格贴图、旋涡贴图、渐变贴图、渐变坡度贴图</p>
+<p>注意：为材质添加2D贴图时,默认的贴图设置往往不能达到纹理要求的效果,通常要通过调整贴图坐标来修改纹理的分布</p>
+</blockquote>
+<h4>🚀 3D贴图</h4>
+
+<blockquote>
+<p>3D贴图：3D贴图是通过数学算法在三维定义上创建的贴图。与2D贴图一样，3D贴图也提供了用于修改贴图位置、大小和角度的“坐标”卷展栏。与2D贴图不一样的是,3D贴图是在三维空间上调整位图。包括棋盘格、凹痕、衰减、大理石、噪波、粒子寿命、粒子运动模糊、随机大理石、行星、烟雾、斑点、木材等</p>
+</blockquote>
+<h4>🚀 复合贴图</h4>
+
+<blockquote>
+<p>复合贴图：由几个贴图混合而成</p>
+</blockquote>
+<h4>🚀 颜色修改器贴图</h4>
+
+<blockquote>
+<p>修改颜色</p>
+</blockquote>
+<h4>🚀 反射与折射贴图</h4>
+
+<blockquote>
+<p>反射与折射贴图：包括平面镜像、光线跟踪、反射&#x2F;折射、薄壁折射等</p>
+</blockquote>
+<h3 id="7-3-2-贴图坐标"><a href="#7-3-2-贴图坐标" class="headerlink" title="7.3.2 贴图坐标"></a>7.3.2 贴图坐标</h3><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF117.png" alt="三维建模技术117"></p>
+<blockquote>
+<p>3ds Max中有两种用于贴图投影方式的修改器:<strong>UVW贴图</strong>和<strong>UVW展开</strong></p>
+<p>在3ds Max中,世界坐标系和其中的对象都采用XYZ坐标表述,而贴图坐标采用UVW坐标表述,其目的是把贴图和几何空间分开。几何对象上的XYZ坐标指的是世界坐标或者对象自身空间的准确位置,贴图的UVW坐标表示贴图的比例,计算的是贴图的增量,不是外在的尺寸</p>
+<p>在贴图坐标中,U、V、W分别与X、Y、Z平行。U相当于X;V相当于Y;W相当于Z,代表着与贴图的UV平面垂直的方向</p>
+<p><strong>对于一个新添加或导入的对象</strong>,如果没有建立自己的贴图坐标,则创建贴图时可能会发生贴图错误或在渲染视图中不能显示的情况(渲染时显示“缺少UVW贴图”)。这时<strong>必须向对象指定“UVW贴图”修改器</strong>来解决问题</p>
+</blockquote>
+<h4>🚀 “UVW贴图”修改器</h4>
+
+<blockquote>
+<p>“UVW贴图”修改器可以在模型的表面指定贴图坐标,以确定如何使材质投射在对象表面</p>
+</blockquote>
+<h4>🚀 UVW贴图Gizmo</h4>
+
+<blockquote>
+<p>“UVW贴图”Gizmo将贴图坐标投影到对象上<br>可定位、旋转或缩放Gizmo以调整对象上的贴图坐标，还可以设置Gizmo的动画<br>对于平面、长方体、圆柱体和收缩包裹贴图,一条黄色短线指示贴图顶部。Gizmo的绿色边指示贴图右侧<br>在球形或圆柱形贴图上，绿色边是左右边的结合处。必须在修改器显示层次中选择Gizmo，才能显示Gizmo</p>
+</blockquote>
+<h4>🚀 贴图通道</h4>
+
+<blockquote>
+<p>通过将显示贴图通道指定给位图,可为使用多个位图的材质中的每个位图控制贴图坐标的类型和贴图Gizmo的置换。在“材质编辑器”中,为每个贴图指定不同的通道编号，然后将多个“UVW贴图”修改器添加到对象的修改器堆栈，每个“UVW贴图”修改器设置为不同贴图通道</p>
+</blockquote>
+<h2 id="7-4-实例"><a href="#7-4-实例" class="headerlink" title="7.4 实例"></a>7.4 实例</h2><blockquote>
+<p>书的材质和贴图</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF118.png" alt="三维建模技术118"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF119.gif" alt="三维建模技术119"></p>
+<blockquote>
+<p>UVW贴图Gizmo，有时候贴图效果可能不是我们想要的，比如下面这个屋顶，侧面贴图方向不对。利用修改器编辑多边形选中这个面，打开UVW贴图选中Gizmo，之后利用旋转，把贴图旋转到合适的位置就可以了</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF130.png" alt="三维建模技术130"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">张时贰</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://gc-zf.github.io/posts/47125/">http://gc-zf.github.io/posts/47125/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://gc-zf.github.io" target="_blank">张时贰</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/3ds-Max/">3ds Max</a></div><div class="post_share"><div class="social-share" data-image="https://picsum.photos/seed/zhjbkssjmjws/470/315" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/Hexo_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/Hexo_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/Hexo_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/Hexo_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/13970/"><img class="prev-cover" src="https://picsum.photos/seed/bewavaj/470/315" onerror="onerror=null;src='/Hexo_img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JAVA WEB上课笔记汇总</div></div></a></div><div class="next-post pull-right"><a href="/posts/29786/"><img class="next-cover" src="https://picsum.photos/seed/zhjbksnohtyp/470/315" onerror="onerror=null;src='/Hexo_img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python上课笔记汇总</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Hexo_img/avatar.jpg" onerror="this.onerror=null;this.src='/Hexo_img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">张时贰</div><div class="author-info__description">环转码，热爱敲代码的小张！</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/GC-ZF"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/GC-ZF" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_49488584" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=1310446718&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:1310446718@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎访问小张的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E7%95%8C%E9%9D%A2"><span class="toc-text">1 界面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">🌴 2022.2.28 早十</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-3ds-Max-2020%E5%B7%A5%E4%BD%9C%E7%95%8C%E9%9D%A2"><span class="toc-text">1.1 3ds Max 2020工作界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E4%B8%89%E7%BB%B4%E7%89%A9%E4%BD%93%E7%9A%84%E6%98%BE%E7%A4%BA%E6%96%B9%E5%BC%8F"><span class="toc-text">1.2 三维物体的显示方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E8%A7%86%E5%9B%BE%E5%B8%83%E5%B1%80"><span class="toc-text">1.3 视图布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E8%A7%86%E5%9B%BE%E8%83%8C%E6%99%AF"><span class="toc-text">1.4 视图背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E7%89%A9%E4%BD%93%E7%9A%84%E9%9A%90%E8%97%8F"><span class="toc-text">1.5 物体的隐藏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-%E5%B7%A5%E5%85%B7%E6%A0%8F"><span class="toc-text">1.6 工具栏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-%E8%A7%86%E5%9B%BE%E6%8E%A7%E5%88%B6%E5%8C%BA"><span class="toc-text">1.7 视图控制区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">1.8 菜单栏常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-3DS-Max-2020%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE"><span class="toc-text">1.9 3DS Max 2020基本设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">🌴 2022.3.7 早十</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E7%9A%84%E4%B8%BB%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="toc-text">2 三维建模的主体思路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">🚀 堆砌建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">🚀 细分建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">🚀 区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C%E5%BB%BA%E6%A8%A1"><span class="toc-text">2.1 场景对象操作建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E5%85%8B%E9%9A%86%E5%A4%8D%E5%88%B6"><span class="toc-text">2.1.1 克隆复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E5%8F%98%E6%8D%A2%E5%A4%8D%E5%88%B6"><span class="toc-text">2.1.2 变换复制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 移动变换复制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 旋转变换复制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E9%95%9C%E5%83%8F%E5%A4%8D%E5%88%B6"><span class="toc-text">2.1.3 镜像复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-%E9%97%B4%E9%9A%94%E5%A4%8D%E5%88%B6"><span class="toc-text">2.1.4 间隔复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-%E9%98%B5%E5%88%97%E5%A4%8D%E5%88%B6"><span class="toc-text">2.1.5 阵列复制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-3D-Max%E5%BB%BA%E6%A8%A1%E6%96%B9%E6%B3%95"><span class="toc-text">2.2 3D Max建模方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%9F%BA%E6%9C%AC%E4%BD%93%E5%BB%BA%E6%A8%A1"><span class="toc-text">2.3 基本体建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%E6%A0%87%E5%87%86%E5%9F%BA%E6%9C%AC%E4%BD%93"><span class="toc-text">2.3.1 标准基本体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-%E6%89%A9%E5%B1%95%E5%9F%BA%E6%9C%AC%E4%BD%93"><span class="toc-text">2.3.2 扩展基本体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 异面体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 环形节</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 切角长方体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 切角圆柱体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 油罐</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 胶囊</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 纺锤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 L-Ext (L形挤出)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 球棱柱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 C-Ext(C形挤出)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 环形波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 软管</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">🌴 2022.3.14 早十</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%BD%A2%E5%BB%BA%E6%A8%A1"><span class="toc-text">2.5 二维图形建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 二维图形建模方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-%E5%88%9B%E5%BB%BA%E6%A0%B7%E6%9D%A1%E7%BA%BF"><span class="toc-text">2.5.1 创建样条线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%BD%A2%E7%9A%84%E6%B8%B2%E6%9F%93"><span class="toc-text">2.5.2 二维图形的渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-%E7%BC%96%E8%BE%91%E6%A0%B7%E6%9D%A1%E7%BA%BF"><span class="toc-text">2.5.3 编辑样条线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 样条线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 顶点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 线段</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3"><span class="toc-text">3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%A4%8D%E5%90%88%E5%87%A0%E4%BD%95%E4%BD%93%E5%BB%BA%E6%A8%A1%E6%A6%82%E8%BF%B0"><span class="toc-text">3.1 复合几何体建模概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%94%BE%E6%A0%B7%E5%BB%BA%E6%A8%A1"><span class="toc-text">3.2 放样建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 放样建模要素分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 基本放样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 多截面放样</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">🌴 2022.3.21 早十</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%94%BE%E6%A0%B7%E5%BB%BA%E6%A8%A1-1"><span class="toc-text">3.2 放样建模</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 多截面放样</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E5%B8%83%E5%B0%94%E5%BB%BA%E6%A8%A1"><span class="toc-text">3.3 布尔建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%E6%95%A3%E5%B8%83%E5%BB%BA%E6%A8%A1"><span class="toc-text">3.4 散布建模</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">🌴 2022.3.28 早十</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4"><span class="toc-text">4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E4%BF%AE%E6%94%B9%E5%99%A8%E5%BB%BA%E6%A8%A1%E7%BB%BC%E8%BF%B0"><span class="toc-text">4.1 修改器建模综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E4%BF%AE%E6%94%B9%E5%99%A8%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF"><span class="toc-text">4.2 修改器命令面板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%BD%A2%E7%BC%96%E8%BE%91%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-text">4.3 二维图形编辑修改器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 挤出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 车削</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%E4%B8%89%E7%BB%B4%E5%9B%BE%E5%BD%A2%E7%BC%96%E8%BE%91%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-text">4.4 三维图形编辑修改器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-1%E5%BC%AF%E6%9B%B2%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-text">4.4.1弯曲修改器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-2%E9%94%A5%E5%8C%96%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-text">4.4.2锥化修改器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-3%E6%89%AD%E6%9B%B2%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-text">4.4.3扭曲修改器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-4-FFD%E4%BF%AE%E6%94%B9%E5%99%A8-%E8%87%AA%E7%94%B1%E5%8F%98%E5%BD%A2"><span class="toc-text">4.4.4 FFD修改器(自由变形)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5"><span class="toc-text">5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E4%B8%96%E7%95%8C%E7%A9%BA%E9%97%B4%E4%BF%AE%E6%94%B9%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-text">5.1 世界空间修改器概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E8%B7%AF%E5%BE%84%E5%8F%98%E5%BD%A2%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-text">5.2 路径变形修改器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E6%AF%9B%E5%8F%91%E4%BF%AE%E6%94%B9%E5%99%A8"><span class="toc-text">5.2 毛发修改器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">🌴 2022.04.04 早十</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%8F%AF%E7%BC%96%E8%BE%91%E5%A4%9A%E8%BE%B9%E5%BD%A2-%E9%AB%98%E7%BA%A7%E5%BB%BA%E6%A8%A1"><span class="toc-text">6 可编辑多边形(高级建模)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 概述编辑多边形建模</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚁 多边形建模的基本原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚁 创建可编辑多边形的方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E5%AD%90%E5%AF%B9%E8%B1%A1%E4%BB%8B%E7%BB%8D"><span class="toc-text">6.1 多边形的子对象介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-1-%E9%A1%B6%E7%82%B9%E5%AF%B9%E8%B1%A1"><span class="toc-text">6.2.1 顶点对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 移除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 断开</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 挤出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 焊接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 目标焊接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 切角</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 移除孤立点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-2-%E8%BE%B9%E5%AF%B9%E8%B1%A1"><span class="toc-text">6.2.2 边对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 连接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-3-%E8%BE%B9%E7%95%8C%E5%AF%B9%E8%B1%A1"><span class="toc-text">6.2.3 边界对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-4-%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%AF%B9%E8%B1%A1"><span class="toc-text">6.2.4 多边形对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 插入顶点 挤出 轮廓 倒角</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 桥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 从边旋转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 沿样条线挤出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 塌陷</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 平面化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-4-%E5%85%83%E7%B4%A0%E5%AF%B9%E8%B1%A1"><span class="toc-text">6.2.4 元素对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-%E7%BC%96%E8%BE%91%E7%BD%91%E6%A0%BC"><span class="toc-text">6.3 编辑网格</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 炸开</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 可见</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%BB%86%E5%88%86"><span class="toc-text">6.4 多边形细分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 细分原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 细分方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">🌴 2022.4.25 早十</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E6%9D%90%E8%B4%A8%E5%92%8C%E8%B4%B4%E5%9B%BE"><span class="toc-text">7 材质和贴图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-%E6%9D%90%E8%B4%A8%E5%9F%BA%E7%A1%80"><span class="toc-text">7.1 材质基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-1-%E6%9D%90%E8%B4%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-text">7.1.1 材质的基本原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-2-%E6%9D%90%E8%B4%A8%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">7.1.2 材质编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 精简材质编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">🚀 平板材质编辑器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-%E6%A0%87%E5%87%86%E6%9D%90%E8%B4%A8"><span class="toc-text">7.2 标准材质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-1-Blinn%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-text">7.2.1 Blinn基本参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-2-%E6%98%8E%E6%9A%97%E5%99%A8%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-text">7.2.2 明暗器基本参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-3-%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%98%8E%E6%9A%97%E5%99%A8"><span class="toc-text">7.2.3 各向异性明暗器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text"> 🚀 各向异性明暗器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text"> 🚀 Blinn明暗器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 金属明暗器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 多层明暗器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 Oren-Nayar-Blinn明暗器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 Phong明暗器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 Strauss明暗器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 半透明明暗器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-%E8%B4%B4%E5%9B%BE%E5%8F%8A%E8%B4%B4%E5%9B%BE%E5%9D%90%E6%A0%87"><span class="toc-text">7.3 贴图及贴图坐标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-1-%E8%B4%B4%E5%9B%BE%E7%B1%BB%E5%9E%8B"><span class="toc-text">7.3.1 贴图类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 位图贴图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 2D贴图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 3D贴图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 复合贴图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 颜色修改器贴图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 反射与折射贴图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-2-%E8%B4%B4%E5%9B%BE%E5%9D%90%E6%A0%87"><span class="toc-text">7.3.2 贴图坐标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 “UVW贴图”修改器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 UVW贴图Gizmo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🚀 贴图通道</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4-%E5%AE%9E%E4%BE%8B"><span class="toc-text">7.4 实例</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/41646/" title="Hexo博客搭建"><img src="https://picsum.photos/seed/jdkb/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="Hexo博客搭建"/></a><div class="content"><a class="title" href="/posts/41646/" title="Hexo博客搭建">Hexo博客搭建</a><time datetime="2022-05-01T12:26:39.000Z" title="发表于 2022-05-01 20:26:39">2022-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8380/" title="JAVA WEB开发技术作业 JS 实现学生列表及增加、删除修改"><img src="https://picsum.photos/seed/gszxssj/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="JAVA WEB开发技术作业 JS 实现学生列表及增加、删除修改"/></a><div class="content"><a class="title" href="/posts/8380/" title="JAVA WEB开发技术作业 JS 实现学生列表及增加、删除修改">JAVA WEB开发技术作业 JS 实现学生列表及增加、删除修改</a><time datetime="2022-04-26T04:00:03.000Z" title="发表于 2022-04-26 12:00:03">2022-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/65203/" title="JAVA WEB开发技术作业 学生信息列表效果(display布局)"><img src="https://picsum.photos/seed/dxxsx/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="JAVA WEB开发技术作业 学生信息列表效果(display布局)"/></a><div class="content"><a class="title" href="/posts/65203/" title="JAVA WEB开发技术作业 学生信息列表效果(display布局)">JAVA WEB开发技术作业 学生信息列表效果(display布局)</a><time datetime="2022-04-01T01:49:17.000Z" title="发表于 2022-04-01 09:49:17">2022-04-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/44155/" title="JAVA WEB开发技术作业 个人基本信息表单"><img src="https://picsum.photos/seed/dbxxbjrg/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="JAVA WEB开发技术作业 个人基本信息表单"/></a><div class="content"><a class="title" href="/posts/44155/" title="JAVA WEB开发技术作业 个人基本信息表单">JAVA WEB开发技术作业 个人基本信息表单</a><time datetime="2022-03-21T12:49:25.000Z" title="发表于 2022-03-21 20:49:25">2022-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/49243/" title="JAVA WEB开发技术作业 HTML国家奖学金申请审批表"><img src="https://picsum.photos/seed/jglmth/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="JAVA WEB开发技术作业 HTML国家奖学金申请审批表"/></a><div class="content"><a class="title" href="/posts/49243/" title="JAVA WEB开发技术作业 HTML国家奖学金申请审批表">JAVA WEB开发技术作业 HTML国家奖学金申请审批表</a><time datetime="2022-03-18T13:47:34.000Z" title="发表于 2022-03-18 21:47:34">2022-03-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picsum.photos/seed/swjmjsskbjhz/1920/942')"><div id="footer-wrap"><div class="copyright"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div>小张小张出口成章</div><div><a onclick="window.open('url')" class="footer-a">备xxxx</a></div></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-flame-rho.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.vemoji)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-flame-rho.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      document.getElementById('twikoo-count').innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="7041302176" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="鬼,才,小,张,同,学" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

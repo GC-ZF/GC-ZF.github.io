@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数据库实验四 触发器与存储过程实验(SQL入门教学三 从0到1） | 张时贰</title><meta name="keywords" content="SQL,数据库"><meta name="author" content="张时贰"><meta name="copyright" content="张时贰"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="实验四 触发器与存储过程实验前言 实验内容和要求 （1）触发器的使用       ①在数据表“学生”中创建update触发器，级联更新“选课”表相应的记录          ②利用新表，将“学生”表中被删除的记录存储到“学生备份”表中，以供日后的数据查询和分析      （2）存储过程的使用          ①在建立的数据库中，建立一个存储过程，要求统计计算机系学生的人数，并将人数返回给用户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库实验四 触发器与存储过程实验(SQL入门教学三 从0到1）">
+<meta property="og:url" content="http://gc-zf.github.io/posts/64903/index.html">
+<meta property="og:site_name" content="张时贰">
+<meta property="og:description" content="实验四 触发器与存储过程实验前言 实验内容和要求 （1）触发器的使用       ①在数据表“学生”中创建update触发器，级联更新“选课”表相应的记录          ②利用新表，将“学生”表中被删除的记录存储到“学生备份”表中，以供日后的数据查询和分析      （2）存储过程的使用          ①在建立的数据库中，建立一个存储过程，要求统计计算机系学生的人数，并将人数返回给用户">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picsum.photos/seed/syskjs/470/315">
+<meta property="article:published_time" content="2021-12-13T10:33:46.000Z">
+<meta property="article:modified_time" content="2022-05-01T14:02:00.562Z">
+<meta property="article:author" content="张时贰">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/seed/syskjs/470/315"><link rel="shortcut icon" href="/Hexo_img/favicon.jpg"><link rel="canonical" href="http://gc-zf.github.io/posts/64903/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 张时贰","link":"链接: ","source":"来源: 张时贰","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数据库实验四 触发器与存储过程实验(SQL入门教学三 从0到1）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-01 22:02:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Hexo_img/avatar.jpg" onerror="onerror=null;src='/Hexo_img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/history/"><i class="fa-fw fa-regular fa-clock"></i><span> 建站史</span></a></div><div class="menus_item"><a class="site-page" href="/wall/"><i class="fa-fw fa-solid fa-money-bill-1-wave"></i><span> 赞助墙</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picsum.photos/seed/sjksys/1920/942')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">张时贰</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/history/"><i class="fa-fw fa-regular fa-clock"></i><span> 建站史</span></a></div><div class="menus_item"><a class="site-page" href="/wall/"><i class="fa-fw fa-solid fa-money-bill-1-wave"></i><span> 赞助墙</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据库实验四 触发器与存储过程实验(SQL入门教学三 从0到1）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-12-13T10:33:46.000Z" title="发表于 2021-12-13 18:33:46">2021-12-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-01T14:02:00.562Z" title="更新于 2022-05-01 22:02:00">2022-05-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93SQL-Server/">数据库SQL Server</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="数据库实验四 触发器与存储过程实验(SQL入门教学三 从0到1）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="实验四-触发器与存储过程实验"><a href="#实验四-触发器与存储过程实验" class="headerlink" title="实验四 触发器与存储过程实验"></a>实验四 触发器与存储过程实验</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><p>实验内容和要求</p>
+<p>（1）触发器的使用</p>
+<pre><code>      ①在数据表“学生”中创建update触发器，级联更新“选课”表相应的记录
+  
+      ②利用新表，将“学生”表中被删除的记录存储到“学生备份”表中，以供日后的数据查询和分析
+  
+  （2）存储过程的使用
+  
+      ①在建立的数据库中，建立一个存储过程，要求统计计算机系学生的人数，并将人数返回给用户
+  
+      ②在建立的数据库中，建立一个存储过程，要求
+  
+          统计成绩大于等于90分学生的人数
+  
+           统计成绩大于等于80分并且小于90分学生的人数，并将人数返回给用户
+</code></pre>
+</li>
+<li><p>参考教材《数据库系统概论第五版》&#x3D;&#x3D;P168 触发器 P255 8.3存储过程和函数&#x3D;&#x3D; </p>
+</li>
+<li><p>参考博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43287952/article/details/106624130?ops_request_misc=%7B%22request_id%22:%22163938614616780357234823%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=163938614616780357234823&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-8-106624130.pc_search_insert_es_download&utm_term=+%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%AE%9E%E9%AA%8C&spm=1018.2226.3001.4187">数据库实验存储过程和触发器</a></p>
+</li>
+<li><p>触发器和存储函数这里知识点十分多，建议另外去找一些视频课和书籍系统学习</p>
+</li>
+<li><p>到了实验四，这个专栏就停止更新啦！四个实验只是带大家入门SQL，系统学习还是配套书籍和课本效果更好！</p>
+</li>
+<li><p>实验前,先熟悉常用的语句,方便理解以下代码(个人整理，如有错误，欢迎指正)</p>
+</li>
+</ul>
+<h2 id="SQL知识点"><a href="#SQL知识点" class="headerlink" title="SQL知识点"></a>SQL知识点</h2><h3 id="一、触发器"><a href="#一、触发器" class="headerlink" title="一、触发器"></a>一、触发器</h3><p><strong>触发器：</strong>是用户定义在关系表上的一类由事件驱动的特殊过程。一旦定义，触发器将被保存在数据库服务器中。热河用户对表的增、删、改操作均有服务器自动激活相应的触发器，在关系数据库管理系统核心层进行集中的完整性控制。触发器类似于约束，但是比约束更加灵活，可以实施更为复杂的检查和操作，具有更精细和强大的数据控制能力</p>
+<p>当对表SC的Grade属性进行修改时，若分数增加了10%，则将此次操作记录到另一个表SC_U(Sno、Cno、Oldgrade、Newgrade),其中Oldgrade是修改前的分数，Newgrade是修改后的分数</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> SC_T <span class="comment">/*SC_T是触发器的名字*/</span></span><br><span class="line">AFTER <span class="keyword">UPDATE</span> <span class="keyword">OF</span> Grade <span class="keyword">ON</span> SC <span class="comment">/*UPDATE OF...是触发事件*/</span></span><br><span class="line">							<span class="comment">/*AFTER是触发时机，表示当对SC的Grade属性修改完成后再触发下面的规则*/</span></span><br><span class="line"><span class="keyword">REFERENCING</span></span><br><span class="line">	OLDROW <span class="keyword">AS</span> OldTuple,</span><br><span class="line">	NEWROW <span class="keyword">AS</span> NewTuple</span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span> <span class="type">ROW</span> <span class="comment">/*行级触发器，即每执行依次Grade的更新，下面的规则就执行一次*/</span></span><br><span class="line"><span class="keyword">WHEN</span>(<span class="keyword">New</span> Tuple.Grade<span class="operator">&gt;=</span><span class="number">1.1</span><span class="operator">*</span>OldTuple.Grade) <span class="comment">/*触发器条件，只有该条件为真时才执行下面的INSERT操作*/</span></span><br><span class="line">	<span class="keyword">INSERT</span> <span class="keyword">INTO</span> SC_U(Sno,Cno,OldGrade,NewGrade) </span><br><span class="line">	<span class="keyword">VALUES</span>(OldTuple.Sno,OldTuple.Cno,OldTuple.Grade,NewTuple.Grade)</span><br></pre></td></tr></table></figure>
+
+<p><code>FOR EACH STATEMENT</code>语级触发器，执行完后面的语句才执行一次。</p>
+<h3 id="二、存储过程"><a href="#二、存储过程" class="headerlink" title="二、存储过程"></a>二、存储过程</h3><p>SQL中存储过程优点：</p>
+<p>1、重复使用。存储过程可以重复使用，从而可以减少数据库开发人员的工作量</p>
+<p>2、减少网络流量。存储过程位于服务器上，调用的时候只需要传递存储过程的名称以及参数就可以了，因此降低了网络传输的数据量</p>
+<p>3、安全性。参数化的存储过程可以防止SQL注入式攻击，而且可以将Grant、Deny以及Revoke权限应用于存储过程</p>
+<p>4、存储过程只在创造时进行编译，以后每次执行存储过程都不需再重新编译，而一般SQL语句每执行一次就编译一次,所以使用存储过程可提高数据库执行速度</p>
+<p><strong>2.1创建存储过程</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">PROCEDURE</span> 过程名([参数<span class="number">1</span>,参数<span class="number">2</span>,...]) <span class="comment">/*存储过程首部*/</span></span><br><span class="line"><span class="keyword">AS</span> <span class="operator">&lt;</span>过程化<span class="keyword">SQL</span>块<span class="operator">&gt;</span>; <span class="comment">/*存储过程体，描述该存储过程的操作*/</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>这里以银行存储为例子，不用学籍管理数据库</strong></p>
+<p>建立新表Account并插入两个账户</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Account</span><br><span class="line">(</span><br><span class="line">accountnum <span class="type">CHAR</span>(<span class="number">3</span>),	<span class="comment">-- 账户编号</span></span><br><span class="line">total <span class="type">FLOAT</span>		<span class="comment">-- 账户余额</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Account <span class="keyword">VALUES</span>(<span class="number">101</span>,<span class="number">50</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Account <span class="keyword">VALUES</span>(<span class="number">102</span>,<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Account;</span><br></pre></td></tr></table></figure>
+
+<p>从账户1转指定数额款项到账户2中.假定账户关系为Account（Accountnum，Toral）,利用存储过程实现如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> REPLACE <span class="keyword">PROCEDURE</span> TRANSFER(inAccount <span class="type">INT</span>,outAccount <span class="type">INT</span>,amount <span class="type">FLOAT</span>)</span><br><span class="line"><span class="comment">/*定义存储过程TRANSFER，其参数为转入账户，转出账户，转账额度*/</span></span><br><span class="line"><span class="keyword">AS</span> <span class="keyword">DECLARE</span> <span class="comment">/*定义变量*/</span></span><br><span class="line">  totalDepositOut <span class="type">Float</span>;</span><br><span class="line">  totalDepositIn <span class="type">Float</span>;</span><br><span class="line">  inAccountnum <span class="type">INT</span>; <span class="comment">--定义变量</span></span><br><span class="line"><span class="keyword">BEGIN</span>   <span class="comment">/*检查转出账户的余额*/</span></span><br><span class="line">  <span class="keyword">SELECT</span> total <span class="keyword">INTO</span> totalDepositOut <span class="keyword">FROM</span> Account </span><br><span class="line">  <span class="keyword">WHERE</span> Accountnum <span class="operator">=</span> outAccount; <span class="comment">/*将Account表中的转出账户的余额赋给对应变量*/</span></span><br><span class="line">  IF totalDepositOut <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">THEN</span>  <span class="comment">/*如果转出账户不存在或账户中没有存款*/</span></span><br><span class="line">      <span class="keyword">ROLLBACK</span>; <span class="comment">/*回滚事务*/</span></span><br><span class="line">      <span class="keyword">RETURN</span></span><br><span class="line">  <span class="keyword">END</span> IF; <span class="comment">/*转出账户不存在，回滚*/</span></span><br><span class="line">  IF totalDepositOut <span class="operator">&lt;</span> amount <span class="keyword">THEN</span> <span class="comment">/*如果账户存款不足*/</span></span><br><span class="line">      <span class="keyword">ROLLBACK</span>; <span class="comment">/*回滚事务*/</span></span><br><span class="line">      <span class="keyword">RETURN</span></span><br><span class="line">  <span class="keyword">END</span> IF; <span class="comment">/*账户余额不足，回滚*/</span></span><br><span class="line"><span class="keyword">SELECT</span> Accountnum <span class="keyword">INTO</span> inAccountnum <span class="keyword">FROM</span> Account</span><br><span class="line"><span class="keyword">WHERE</span> Accountnum <span class="operator">=</span> inAccount;</span><br><span class="line">IF inAccount <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">THEN</span> <span class="comment">/*如果转入账户不存在*/</span></span><br><span class="line">   <span class="keyword">ROLLBACK</span>; <span class="comment">/*回滚事务*/</span></span><br><span class="line">   <span class="keyword">RETURN</span></span><br><span class="line"><span class="keyword">END</span> IF;</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> Account <span class="keyword">SET</span> total<span class="operator">=</span>total<span class="operator">-</span>amount <span class="keyword">WHERE</span> accountnum <span class="operator">=</span> outAccount;<span class="comment">/*修改转出账户余额，减去转出金额*/</span></span><br><span class="line"><span class="keyword">UPDATE</span> Account <span class="keyword">SET</span> total <span class="operator">=</span> total <span class="operator">+</span> amount <span class="keyword">WHERE</span> accountnum <span class="operator">=</span> inAccount; <span class="comment">/*修改转入账户余额，增加转入额*/</span></span><br><span class="line"><span class="keyword">COMMIT</span>; <span class="comment">/*提交转账事务*/</span></span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.2执行存储过程</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CALL</span><span class="operator">/</span>PERFORM <span class="keyword">PROCEDURE</span> 过程名([参数<span class="number">1</span>,参数<span class="number">2</span>,...]);</span><br></pre></td></tr></table></figure>
+
+<p>从账户01003815868转10000元到01003813828账户中</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CALL</span> <span class="keyword">PROCEDURE</span> TRANSFER(<span class="number">01003815868</span>,<span class="number">01003813828</span>,<span class="number">10000</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.3修改存储过程</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">PROCEDURE</span> 过程名<span class="number">1</span> RENAME <span class="keyword">TO</span> 过程名<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.4删除存储过程</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">PROCEDURE</span> 过程名();</span><br></pre></td></tr></table></figure>
+
+<h2 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h2><h3 id="1-触发器的使用"><a href="#1-触发器的使用" class="headerlink" title="1.触发器的使用"></a>1.触发器的使用</h3><h4 id="1-1在数据表“学生”中创建update触发器，级联更新“选课”表相应的记录"><a href="#1-1在数据表“学生”中创建update触发器，级联更新“选课”表相应的记录" class="headerlink" title="1.1在数据表“学生”中创建update触发器，级联更新“选课”表相应的记录"></a>1.1在数据表“学生”中创建update触发器，级联更新“选课”表相应的记录</h4><p>首先为表SC添加级联(在实验一建表的时候没有添加级联，如果已经有了就跳过这步)</p>
+<p>按照下面四张图依次点击</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E5%AE%9E%E9%AA%8C%E5%9B%9B01.png" alt="image-20211213100119410"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B02.png" alt="image-20211213100146474"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B03.png" alt="image-20211213100220377"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B04.png" alt="image-20211213100244003"></p>
+<p>依次点开学籍管理-表-Student-触发器-新建触发器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B05.png" alt="image-20211213090822471"></p>
+<p>这里新建触发器，在数据库已经给出了模板，只需要修改即可</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> Stu_UPDATE</span><br><span class="line">	<span class="keyword">ON</span> Student</span><br><span class="line">	AFTER <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">DECLARE</span> <span class="variable">@bsno</span> <span class="type">char</span>(<span class="number">9</span>),<span class="variable">@asno</span> <span class="type">char</span>(<span class="number">9</span>)</span><br><span class="line"><span class="comment">--&#x27;使用UPDATE触发器级联更新SC表中相关的行&#x27;</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="variable">@bsno</span><span class="operator">=</span>Sno <span class="keyword">FROM</span> DELETED</span><br><span class="line">PRINT <span class="string">&#x27;更新前的学号:&#x27;</span><span class="operator">+</span><span class="variable">@bsno</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="variable">@asno</span> <span class="operator">=</span>Sno <span class="keyword">FROM</span> INSERTED</span><br><span class="line">PRINT <span class="string">&#x27;更新后的学号:&#x27;</span><span class="operator">+</span><span class="variable">@asno</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> SC <span class="keyword">SET</span> Sno<span class="operator">=</span><span class="variable">@asno</span> <span class="keyword">WHERE</span> SC.Sno<span class="operator">=</span><span class="variable">@bsno</span></span><br><span class="line"><span class="keyword">END</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>测试结果,将192054401更改为192054481</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> Student</span><br><span class="line"><span class="keyword">SET</span> Sno<span class="operator">=</span><span class="string">&#x27;192054481&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> Sno<span class="operator">=</span><span class="string">&#x27;192054401&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果如图，此时在SC和Student表该学生信息都被修改</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B06.png" alt="image-20211213103058394"></p>
+<h4 id="1-2利用新表，将“学生”表中被删除的记录存储到“学生备份”表中，以供日后的数据查询和分析"><a href="#1-2利用新表，将“学生”表中被删除的记录存储到“学生备份”表中，以供日后的数据查询和分析" class="headerlink" title="1.2利用新表，将“学生”表中被删除的记录存储到“学生备份”表中，以供日后的数据查询和分析"></a>1.2利用新表，将“学生”表中被删除的记录存储到“学生备份”表中，以供日后的数据查询和分析</h4><p>同理，在Student表中新建触发器，<strong>不能在同一个触发器中写两个</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> Stu_DELETE</span><br><span class="line">	<span class="keyword">ON</span> Student</span><br><span class="line">	AFTER <span class="keyword">DELETE</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">	<span class="comment">-- SET NOCOUNT ON added to prevent extra result sets from</span></span><br><span class="line">	<span class="comment">-- interfering with SELECT statements.</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> Student_BACK <span class="comment">--在触发器中新建一个表</span></span><br><span class="line">(Sno <span class="type">char</span>(<span class="number">9</span>) <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line"> Sname <span class="type">char</span>(<span class="number">20</span>),</span><br><span class="line"> Ssex <span class="type">char</span>(<span class="number">2</span>),</span><br><span class="line"> Sage <span class="type">SMALLINT</span>,</span><br><span class="line"> Dno <span class="type">char</span>(<span class="number">20</span>)</span><br><span class="line">);</span><br><span class="line">PRINT <span class="string">&#x27;使用DELETE触发器备份删除Student表中相关的行-开始&#x27;</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Student_BACK</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> DELETED</span><br><span class="line">PRINT <span class="string">&#x27;使用DLETED触发器备份删除Student表中相关一行-结束&#x27;</span></span><br><span class="line"><span class="keyword">END</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>测试结果,删除192054401的学生信息</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span></span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> Sno<span class="operator">=</span><span class="string">&#x27;192054401&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B07.png" alt="image-20211213104657686"></p>
+<p>查看Student_BACK表信息</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">FROM</span> Student_BACK;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B08.png" alt="image-20211213104810227"></p>
+<h3 id="2-存储过程的使用"><a href="#2-存储过程的使用" class="headerlink" title="2.存储过程的使用"></a>2.存储过程的使用</h3><p>这里先介绍一下如何建立存储过程，依次点击下图，同样SQL Serve已经给出说明，只需要修改下面的代码即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B09.png" alt="image-20211213105216434"></p>
+<h4 id="2-1在建立的数据库中，建立一个存储过程，要求统计计算机系学生的人数，并将人数返回给用户"><a href="#2-1在建立的数据库中，建立一个存储过程，要求统计计算机系学生的人数，并将人数返回给用户" class="headerlink" title="2.1在建立的数据库中，建立一个存储过程，要求统计计算机系学生的人数，并将人数返回给用户"></a>2.1在建立的数据库中，建立一个存储过程，要求统计计算机系学生的人数，并将人数返回给用户</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> proc Num (<span class="variable">@a</span> <span class="type">varchar</span>(<span class="number">15</span>),<span class="variable">@b</span> <span class="type">int</span> output)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="variable">@b</span> <span class="operator">=</span> <span class="built_in">COUNT</span>(sno) <span class="keyword">from</span> Student <span class="keyword">where</span> sdept <span class="operator">=</span> <span class="variable">@a</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p>执行语句</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span> <span class="variable">@num</span> <span class="type">char</span>;</span><br><span class="line"><span class="keyword">EXECUTE</span> Num <span class="string">&#x27;计算机工程系&#x27;</span>,<span class="variable">@num</span> output;</span><br><span class="line">PRINT <span class="variable">@num</span><span class="operator">+</span><span class="string">&#x27;人&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B10.png" alt="image-20211213181605023"></p>
+<h4 id="2-2统计成绩大于等于90分学生的人数"><a href="#2-2统计成绩大于等于90分学生的人数" class="headerlink" title="2.2统计成绩大于等于90分学生的人数"></a>2.2统计成绩大于等于90分学生的人数</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> Proc_count</span><br><span class="line"><span class="variable">@Sdept</span> <span class="type">varchar</span>(<span class="number">20</span>),</span><br><span class="line"><span class="variable">@num</span> <span class="type">SMALLINT</span> OUTPUT</span><br><span class="line"></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="variable">@num</span><span class="operator">=</span><span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="variable">@Sdept</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DECLARE</span> <span class="variable">@sd</span> <span class="type">varchar</span>(<span class="number">20</span>),<span class="variable">@n</span> <span class="type">SMALLINT</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">FROM</span> Student</span><br><span class="line"><span class="keyword">WHERE</span> <span class="variable">@Sdept</span><span class="operator">=</span><span class="string">&#x27;计算机工程系&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">END</span></span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">EXEC</span> Proc_count <span class="variable">@sd</span>,<span class="variable">@n</span> OUTPUT</span><br><span class="line">PRINT <span class="variable">@n</span><span class="comment">--convert(varchar(6),@n)</span></span><br></pre></td></tr></table></figure>
+<p>使用SQL创建储存</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> Grade_num(<span class="variable">@n</span> <span class="type">INT</span> OUTPUT)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="variable">@n</span><span class="operator">=</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">from</span> SC <span class="keyword">where</span> Grade<span class="operator">&gt;=</span><span class="number">90</span>;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+<p>执行存储过程</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B11.png" alt="image-20211213175949429"></p>
+<p>执行结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B12.png" alt="image-20211213180020564"></p>
+<p>这里扩展一个问题</p>
+<p>实现根据用户输入的院系编号参数，查找该学院的学生人数，并以变量形式输出的功能</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> proc sp_sdept_student2 (<span class="variable">@a</span> <span class="type">varchar</span>(<span class="number">15</span>),<span class="variable">@b</span> <span class="type">int</span> output)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="variable">@b</span> <span class="operator">=</span> <span class="built_in">COUNT</span>(sno) <span class="keyword">from</span> Student <span class="keyword">where</span> sdept <span class="operator">=</span> <span class="variable">@a</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这里写了两种执行结果的调用,注意&#x3D;&#x3D;num定义&#x3D;&#x3D;</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span> <span class="variable">@num</span> <span class="type">int</span>;</span><br><span class="line"><span class="keyword">EXECUTE</span> sp_sdept_student2 <span class="string">&#x27;数学系&#x27;</span>,<span class="variable">@num</span> output;</span><br><span class="line">PRINT <span class="variable">@num</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span> <span class="variable">@num</span> <span class="type">char</span>;</span><br><span class="line"><span class="keyword">EXECUTE</span> sp_sdept_student2 <span class="string">&#x27;数学系&#x27;</span>,<span class="variable">@num</span> output;</span><br><span class="line">PRINT <span class="variable">@num</span><span class="operator">+</span><span class="string">&#x27;人&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B13.png" alt="image-20211213174547265"></p>
+<h4 id="2-3统计成绩大于等于80分并且小于90分学生的人数，并将人数返回给用户"><a href="#2-3统计成绩大于等于80分并且小于90分学生的人数，并将人数返回给用户" class="headerlink" title="2.3统计成绩大于等于80分并且小于90分学生的人数，并将人数返回给用户"></a>2.3统计成绩大于等于80分并且小于90分学生的人数，并将人数返回给用户</h4><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> PROC_ST <span class="variable">@n1</span> <span class="type">SMALLINT</span> OUTPUT</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="variable">@n1</span> <span class="operator">=</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> SC <span class="keyword">WHERE</span> Grade<span class="operator">&gt;=</span><span class="number">80</span> <span class="keyword">AND</span> Grade<span class="operator">&lt;</span><span class="number">90</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DECLARE</span> <span class="variable">@n1</span> <span class="type">SMALLINT</span></span><br><span class="line"><span class="keyword">EXEC</span>  PROC_ST <span class="variable">@n1</span> OUTPUT,PRINT <span class="keyword">convert</span>(<span class="type">varchar</span>(<span class="number">6</span>),<span class="variable">@n1</span>) </span><br><span class="line"><span class="keyword">END</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>使用SQL创建储存</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> Grade_num2(<span class="variable">@n</span> <span class="type">INT</span> OUTPUT)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="variable">@n</span><span class="operator">=</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">from</span> SC <span class="keyword">where</span> Grade<span class="operator">&lt;</span><span class="number">90</span> <span class="keyword">AND</span> Grade<span class="operator">&gt;=</span><span class="number">80</span>;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>执行结果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C%E5%9B%9B14.png" alt="image-20211213180122876"></p>
+<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p>触发器和存储过程何时执行？</p>
+<p>触发器相当于是一个时间的触发装置，当满足了触发事件的条件后进行相应的处理操作，例如在数据库表中增加或者删除、修改了某条记录后，输出消息来告知该操作。这样就可以在这个表上设置一个触发器，触发条件为增加，删除或者修改了记录，触发的时间就是进行消息通知的输出.存储过程只有调用时才会执行</p>
+<p>触发器能否带参数？</p>
+<p>不能</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">张时贰</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://gc-zf.github.io/posts/64903/">http://gc-zf.github.io/posts/64903/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://gc-zf.github.io" target="_blank">张时贰</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/SQL/">SQL</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></div><div class="post_share"><div class="social-share" data-image="https://picsum.photos/seed/syskjs/470/315" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/Hexo_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/Hexo_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/Hexo_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/Hexo_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/49728/"><img class="prev-cover" src="https://picsum.photos/seed/sytxzc/470/315" onerror="onerror=null;src='/Hexo_img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">操作系统实验四 银行家算法(Banker’s Algorithm)</div></div></a></div><div class="next-post pull-right"><a href="/posts/20609/"><img class="next-cover" src="https://picsum.photos/seed/czxt/470/315" onerror="onerror=null;src='/Hexo_img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">操作系统实验三 动态分区(First Fit、Next Fit、Best Fit、Worst Fit )</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/51919/" title="数据库实验一 在SQL Server中创建数据库(SQL入门教学一 从0到1）"><img class="cover" src="https://picsum.photos/seed/yyksjs/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-30</div><div class="title">数据库实验一 在SQL Server中创建数据库(SQL入门教学一 从0到1）</div></div></a></div><div><a href="/posts/43181/" title="数据库实验三 数据库安全性与完整性实验(SQL入门教学三 从0到1）"><img class="cover" src="https://picsum.photos/seed/syskjs/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-08</div><div class="title">数据库实验三 数据库安全性与完整性实验(SQL入门教学三 从0到1）</div></div></a></div><div><a href="/posts/2188/" title="数据库前后端交互 入门教程一 PowerDesigner的使用"><img class="cover" src="https://picsum.photos/seed/yhjdhgkjs/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-25</div><div class="title">数据库前后端交互 入门教程一 PowerDesigner的使用</div></div></a></div><div><a href="/posts/5412/" title="数据库实验二 查询(SQL入门教学二 从0到1）"><img class="cover" src="https://picsum.photos/seed/eysjjs/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-06</div><div class="title">数据库实验二 查询(SQL入门教学二 从0到1）</div></div></a></div><div><a href="/posts/15144/" title="数据库前后端交互 从后端到前端入门教程二 (Tomcat、MySQL、Bootstrap、JAVA Servlet)"><img class="cover" src="https://picsum.photos/seed/ehjdhqkjs/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-26</div><div class="title">数据库前后端交互 从后端到前端入门教程二 (Tomcat、MySQL、Bootstrap、JAVA Servlet)</div></div></a></div><div><a href="/posts/24519/" title="Mysql修改密码"><img class="cover" src="https://picsum.photos/seed/mmgx/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-23</div><div class="title">Mysql修改密码</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Hexo_img/avatar.jpg" onerror="this.onerror=null;this.src='/Hexo_img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">张时贰</div><div class="author-info__description">环转码，热爱敲代码的小张！</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/GC-ZF"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/GC-ZF" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_49488584" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=1310446718&amp;site=qq&amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:1310446718@qq.com" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎访问小张的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%9B%9B-%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验四 触发器与存储过程实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-text">SQL知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">一、触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">二、存储过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">1.触发器的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1%E5%9C%A8%E6%95%B0%E6%8D%AE%E8%A1%A8%E2%80%9C%E5%AD%A6%E7%94%9F%E2%80%9D%E4%B8%AD%E5%88%9B%E5%BB%BAupdate%E8%A7%A6%E5%8F%91%E5%99%A8%EF%BC%8C%E7%BA%A7%E8%81%94%E6%9B%B4%E6%96%B0%E2%80%9C%E9%80%89%E8%AF%BE%E2%80%9D%E8%A1%A8%E7%9B%B8%E5%BA%94%E7%9A%84%E8%AE%B0%E5%BD%95"><span class="toc-text">1.1在数据表“学生”中创建update触发器，级联更新“选课”表相应的记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2%E5%88%A9%E7%94%A8%E6%96%B0%E8%A1%A8%EF%BC%8C%E5%B0%86%E2%80%9C%E5%AD%A6%E7%94%9F%E2%80%9D%E8%A1%A8%E4%B8%AD%E8%A2%AB%E5%88%A0%E9%99%A4%E7%9A%84%E8%AE%B0%E5%BD%95%E5%AD%98%E5%82%A8%E5%88%B0%E2%80%9C%E5%AD%A6%E7%94%9F%E5%A4%87%E4%BB%BD%E2%80%9D%E8%A1%A8%E4%B8%AD%EF%BC%8C%E4%BB%A5%E4%BE%9B%E6%97%A5%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%88%86%E6%9E%90"><span class="toc-text">1.2利用新表，将“学生”表中被删除的记录存储到“学生备份”表中，以供日后的数据查询和分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2.存储过程的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1%E5%9C%A8%E5%BB%BA%E7%AB%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%EF%BC%8C%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%EF%BC%8C%E8%A6%81%E6%B1%82%E7%BB%9F%E8%AE%A1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E5%AD%A6%E7%94%9F%E7%9A%84%E4%BA%BA%E6%95%B0%EF%BC%8C%E5%B9%B6%E5%B0%86%E4%BA%BA%E6%95%B0%E8%BF%94%E5%9B%9E%E7%BB%99%E7%94%A8%E6%88%B7"><span class="toc-text">2.1在建立的数据库中，建立一个存储过程，要求统计计算机系学生的人数，并将人数返回给用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2%E7%BB%9F%E8%AE%A1%E6%88%90%E7%BB%A9%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E90%E5%88%86%E5%AD%A6%E7%94%9F%E7%9A%84%E4%BA%BA%E6%95%B0"><span class="toc-text">2.2统计成绩大于等于90分学生的人数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3%E7%BB%9F%E8%AE%A1%E6%88%90%E7%BB%A9%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E80%E5%88%86%E5%B9%B6%E4%B8%94%E5%B0%8F%E4%BA%8E90%E5%88%86%E5%AD%A6%E7%94%9F%E7%9A%84%E4%BA%BA%E6%95%B0%EF%BC%8C%E5%B9%B6%E5%B0%86%E4%BA%BA%E6%95%B0%E8%BF%94%E5%9B%9E%E7%BB%99%E7%94%A8%E6%88%B7"><span class="toc-text">2.3统计成绩大于等于80分并且小于90分学生的人数，并将人数返回给用户</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-text">思考题</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/41646/" title="Hexo博客搭建"><img src="https://picsum.photos/seed/jdkb/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="Hexo博客搭建"/></a><div class="content"><a class="title" href="/posts/41646/" title="Hexo博客搭建">Hexo博客搭建</a><time datetime="2022-05-01T12:26:39.000Z" title="发表于 2022-05-01 20:26:39">2022-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8380/" title="JAVA WEB开发技术作业 JS 实现学生列表及增加、删除修改"><img src="https://picsum.photos/seed/gszxssj/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="JAVA WEB开发技术作业 JS 实现学生列表及增加、删除修改"/></a><div class="content"><a class="title" href="/posts/8380/" title="JAVA WEB开发技术作业 JS 实现学生列表及增加、删除修改">JAVA WEB开发技术作业 JS 实现学生列表及增加、删除修改</a><time datetime="2022-04-26T04:00:03.000Z" title="发表于 2022-04-26 12:00:03">2022-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/65203/" title="JAVA WEB开发技术作业 学生信息列表效果(display布局)"><img src="https://picsum.photos/seed/dxxsx/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="JAVA WEB开发技术作业 学生信息列表效果(display布局)"/></a><div class="content"><a class="title" href="/posts/65203/" title="JAVA WEB开发技术作业 学生信息列表效果(display布局)">JAVA WEB开发技术作业 学生信息列表效果(display布局)</a><time datetime="2022-04-01T01:49:17.000Z" title="发表于 2022-04-01 09:49:17">2022-04-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/44155/" title="JAVA WEB开发技术作业 个人基本信息表单"><img src="https://picsum.photos/seed/dbxxbjrg/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="JAVA WEB开发技术作业 个人基本信息表单"/></a><div class="content"><a class="title" href="/posts/44155/" title="JAVA WEB开发技术作业 个人基本信息表单">JAVA WEB开发技术作业 个人基本信息表单</a><time datetime="2022-03-21T12:49:25.000Z" title="发表于 2022-03-21 20:49:25">2022-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/49243/" title="JAVA WEB开发技术作业 HTML国家奖学金申请审批表"><img src="https://picsum.photos/seed/jglmth/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="JAVA WEB开发技术作业 HTML国家奖学金申请审批表"/></a><div class="content"><a class="title" href="/posts/49243/" title="JAVA WEB开发技术作业 HTML国家奖学金申请审批表">JAVA WEB开发技术作业 HTML国家奖学金申请审批表</a><time datetime="2022-03-18T13:47:34.000Z" title="发表于 2022-03-18 21:47:34">2022-03-18</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picsum.photos/seed/sjksys/1920/942')"><div id="footer-wrap"><div class="copyright"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div>小张小张出口成章</div><div><a onclick="window.open('url')" class="footer-a">备xxxx</a></div></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-flame-rho.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.vemoji)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-flame-rho.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      document.getElementById('twikoo-count').innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="7041302176" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="鬼,才,小,张,同,学" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
