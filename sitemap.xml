@@ -11,6 +11,24 @@
   </url>
   
   <url>
+    <loc>http://zhangshier.vip/posts/41646/</loc>
+    
+    <lastmod>2022-05-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhangshier.vip/navigate/index.html</loc>
+    
+    <lastmod>2022-05-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://zhangshier.vip/posts/29786/</loc>
     
     <lastmod>2022-05-01</lastmod>
@@ -362,15 +380,6 @@
   </url>
   
   <url>
-    <loc>http://zhangshier.vip/posts/41646/</loc>
-    
-    <lastmod>2022-05-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://zhangshier.vip/posts/61513/</loc>
     
     <lastmod>2022-05-01</lastmod>
@@ -483,13 +492,6 @@
   </url>
   
   <url>
-    <loc>http://zhangshier.vip/tags/MATLAB/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://zhangshier.vip/tags/SQL/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -498,6 +500,13 @@
   
   <url>
     <loc>http://zhangshier.vip/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <lastmod>2022-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhangshier.vip/tags/MATLAB/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -604,14 +613,14 @@
   </url>
   
   <url>
-    <loc>http://zhangshier.vip/categories/JAVA-WEB%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://zhangshier.vip/categories/Web%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zhangshier.vip/categories/Web%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://zhangshier.vip/categories/JAVA-WEB%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -625,14 +634,14 @@
   </url>
   
   <url>
-    <loc>http://zhangshier.vip/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8FMATLAB/</loc>
+    <loc>http://zhangshier.vip/categories/%E6%95%B0%E6%8D%AE%E5%BA%93SQL-Server/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zhangshier.vip/categories/%E6%95%B0%E6%8D%AE%E5%BA%93SQL-Server/</loc>
+    <loc>http://zhangshier.vip/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8FMATLAB/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
