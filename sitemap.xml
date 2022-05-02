@@ -455,6 +455,20 @@
   </url>
   
   <url>
+    <loc>http://gc-zf.github.io/tags/JAVA-WEB/</loc>
+    <lastmod>2022-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://gc-zf.github.io/tags/MATLAB/</loc>
+    <lastmod>2022-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://gc-zf.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -470,13 +484,6 @@
   
   <url>
     <loc>http://gc-zf.github.io/tags/JAVA/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gc-zf.github.io/tags/JAVA-WEB/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -539,13 +546,6 @@
   </url>
   
   <url>
-    <loc>http://gc-zf.github.io/tags/markdown/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://gc-zf.github.io/tags/eclipse/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -553,7 +553,7 @@
   </url>
   
   <url>
-    <loc>http://gc-zf.github.io/tags/MATLAB/</loc>
+    <loc>http://gc-zf.github.io/tags/markdown/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -604,6 +604,13 @@
   </url>
   
   <url>
+    <loc>http://gc-zf.github.io/categories/JAVA-WEB%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-05-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://gc-zf.github.io/categories/Web%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -611,14 +618,14 @@
   </url>
   
   <url>
-    <loc>http://gc-zf.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>http://gc-zf.github.io/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8FMATLAB/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://gc-zf.github.io/categories/JAVA-WEB%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://gc-zf.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -633,13 +640,6 @@
   
   <url>
     <loc>http://gc-zf.github.io/categories/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-05-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://gc-zf.github.io/categories/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8FMATLAB/</loc>
     <lastmod>2022-05-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
