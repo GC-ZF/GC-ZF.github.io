@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>微机原理与技术接口 实验一 输入输出实验</title>
+      <link href="/posts/20381/"/>
+      <url>/posts/20381/</url>
+      
+        <content type="html"><![CDATA[<h1 align="center">🌴 2022.4.27 早十 实验一</h1><h1 align="center">实验一 输入输出实验</h1><h2 id="1-1-实验要求"><a href="#1-1-实验要求" class="headerlink" title="1.1 实验要求"></a>1.1 实验要求</h2><blockquote><p>熟悉emu8086仿真系统，实现控制台输入输出，设计并单步调试实现一位十进制数的加法运算(屏幕效果为3+2&#x3D;5,红色为输入其他为自动输出)</p></blockquote><h2 id="1-2-理论分析"><a href="#1-2-理论分析" class="headerlink" title="1.2 理论分析"></a>1.2 理论分析</h2><blockquote><p>调用DOS中AH&#x3D;1输入字符，存入AL，返回值是ASCII码，所以要借用与运算将高位清零，例如字符3的ASCII码为33H，和FH与运算得到3H</p><p>调用DOS中AH&#x3D;2输出字符，重点注意DL&#x3D;要输出的字符，AL&#x3D;DL。这会修改第一次在控制台输入的被加数，所以暂存在DH中</p><p>加数2即32H没有做与运算，因为如果这里做了与运算，计算完之后，在最后输出时输出的是05H对应的字符♣，还需要再和FH与运算一次才是35H即5</p></blockquote><h2 id="1-3-汇编语言"><a href="#1-3-汇编语言" class="headerlink" title="1.3 汇编语言"></a>1.3 汇编语言</h2><blockquote><p>[源文件](<a href="https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/Microcomputer">https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/Microcomputer</a> principle&#x2F;Experient)</p></blockquote><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MOV AH,1    ;AH=1控制台输入,返回值是AL=字符的ASCII</span><br><span class="line">INT 21H     ;调用DOS</span><br><span class="line">AND AL,15   ;与运算,将高位清零,假设输入3D=33H,将高位清零</span><br><span class="line">MOV DH,AL   ;AL存到DH,Note:AL=DL,05行AL的值变为&#x27;+&#x27;所以要借用DH暂存</span><br><span class="line">MOV DL,&#x27;+&#x27;  ;DL=要输出的ASCII</span><br><span class="line">MOV AH,2    ;AH=2控制台输出</span><br><span class="line">INT 21H</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;为什么第二次没有做ADN？因为如果这里与运算后,最后还要与15,避免重复操作</span><br><span class="line">ADD DH,AL   ;为什么是DH+AL而不是AL+DH,原因和第四行相同,下一行DL的值变为&#x27;=&#x27;</span><br><span class="line">MOV DL,&#x27;=&#x27;</span><br><span class="line">MOV AH,2</span><br><span class="line">INT 21H</span><br><span class="line">MOV DL,DH</span><br><span class="line">INT 21H     ;12行AH=2所以14行不需要重复定义 </span><br><span class="line">HLT         ;停机指令 </span><br><span class="line">;Note:AL=DL!!!</span><br></pre></td></tr></table></figure><h2 id="1-4-实验结果"><a href="#1-4-实验结果" class="headerlink" title="1.4 实验结果"></a>1.4 实验结果</h2><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF01.gif" alt="微机原理与接口技术01"></p><blockquote><p>思考内容</p><p>1.输入输出数据和计算用数据的区别<br>从键盘上输入和从屏幕上输出的都是字符，返回值实际是ASCII码，与计算用的数据实间相差30H，所以一个数从屏幕上输入时转换成数字-30H，输出时将+30H，或者输入时输出时都进行一次与运算</p><p>2.单字符输入输出和串输入输出的不同<br>单字符的输入使用1号功能键，输出通过2号功能调用，且待显示字符送给DL寄存器；串输入使用0A功能，输出通过9号功能调用，DS:DX指向待显示字符串，且字符串必须以“$”结束</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微机原理与技术接口 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微机原理 </tag>
+            
+            <tag> 汇编语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo博客搭建</title>
       <link href="/posts/41646/"/>
       <url>/posts/41646/</url>
@@ -619,11 +646,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -675,11 +702,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -731,11 +758,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -760,11 +787,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -968,11 +995,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1076,11 +1103,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
