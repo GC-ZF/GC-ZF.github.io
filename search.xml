@@ -112,6 +112,31 @@
     
     
     <entry>
+      <title>3ds Max 实验六 三维图形修改器的综合应用</title>
+      <link href="/posts/45649/"/>
+      <url>/posts/45649/</url>
+      
+        <content type="html"><![CDATA[<h1 align="center">🌴 2022.4.18 下午 实验五</h1><h2 align="center">实验六 三维图形修改器的综合应用</h2><h1>一、实验要求</h1><blockquote><p>熟悉3DS MAX 软件，利用三维图形修改器的操作方法制作一盘水果</p></blockquote><h1>二、实验步骤</h1><blockquote><p>小张自己的建模过程简述，仅供参考。[MAX源文件](<a href="https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D">https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D</a> modeling technology&#x2F;Experient&#x2F;Experiment 6 fruit plate.max)</p></blockquote><blockquote><p>1.用直线绘制一个闭合图形，利用车削得到盘子</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF120.png" alt="三维建模技术120"></p><blockquote><p>2.绘制一个球体，利用修改器中” FFD圆柱体”在顶点模式下，对中间的点进行缩放</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF121.png" alt="三维建模技术121"></p><blockquote><p>3.利用修改器中的锥化，得到一个上窄下宽的球体</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF122.png" alt="三维建模技术122"></p><blockquote><p>4.绘制苹果柄，首先绘制一个圆柱体，通过修改器中的扭曲和弯曲得到如图</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF123.png" alt="三维建模技术123"></p><blockquote><p>5.调整位置，得到一个完整的苹果</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF124.png" alt="三维建模技术124"></p><blockquote><p>6.同理，绘制梨，首先绘制一个球体，利用修改器中” FFD圆柱体”在顶点模式下，对中间的点进行缩放，利用修改器中的锥化，得到一个上窄下宽的球体，复制一个柄，调整位置得到一个完整的梨</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF125.png" alt="三维建模技术125"></p><blockquote><p>7.绘制香蕉，首先绘制一个五棱柱，利用修改器中的弯曲，使棱柱弯曲</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF126.png" alt="三维建模技术126"></p><blockquote><p>8.利用修改器中的锥化，调整上下宽度，并进行网格平滑。之后利用编辑多边形中的倒角制作香蕉头部</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF127.png" alt="三维建模技术127"></p><blockquote><p>9.绘制一个圆柱体，对其进行锥化操作。复制出五个香蕉，调整摆放位置，得到一把香蕉</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF128.png" alt="三维建模技术128"></p><blockquote><p>10.分别复制出几个水果，调整香蕉、苹果、梨、盘子的位置，得到最终模型</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF129.png" alt="三维建模技术129"></p><h1>三、效果图</h1><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF129.png" alt="三维建模技术129"></p><h1>四、小结</h1><blockquote><p>步骤8中香蕉柄得不到想要的效果，一定要先做网格平滑再做编辑多边形中的倒角操作，因为如果先做香蕉柄的话，之后的网格平滑也会对香蕉柄进行平滑操作</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo博客搭建</title>
       <link href="/posts/41646/"/>
       <url>/posts/41646/</url>
@@ -166,6 +191,94 @@
     
     
     <entry>
+      <title>3ds Max 实验五 二维图形修改器的综合应用</title>
+      <link href="/posts/26222/"/>
+      <url>/posts/26222/</url>
+      
+        <content type="html"><![CDATA[<h1 align="center">🌴 2022.4.18 下午 实验五</h1><h2 align="center">实验五 二维图形修改器的综合应用</h2><h1>一、实验要求</h1><blockquote><p>熟悉3DS MAX 软件，利用二维图形修改器的操作方法制作三个姿态各异的酒瓶</p></blockquote><h1>二、实验步骤</h1><blockquote><p>小张自己的建模过程简述，仅供参考。[MAX源文件](<a href="https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D">https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D</a> modeling technology&#x2F;Experient&#x2F;Experiment 5 Wine bottle.max)</p></blockquote><blockquote><p>1.使用直线画一个酒瓶的轮廓，并用Bezier角点调整，使轮廓平滑</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF103.png" alt="三维建模技术103"></p><blockquote><p>2.修改轴的位置到轴对称线</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF104.png" alt="三维建模技术104"></p><blockquote><p>3.对轮廓利用二维图形修改器中的车削，得到酒瓶三维图形</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF109.png" alt="三维建模技术109"></p><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF105.png" alt="三维建模技术105"></p><blockquote><p>4.利用实例复制，并通过旋转、平移调整酒瓶位置得到三个酒瓶</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF106.png" alt="三维建模技术106"></p><h1>三、效果图</h1><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF107.png" alt="三维建模技术107"></p><h1>四、小结</h1><blockquote><p>实验五主要是对车削的使用，其中关键的步骤是修改轴默认的位置到轴对称线。另外车削出来会得到黑色的渲染颜色,需要在车削参数中勾选<strong>翻转法线</strong></p><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF108.png" alt="三维建模技术108"></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>3ds Max 实验四 复合对象综合应用</title>
+      <link href="/posts/37285/"/>
+      <url>/posts/37285/</url>
+      
+        <content type="html"><![CDATA[<h1 align="center">🌴 2022.4.11 下午 实验四</h1><h2 align="center">实验四 复合对象综合应用</h2><h1>一、实验要求</h1><blockquote><p>熟悉3DS MAX 软件，利用复合对象的建模方法创建制作一条公路</p></blockquote><h1>二、实验步骤</h1><blockquote><p>小张自己的建模过程简述，仅供参考。[MAX源文件](<a href="https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D">https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D</a> modeling technology&#x2F;Experient&#x2F;Experiment 4 Road.max)</p></blockquote><blockquote><p>1.利用直线绘制出公路的一半</p></blockquote><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF97.png" alt="三维建模技术97" style="zoom: 50%;" /><blockquote><p>2.利用镜像，复制出公路的另一半</p></blockquote><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF98.png" alt="三维建模技术98" style="zoom:50%;" /><blockquote><p>3.对公路进行样条线编辑，对两半公路进行附加并将顶点”焊接”</p></blockquote><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF99.png" alt="三维建模技术99" style="zoom:50%;" /><blockquote><p>4.复制出一个公路，并调整高低，上面作为逆时针，下面作为顺时针</p></blockquote><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF100.png" alt="三维建模技术100" style="zoom:50%;" /><blockquote><p>5.利用平滑曲线在俯视图中绘制出公路大致样子，之后在左视图中调整高低</p></blockquote><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF101.png" alt="三维建模技术101" style="zoom:50%;" /><blockquote><p>6.利用放样，分别拾取两个公路图形</p></blockquote><h1>三、效果图</h1><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF102.png" alt="三维建模技术102" style="zoom:50%;" /><h1>四、小结</h1><blockquote><p>通过实验四，复习了之前的编辑样条线内容，主要练习了对放样的使用</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>3ds Max 实验三 二维图形建模的基本应用</title>
+      <link href="/posts/31827/"/>
+      <url>/posts/31827/</url>
+      
+        <content type="html"><![CDATA[<h1 align="center">🌴 2022.4.4 下午 实验三</h1><h2 align="center">实验三 二维图形建模的基本应用</h2><h1>一、实验要求</h1><blockquote><p>熟悉3DS MAX 软件，利用二维图形的建模方法制作一个汽车车标</p></blockquote><h1>二、实验步骤</h1><blockquote><p>小张自己的建模过程简述，仅供参考。[MAX源文件](<a href="https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D">https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D</a> modeling technology&#x2F;Experient&#x2F;Experiment 3 Log.max)</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF86.png" alt="三维建模技术86"></p><blockquote><p>1.为了方便绘制，首先绘制一个平面，调整大小与图片相等</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF87.png" alt="三维建模技术87"></p><blockquote><p>2.通过材质编辑器中的位图导入图片</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF88.png" alt="三维建模技术88"></p><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF89.png" alt="三维建模技术89"></p><blockquote><p>3.绘制一个长方形大致包围外轮廓</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF90.png" alt="三维建模技术90"></p><blockquote><p>4.对长方形通过编辑样条线，与外轮廓贴合</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF91.png" alt="三维建模技术91"></p><blockquote><p>5.对外轮廓长方形利用编辑样条线中的轮廓，绘制出内轮廓</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF92.png" alt="三维建模技术92"></p><blockquote><p>6.绘制一个长方形大致包裹字母H，并用样条线编辑顶点使之贴合</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF93.png" alt="三维建模技术93"></p><blockquote><p>7.绘制两个椭圆</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF94.png" alt="三维建模技术94"></p><blockquote><p>8.对两个椭圆进行样条线编辑，对顶点进行调整，与H贴合</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF95.png" alt="三维建模技术95"></p><blockquote><p>9.将内轮廓长方形与两个椭圆附加并作差集运算</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF96.png" alt="三维建模技术96"></p><h1>三、效果图</h1><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF96.png" alt="三维建模技术96"></p><h1>四、小结</h1><blockquote><p>通过实验三，更加熟练的利用了编辑样条线，尤其是布尔运算(非闭合曲线不能运算！搞了半天被坑到了)，这是前两个实验所没有的</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>3ds Max 实验二 三维图形建模的基本应用</title>
+      <link href="/posts/40346/"/>
+      <url>/posts/40346/</url>
+      
+        <content type="html"><![CDATA[<h1 align="center">🌴 2022.3.21 下午 实验二</h1><h2 align="center">实验二 三维图形建模的基本应用</h2><h1>一、实验要求</h1><blockquote><p>熟悉3DS MAX 软件，利用三维几何体的建模方法创建桌子</p></blockquote><h1>二、实验步骤</h1><blockquote><p>小张自己的建模过程简述，仅供参考。[MAX源文件](<a href="https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/3D">https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/3D</a> modeling technology&#x2F;Experient)</p></blockquote><blockquote><p>1.在前视图中绘制弧，在俯视图中绘制圆，如图</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF39.png" alt="三维建模技术39"></p><blockquote><p>2.利用编辑样条线中Bezier角点调整弧线</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF40.png" alt="三维建模技术40"></p><blockquote><p>3.利用放样，拾取圆形对弧线放样，如图</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF41.png" alt="三维建模技术41"></p><blockquote><p>4.绘制切角圆柱体，作为桌板</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF42.png" alt="三维建模技术42"></p><blockquote><p>5.利用对齐，调整桌腿位置</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF43.png" alt="三维建模技术43"></p><blockquote><p>6.调整旋转轴位置(设置仅影响轴，拖动<code>x</code>向左)，z轴与切角圆柱体圆心对齐</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF44.png" alt="三维建模技术44"></p><blockquote><p>7.利用阵列复制，实现对桌腿的复制</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF45.png" alt="三维建模技术45"></p><h1>三、效果图</h1><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF46.png" alt="三维建模技术46"></p><h1>四、小结</h1><blockquote><p>通过对桌子的绘制，除了利用了实验一中平滑线条、平移、编辑样条线、Bezier角点，还用了放样与阵列</p><p>其中阵列我也是第一次使用到，因为先前学过soildworks，通过度娘发现，3ds也可以改变旋转轴位置，即步骤6中选中桌腿设置仅影响轴，然后拖动x轴位置，在阵列时选择Z轴90°旋转</p></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JAVA WEB开发技术作业 学生信息列表效果(display布局)</title>
       <link href="/posts/65203/"/>
       <url>/posts/65203/</url>
@@ -187,6 +300,31 @@
             <tag> Web </tag>
             
             <tag> JAVA WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>3ds Max 实验一 场景对象操作的综合应用-花车</title>
+      <link href="/posts/44612/"/>
+      <url>/posts/44612/</url>
+      
+        <content type="html"><![CDATA[<h1 align="center">🌴 2022.3.21 下午 实验一</h1><h2 align="center">实验一 场景对象操作的综合应用</h2><h1>一、实验要求</h1><blockquote><p>熟悉3DS MAX 软件，利用已有的汽车模型，制作一个花车</p></blockquote><h1>二、实验步骤</h1><blockquote><p>小张自己的建模过程简述，仅供参考。[MAX源文件](<a href="https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/3D">https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/3D</a> modeling technology&#x2F;Experient)</p></blockquote><blockquote><p>1.利用平滑线条，在正视图大概绘制轮廓线。使用编辑样条线中的顶点模式，利用“优化”、“Bezier角点”细微调整。效果如图</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF33.png" alt="三维建模技术33"></p><blockquote><p>2.利用镜像，将轮廓线X轴对称</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF34.png" alt="三维建模技术34"></p><blockquote><p>3.在俯视图，使用平滑线条参照机盖大小，绘制出心形，重复1操作，使用编辑样条线中的顶点模式，利用 “优化”、“Bezier角点”细微调整</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF35.png" alt="三维建模技术35"></p><blockquote><p>4.将心型平移到机盖上，在编辑样条线中的顶点模式下，对顶点进行微调，使心型与机车盖贴合</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF36.png" alt="三维建模技术36"></p><blockquote><p>5.利用间隔复制，分别拾取心型路径、汽车轮廓，将花复制在车顶上</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF37.png" alt="三维建模技术37"></p><h1>三、效果图</h1><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF38.png" alt="三维建模技术38" style="zoom:50%;" /><h1>四、小结</h1><blockquote><p>本节主要利用到的操作有：平滑线条、平移、编辑样条线、Bezier角点、间隔复制，实验一基本没什么难度就是练习一下学到的知识</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
             
         </tags>
       
