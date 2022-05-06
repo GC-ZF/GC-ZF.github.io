@@ -273,6 +273,18 @@
         <content type="html"><![CDATA[<h1 align="center">🌴 2022.3.21 下午 实验二</h1><h2 align="center">实验二 三维图形建模的基本应用</h2><h1>一、实验要求</h1><blockquote><p>熟悉3DS MAX 软件，利用三维几何体的建模方法创建桌子</p></blockquote><h1>二、实验步骤</h1><blockquote><p>小张自己的建模过程简述，仅供参考。[MAX源文件](<a href="https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/3D">https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/3D</a> modeling technology&#x2F;Experient)</p></blockquote><blockquote><p>1.在前视图中绘制弧，在俯视图中绘制圆，如图</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF39.png" alt="三维建模技术39"></p><blockquote><p>2.利用编辑样条线中Bezier角点调整弧线</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF40.png" alt="三维建模技术40"></p><blockquote><p>3.利用放样，拾取圆形对弧线放样，如图</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF41.png" alt="三维建模技术41"></p><blockquote><p>4.绘制切角圆柱体，作为桌板</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF42.png" alt="三维建模技术42"></p><blockquote><p>5.利用对齐，调整桌腿位置</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF43.png" alt="三维建模技术43"></p><blockquote><p>6.调整旋转轴位置(设置仅影响轴，拖动<code>x</code>向左)，z轴与切角圆柱体圆心对齐</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF44.png" alt="三维建模技术44"></p><blockquote><p>7.利用阵列复制，实现对桌腿的复制</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF45.png" alt="三维建模技术45"></p><h1>三、效果图</h1><p><img src="https://cdn.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF46.png" alt="三维建模技术46"></p><h1>四、小结</h1><blockquote><p>通过对桌子的绘制，除了利用了实验一中平滑线条、平移、编辑样条线、Bezier角点，还用了放样与阵列</p><p>其中阵列我也是第一次使用到，因为先前学过soildworks，通过度娘发现，3ds也可以改变旋转轴位置，即步骤6中选中桌腿设置仅影响轴，然后拖动x轴位置，在阵列时选择Z轴90°旋转</p></blockquote>]]></content>
       
       
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
+            
+        </tags>
       
     </entry>
     
