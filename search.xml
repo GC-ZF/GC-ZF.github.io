@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>3ds Max 实验十三 贴图</title>
+      <link href="/posts/32148/"/>
+      <url>/posts/32148/</url>
+      
+        <content type="html"><![CDATA[<h2 align="center">🌴 2022.6.6 下午 实验十三</h2><h2 align="center">实验十三 贴图</h2><h2 id="一、实验要求"><a href="#一、实验要求" class="headerlink" title="一、实验要求"></a>一、实验要求</h2><p>制作一个篮球贴图，并利用所制作的篮球贴图完成一个篮球模型</p><h2 id="二、实验步骤"><a href="#二、实验步骤" class="headerlink" title="二、实验步骤"></a>二、实验步骤</h2><blockquote><p>小张自己的建模过程简述，仅供参考。<a href="https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D%20modeling%20technology/Experient">MAX源文件</a></p></blockquote><p>由于造型特殊性，它的侧面线是不规则的，无法进行拆分，所以我们用贴图表现</p><p>1.利用直线绘制出二维图</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF190.png" alt="三维建模技术190"></p><p>2.对四条线进行附加命令，利用圆角使得两边弯曲</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF191.png" alt="三维建模技术191"></p><p>3.勾选渲染启用与视口中启用，调整厚度</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF192.png" alt="三维建模技术192"></p><p>4.修改渲染环境，<code>菜单栏-&gt;渲染-&gt;环境</code>，将背景颜色修改为红色</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF193.png" alt="三维建模技术193"></p><p>5.在渲染窗口选择”裁剪”，再单击”自动选定对象区域”，之后保存图片渲染到本地，保留备用(先保存如果第七步有不合适的还可以调)</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF194.png" alt="三维建模技术194"></p><p>6.新建一个文件，制作一个球体，之后打开材质编辑器，利用漫反射中的位图，选取第五步保留的图片，之后将材质赋予球体</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF195.png" alt="三维建模技术195"></p><p>7.得到的贴图不是期望的样子，通过UVW贴图中的平面进行调整</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF196.png" alt="三维建模技术196"></p><h2 id="三、效果图"><a href="#三、效果图" class="headerlink" title="三、效果图"></a>三、效果图</h2><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF197.png" alt="三维建模技术197"></p><h2 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h2><p>第七步如果UVW贴图之后，直线有不连接的地方就是第五步出错了，选区超过了四个角，可以偏小一点，但是不能超出四个角</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>3ds Max 实验十二 材质的种类</title>
       <link href="/posts/36741/"/>
       <url>/posts/36741/</url>
@@ -1104,11 +1129,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1314,9 +1339,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1341,9 +1366,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1368,9 +1393,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> Mysql </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1422,11 +1447,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1470,11 +1495,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1499,9 +1524,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1555,11 +1580,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1584,9 +1609,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1611,11 +1636,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1665,9 +1690,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1767,9 +1792,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1819,11 +1844,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
