@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>3ds Max 实验十四 UVW展开</title>
+      <link href="/posts/17400/"/>
+      <url>/posts/17400/</url>
+      
+        <content type="html"><![CDATA[<h2 align="center">🌴 2022.6.6 下午 实验十四</h2><h2 align="center">实验十四 UVW展开</h2><h2 id="一、实验要求"><a href="#一、实验要求" class="headerlink" title="一、实验要求"></a>一、实验要求</h2><p>对一架飞机模型的各个部分进行VUW展开，从而完成飞机的高级贴图</p><h2 id="二、实验步骤"><a href="#二、实验步骤" class="headerlink" title="二、实验步骤"></a>二、实验步骤</h2><blockquote><p>小张自己的建模过程简述，仅供参考。<a href="https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D%20modeling%20technology/Experient">MAX源文件</a></p></blockquote><p>1.在材质编辑器中，利用位图将材质贴到飞机上</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF198.png" alt="三维建模技术198"></p><p>2.在修改器列表中利用UVW展开在多边形下对飞机贴图调整，选择机翼的上部分，点击平面贴图，选择合适的对齐(机翼Z轴) </p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF199.png" alt="三维建模技术199"></p><p>3.打开UV编辑器，利用平移旋转缩放调整贴图位置</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF200.png" alt="三维建模技术200"></p><p>4.重复2、3步，对飞机的每一个面的贴图进行调整</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF201.png" alt="三维建模技术201"></p><h2 id="三、效果图"><a href="#三、效果图" class="headerlink" title="三、效果图"></a>三、效果图</h2><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF202.png" alt="三维建模技术202"></p><h2 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h2><p>每个面选的挺麻烦的，如果多选可以用<kbd>Alt</kbd>取消选中某一个小面，如果点了空白处面就取消选中了，可以<kbd>ctrl</kbd>+<kbd>Z</kbd>撤回</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>3ds Max 实验十三 贴图</title>
       <link href="/posts/32148/"/>
       <url>/posts/32148/</url>
@@ -1129,11 +1154,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1339,9 +1364,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1366,9 +1391,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1393,9 +1418,9 @@
       
         <tags>
             
-            <tag> Mysql </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> Mysql </tag>
             
         </tags>
       
@@ -1447,11 +1472,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1495,11 +1520,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1524,9 +1549,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1580,11 +1605,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1609,9 +1634,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1636,11 +1661,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1690,9 +1715,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1792,9 +1817,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1844,11 +1869,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
