@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux常用命令总结</title>
+      <link href="/posts/35817/"/>
+      <url>/posts/35817/</url>
+      
+        <content type="html"><![CDATA[<h2 id="基本shell命令"><a href="#基本shell命令" class="headerlink" title="基本shell命令"></a>基本shell命令</h2><p>显示当前目录：<code>pwd</code></p><p>切换到根目录：<code>cd /</code></p><p>切换到某个目录 (绝对路径)：<code>cd /xxx</code></p><p>切换到某个目录 (相对路径)：<code>cd xxx</code></p><p>切换到root目录：<code>cd ~</code> </p><p>上一级目录：<code>cd ..</code> </p><p>列举目录文件：<code>ls</code> </p><p>显示目录文件包括隐藏文件：<code>ls -a</code></p><p>显示目录详细信息(文件权限 用户 时间)：<code>ls -l</code></p><p>清屏：<code>clear</code> </p><p>重启：<code>reboot</code> </p><p>关机：<code>halt</code> </p><p>新建demo并写入aaa：<code>echo aaa &gt; demo.txt</code></p><p>在demo中追加内容aaa：<code>echo aaa &gt;&gt; demo.txt 追加</code></p><p>查看文件内容：<code>cat</code> </p><h2 id="su与sudo"><a href="#su与sudo" class="headerlink" title="su与sudo"></a>su与sudo</h2><p>切换用户(包括环境)：<code>su - username</code></p><p>切换用户(不包括环境)：<code>su username</code></p><p>执行命令权限不够，普通用户取得root用户的权限：<code>sudo 命令</code> ，当前用户转换到root，然后以root身份执行命令，执行完成后，直接退回到当前用户</p><p>执行sudo需要额外配置文件，在root用户下给新用户授权，对sudoers文件编辑：<code>vim /etc/sudoers</code>，把用户添加到配置文件中</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">root     ALL=(ALL) ALL#&lt;-找到这行</span><br><span class="line">username ALL=(ALL) ALL#&lt;-添加用户名</span><br></pre></td></tr></table></figure><h2 id="文件操作命令"><a href="#文件操作命令" class="headerlink" title="文件操作命令"></a>文件操作命令</h2><blockquote><p>filename指文件名，path指路径</p></blockquote><p>创建文件：<code>touch filename.txt</code>,<code>touch filename.xml</code>…</p><p>新建文件夹：<code>mkdir filename</code></p><p>删除文件(询问是否删除)：<code>rm filename</code></p><p>强制删除文件(不询问)：<code>rm filename -f</code></p><p>删除空文件夹：<code>rmdir filename</code></p><p>删除有内容的文件夹(询问是否删除)：<code>rm filename -r</code>r表示递归删除，递归子目录</p><p>强制删除有内容的文件夹(不询问)：<code>rm filename -rf</code></p><p>复制到path文件：<code>cp filename path</code></p><p>移动到path文件：<code>mv filename path</code></p><p>安装某个软件：<code>yum xxxxx</code></p><p>查看目录下文件权限：<code>ls -l</code></p><p>修改文件权限为777：<code>sudo chmod 777 filename</code></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">ls</span> -l列举出当前目录权限信息，对应权限说明：</span></span><br><span class="line">-rw------- (600)      只有拥有者有读写权限。</span><br><span class="line">-rw-r--r-- (644)      只有拥有者有读写权限；而属组用户和其他用户只有读权限。</span><br><span class="line">-rwx------ (700)      只有拥有者有读、写、执行权限。</span><br><span class="line">-rwxr-xr-x (755)      拥有者有读、写、执行权限；而属组用户和其他用户只有读、执行权限。</span><br><span class="line">-rwx--x--x (711)      拥有者有读、写、执行权限；而属组用户和其他用户只有执行权限。</span><br><span class="line">-rw-rw-rw- (666)      所有用户都有文件读、写权限。</span><br><span class="line">-rwxrwxrwx (777)      所有用户都有读、写、执行权限。</span><br></pre></td></tr></table></figure><p>vi编辑器相关：<code>vim xxx/文件名</code>进入vi编辑器，退出时先按<kbd>ESC</kbd>然后输</p><ul><li>保存并退出：<code>:wq</code></li><li>强制保存并退出(当前用户权限不够)：<code>:wq!</code></li><li>不保存退出：<code>:q</code></li><li>强制不报错退出：<code>:q!</code></li></ul><h2 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h2><p>查看网络配置：<code>ifconfig</code></p><p>创建用户：<code>useradd 用户名</code></p><p>用户设置密码：<code>passwd 用户名</code> </p><p>查看所有用户名：<code>cat /etc/passwd</code></p><p>删除用户：<code>userdel 用户名</code></p><p>查看进程(显示pid)：<code>ps</code></p><p>查看JAVA进程：<code>jps</code></p><p>关闭某个进程：<code>kill -9 pid</code></p><p>查看端口信息：<code>netstat</code> </p><h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>打开防火墙：<code>systemctl start firewalld</code></p><p>关闭防火墙：<code>systemctl stop firewalld</code></p><p>查看防火墙状态：<code>systemctl status firewalld</code></p><p>开机禁用防火墙：<code>systemctl disable firewalld</code></p><p>开机启动防火墙：<code>systemctl enable firewalld</code></p><h2 id="打包解压"><a href="#打包解压" class="headerlink" title="打包解压"></a>打包解压</h2><p>-C：打包-x：解包 -v：显示-t：查看-z：gzip-j：bzip2-f：使用文档名</p><p>打包opt文件夹，压缩包命名<strong>test.tar.gz</strong>：<code>tar -zcvf test.tar.gz /opt/</code></p><p>解压<strong>test.tar.gz</strong>到当前目录：<code>tar -zxvf test.tar.gz -C ./</code>(<code>tar -zxvf test.tar.gz -C 自定义路径</code>)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>3ds Max 实验十四 UVW展开</title>
       <link href="/posts/17400/"/>
       <url>/posts/17400/</url>
