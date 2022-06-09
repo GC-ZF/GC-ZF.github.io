@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>集群搭建(二) 环境搭建Linux配置JDK Hadoop</title>
+      <link href="/posts/22366/"/>
+      <url>/posts/22366/</url>
+      
+        <content type="html"><![CDATA[<h1 id="集群搭建-二-环境搭建Linux配置JDK-Hadoop"><a href="#集群搭建-二-环境搭建Linux配置JDK-Hadoop" class="headerlink" title="集群搭建(二) 环境搭建Linux配置JDK Hadoop"></a>集群搭建(二) 环境搭建Linux配置JDK Hadoop</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p><a href="https://www.oracle.com/java/technologies/downloads/#java8">Java Downloads | Oracle 官网</a>：下载<strong>hadoop-2.7.3.tar.gz</strong></p><p><a href="https://hadoop.apache.org/releases.html">Apache Hadoop 官网</a>：下载<strong>hadoop-2.7.3.tar.gz</strong></p><p>下到本地后用<strong>Xftp 6</strong>或者其它方法上传到服务器，我上传到了<code>/opt/local</code>，用XShell和notepad++(或vscode或直接vi编辑器)连接服务器</p><p>连接XShell后，执行停止防火墙 <code>systemctl stop firewalld.service</code>，禁止firewall开机启动 <code>systemctl disable firewalld.service</code>，查看<code>firewall-cmd --state</code> 显示<code>not running</code></p><h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><p>连上服务器先切到压缩包路径下，<code>cd /opt/software</code>，执行解压缩，解压到<code>/usr/local/</code>(必须是这个路径，不要自定义)</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf jdk-8u162-linux-x64.tar.gz -C /usr/local/#解压jdk</span><br><span class="line">tar -zxvf hadoop-2.7.3.tar.gz -C /usr/local/# 解压hadoop</span><br></pre></td></tr></table></figure><h2 id="配置JDK环境"><a href="#配置JDK环境" class="headerlink" title="配置JDK环境"></a>配置JDK环境</h2><p>在notepad++中打开<code>/etc/profile</code>，最后面添加</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_162#&lt;-改成自己的jdk</span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib</span><br><span class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure><p>配置完成后输入XShell中<code>source /etc/profile</code>让环境变量生效</p><p>检查结果输入<code>javac</code>或<code>javac</code>或<code>java -version</code>返回相关信息</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">示例</span></span><br><span class="line">[root@server1 ~]# java -version</span><br><span class="line">java version &quot;1.8.0_162&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_162-b12)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)</span><br></pre></td></tr></table></figure><h2 id="配置Hadoop"><a href="#配置Hadoop" class="headerlink" title="配置Hadoop"></a>配置Hadoop</h2><p>Hadoop有三种模式</p><ol><li><p><strong>Local (Standalone) Mode</strong>(本地模式)：开发人员debug调试使用，local把文件存到本地的文件系统中</p></li><li><p><strong>Pseudo-Distributed Mode</strong>(伪分布式)：开发人员debug调试使用，在本地搭建HDFS，伪分布式，完全分布</p></li><li><p><strong>Fully-Distributed Mode</strong>(完全分布式(集群) )：生产环境使用，高可用性，比如突然有个节点出问题，保证集群还可用</p></li></ol><h3 id="本地模式"><a href="#本地模式" class="headerlink" title="本地模式"></a>本地模式</h3><p>在notepad++中打开<code>/etc/profile</code>，最后面添加</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export HADOOP_HOME=/usr/local/hadoop-2.7.3#&lt;-换成自己的</span><br><span class="line">export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH</span><br></pre></td></tr></table></figure><p>配置完成后输入XShell中输入<code>source /etc/profile</code>让环境变量生效，接着</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~</span><br><span class="line">cd $HADOOP_HOME</span><br><span class="line">cd share/hadoop/mapreduce</span><br><span class="line">ls# 查看目录有一个hadoop-mapreduce-examples-2.7.3.jar，用这个测试样例程序</span><br><span class="line">hadoop jar hadoop-mapreduce-examples-2.7.3.jar pi 10 20#返回圆周率</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">结果返回一大串最后一行是圆周率，就对了</span></span><br><span class="line">Job Finished in 6.524 seconds</span><br><span class="line">Estimated value of Pi is 3.12000000000000000000</span><br></pre></td></tr></table></figure><h3 id="伪分布模式"><a href="#伪分布模式" class="headerlink" title="伪分布模式"></a>伪分布模式</h3><p>完全分布式需要免密登录，不然每一次都需要输入密码</p><p>根目录下没有<code>.ssh</code>这个文件，在XShell中输入<code>ssh localhost</code>输入密码，输入<code>yes</code>，<code>exit</code>，退出之后，输入<code>ls -a</code>此时根目录下已有<code>.ssh</code>文件</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd .ssh</span><br><span class="line">ssh-keygen -t rsa# 连续三次回车，生成公钥</span><br><span class="line">ssh-copy-id root@localhost# 将公钥加入授权文件</span><br><span class="line">ssh localhost# 测试，不需要再输入密码</span><br><span class="line">exit# 退出</span><br></pre></td></tr></table></figure><p>先为主机添加映射，本地电脑<code>C:\Windows\System32\drivers\etc\host</code></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">打开CMD,输入</span></span><br><span class="line">ipconfig</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">找VMware Network Adapter VMnet8的IPV4</span></span><br><span class="line">以太网适配器 VMware Network Adapter VMnet8:</span><br><span class="line">   IPv4 地址 . . . . . . . . . . . . : xxx.xxx.xx.x</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看本机名字</span></span><br><span class="line">hostname</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">返回名字</span></span><br><span class="line">xxxxxx</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">任务栏搜索cmd右击管理员运行(host文件需要管理员权限)，输入</span></span><br><span class="line">notepad C:\Windows\System32\drivers\etc\hosts</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在最下面加</span></span><br><span class="line">xxx.xxx.xx.x name#查到本地电脑的IPV4 主机名</span><br><span class="line">xxx.xxx.xx.x name#虚拟机的ip 主机名</span><br></pre></td></tr></table></figure><p>同理为虚拟机添加映射，不知道配置可以先在XShell输命令找一下，查看虚拟机主机名<code>hostname</code>，查看ip地址<code>ifconfig</code>，用notepad++找<code>/etc/hosts</code></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在最下面加</span></span><br><span class="line">xxx.xxx.xx.x name#查到本地电脑的IPV4 主机名</span><br><span class="line">xxx.xxx.xx.x name#虚拟机的ip 主机名</span><br></pre></td></tr></table></figure><p>完全分布式与伪分布大同小异，多台虚拟机，之后的配置文件都需要配一遍然后且每一个虚拟机的<code>/etc/hosts</code>和本地的<code>host</code>都需要做映射</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">xxx.xxx.xx.x name#查到本地电脑的IPV4 主机名</span><br><span class="line">xxx.xxx.xx.x name#虚拟机1号的ip 主机名</span><br><span class="line">xxx.xxx.xx.x name#虚拟机2号的ip 主机名</span><br></pre></td></tr></table></figure><p>之后配置文件，以下操作到notepad++进行文件编辑，在<code>/usr/local/hadoop-2.7.3/etc/hadoop</code>找对应文件</p><p><strong>hadoop-env.sh</strong></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">The java implementation to use.</span></span><br><span class="line">export JAVA_HOME=$&#123;JAVA_HOME&#125;#&lt;-找到这行</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">The java implementation to use.</span></span><br><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_162# &lt;-改为自己的jdk</span><br></pre></td></tr></table></figure><p><strong>mapred-env.sh</strong></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">export</span> JAVA_HOME=/home/y/libexec/jdk1.6.0/&lt;-找到这行(16)</span></span><br><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_162# &lt;-改为自己的jdk</span><br></pre></td></tr></table></figure><p><strong>yarn-env.sh</strong></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">export</span> JAVA_HOME=/home/y/libexec/jdk1.6.0/<span class="comment">#&lt;-找到这行(23)</span></span></span><br><span class="line">export JAVA_HOME=/usr/local/jdk1.8.0_162# &lt;-改为自己的jdk</span><br></pre></td></tr></table></figure><p>建好目录(之后格式化也会自动生成，可以跳过)</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /usr/local/hadoop-2.7.3/</span><br><span class="line">mkdir data</span><br><span class="line">cd data</span><br><span class="line">mkdir name</span><br><span class="line">mkdir tmp</span><br></pre></td></tr></table></figure><p><strong>core-site.xml</strong>，最下面修改<code>&lt;configuration&gt;&lt;/configuration&gt;</code>，第6行换为自己的主机</p><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--指定Hadoop框架使用HDFS作为文件系统--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--这里的主机名就是namenode所在的节点的主机名--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://server1:8020<span class="tag">&lt;/<span class="name">value</span>&gt;</span>     <span class="comment">&lt;!--server是自己的主机名--&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--hadoop工作目录，如果没有data/tmp目录，要先在磁盘上创建。如果不创建，格式化hdfs后会自动创建。--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/hadoop-2.7.3/data/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><p> <strong>hdfs-site.xml</strong>，最下面修改<code>&lt;configuration&gt;&lt;/configuration&gt;</code></p><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--注：如果没有data目录和data/name目录，要先在磁盘上创建。如果不创建，格式化hdfs后会自动创建。--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.namenode.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/hadoop-2.7.3/data/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.datanode.data.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/hadoop-2.7.3/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--设置HDFS文件系统块的复制份数，默认是3。伪分布模式要设为1--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>mapred-site.xml</strong>，默认没有这个文件，从notepad++直接新建文件命名<strong>mapred-site.xml</strong>，从<strong>mapred-site.xml.template</strong>复制内容，也可以通过XShell命令<code>cp mapred-site.xml.template mapred-site.xml</code></p><p>最下面修改<code>&lt;configuration&gt;&lt;/configuration&gt;</code>，注意第10、14行换成自己主机名,注意server是自己的主机名，也可以写IP地址，前提都是需要做好主机名与ip的映射</p><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--指定mapreduce运行在yarn集群--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--历史服务--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.jobhistory.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>server1:10020<span class="tag">&lt;/<span class="name">value</span>&gt;</span>         </span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.jobhistory.webapp.address<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>server1:19888<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><p> <strong>yarn-site.xml</strong>，最下面修改<code>&lt;configuration&gt;&lt;/configuration&gt;</code>，注意第12行换成自己主机名</p><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services.mapreduce_shuffle.class<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>org.apache.hadoop.mapred.ShuffleHandler<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">value</span>&gt;</span>server1<span class="tag">&lt;/<span class="name">value</span>&gt;</span>     </span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>格式化只能做一次！</strong><code>hdfs namenode -format</code>，格式化成功会返回<strong>Exiting with status 0</strong></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">22/06/05 00:08:46 INFO util.ExitUtil: Exiting with status 0</span><br><span class="line">22/06/05 00:08:46 INFO namenode.NameNode: SHUTDOWN_MSG: </span><br><span class="line">/************************************************************</span><br><span class="line">SHUTDOWN_MSG: Shutting down NameNode at server1/192.168.26.153</span><br><span class="line">************************************************************/</span><br></pre></td></tr></table></figure><p>如果是status 其它查看报错根据报错修改，检查错误后，执行以下命令，然后再次格式化</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd /usr/local/hadoop-2.7.3/data</span><br><span class="line">rm tmp -rf</span><br><span class="line">rm name -rf</span><br></pre></td></tr></table></figure><p>测试</p><ol><li>启动集群<code>start-dfs.sh</code>，输入<code>yes</code></li><li>使用jps命令查看当前节点上运行的服务：<code>jps</code></li><li>启动<code>start-yarn.sh</code></li><li>成功启动后，通过Web界面查看NameNode和Datanode信息和HDFS文件系统：打开浏览器输入(Windows<code>C:\Windows\System32\drivers\etc\host</code>的和Linux的<code>/etc/hosts</code>映射配置好)：<code>http://server1:50070</code>，<code>http://server1:8088</code>查看任务进度</li></ol><p><code>http://server1:50070</code>如图</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B523.png" alt="大数据应用实践23"></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">执行一个程序，以圆周率为例子，http://server1:8088中查看日志</span></span><br><span class="line">cd $HADOOP_HOME</span><br><span class="line">cd share/hadoop/mapreduce</span><br><span class="line">hadoop jar hadoop-mapreduce-examples-2.7.3.jar pi 10 20#返回圆周率</span><br></pre></td></tr></table></figure><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B522.png" alt="大数据应用实践22"></p><ol start="5"><li>关闭集群<code>stop-yarn.sh</code>，<code>stop-dfs.sh</code>或者一键关闭<code>stop-all.sh</code></li></ol><p><strong>服务汇总</strong></p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">一、启动服务：</span><br><span class="line"></span><br><span class="line">1.单独启动namenode:</span><br><span class="line"></span><br><span class="line">sbin/hadoop-daemon.sh start namenode</span><br><span class="line"></span><br><span class="line">2.单独启动datanode:</span><br><span class="line"></span><br><span class="line">sbin/hadoop-daemon.sh start datanode</span><br><span class="line"></span><br><span class="line">3.单独启动secondarynamenode</span><br><span class="line"></span><br><span class="line">sbin/hadoop-daemon.sh start secondarynamenode</span><br><span class="line"></span><br><span class="line">4.单独启动yarn的两个服务：</span><br><span class="line"></span><br><span class="line">sbin/yarn-daemon.sh start resourcemanager</span><br><span class="line"></span><br><span class="line">sbin/yarn-daemon.sh start nodemanager</span><br><span class="line"></span><br><span class="line">启动hdfs（启动了namenode，secondarynamenode和datanode)：start-dfs.sh</span><br><span class="line"></span><br><span class="line">启动yarn(启动了resourcemanager和nodemanager)：start-yarn.sh</span><br><span class="line"></span><br><span class="line">一键启动所有的进程服务：start-all.sh</span><br><span class="line"></span><br><span class="line">启动历史服务：mr-jobhistory-daemon.sh start historyserver</span><br><span class="line"></span><br><span class="line">二、停止服务</span><br><span class="line"></span><br><span class="line">1.单独停止yarn的两个服务：</span><br><span class="line"></span><br><span class="line">sbin/yarn-daemon.sh stop resourcemanager</span><br><span class="line"></span><br><span class="line">sbin/yarn-daemon.sh stop nodemanager</span><br><span class="line"></span><br><span class="line">2.单独停止datanode:</span><br><span class="line"></span><br><span class="line">sbin/hadoop-daemon.sh stop datanode</span><br><span class="line"></span><br><span class="line">3.单独停止secondarynamenode</span><br><span class="line"></span><br><span class="line">sbin/hadoop-daemon.sh stop secondarynamenode</span><br><span class="line"></span><br><span class="line">4.单独停止namenode:</span><br><span class="line"></span><br><span class="line">sbin/hadoop-daemon.sh stop namenode</span><br><span class="line"></span><br><span class="line">停止yarn(停止了resourcemanager和nodemanager)：stop-yarn.sh</span><br><span class="line"></span><br><span class="line">停止hdfs(停止了namenode，secondarynamenode和datanode)：stop-dfs.sh</span><br><span class="line"></span><br><span class="line">一键停止所有的进程服务：stop-all.sh</span><br><span class="line"></span><br><span class="line">停止历史服务：mr-jobhistory-daemon.sh stop historyserver</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Centos </tag>
+            
+            <tag> 大数据 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>集群搭建(一) VMware及安装Centos7</title>
       <link href="/posts/11817/"/>
       <url>/posts/11817/</url>
@@ -23,6 +52,8 @@
             <tag> Linux </tag>
             
             <tag> Centos </tag>
+            
+            <tag> 大数据 </tag>
             
         </tags>
       
@@ -1206,11 +1237,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1524,11 +1555,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1572,11 +1603,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1657,11 +1688,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1713,11 +1744,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
@@ -1921,11 +1952,11 @@
       
         <tags>
             
+            <tag> JAVA </tag>
+            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> JAVA </tag>
             
         </tags>
       
