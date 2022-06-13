@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>3ds Max 实验十五 UV展开综合运用</title>
+      <link href="/posts/62003/"/>
+      <url>/posts/62003/</url>
+      
+        <content type="html"><![CDATA[<h2 align="center">🌴 2022.6.13 下午 实验十五</h2><h2 align="center">实验十五 UV展开综合运用</h2><h2 id="一、实验要求"><a href="#一、实验要求" class="headerlink" title="一、实验要求"></a>一、实验要求</h2><p>综合运用，使用UVW展开修改器制作游戏木箱道具贴图</p><h2 id="二、实验步骤"><a href="#二、实验步骤" class="headerlink" title="二、实验步骤"></a>二、实验步骤</h2><blockquote><p>小张自己的建模过程简述，仅供参考。<a href="https://github.com/GC-ZF/TG-Learn/blob/main/Second-semester-of-junior-year/3D%20modeling%20technology/Experient">MAX源文件</a></p></blockquote><p>1.创建一个正方体</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF203.png" alt="三维建模技术203"></p><p>2.利用材质编辑器，将箱子的位图贴到正方体上</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF204.png" alt="三维建模技术204"></p><p>3.此时贴图效果并非想要的效果，利用UVW展开，将每一个面通过投影，在UV编辑器中对每一个面的贴图位置调整</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF205.png" alt="三维建模技术205"></p><p>4.在UV编辑器中，在边模式下，利用水平对齐和垂直对齐，对边进行调整</p><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF206.png" alt="三维建模技术206"></p><h2 id="三、效果图"><a href="#三、效果图" class="headerlink" title="三、效果图"></a>三、效果图</h2><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF/%E4%B8%89%E7%BB%B4%E5%BB%BA%E6%A8%A1%E6%8A%80%E6%9C%AF207.png" alt="三维建模技术207"></p><h2 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h2><p>本次实验，练习了对UVW展开的操作，相对于之前的飞机贴图，需要额外做<strong>对齐</strong>操作</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三维建模技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3ds Max </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>集群搭建(二) 环境搭建Linux配置JDK Hadoop</title>
       <link href="/posts/22366/"/>
       <url>/posts/22366/</url>
@@ -1237,11 +1262,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1555,11 +1580,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1603,11 +1628,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1688,11 +1713,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1744,11 +1769,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1952,11 +1977,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
