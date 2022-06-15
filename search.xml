@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Python 实验一 程序设计结构</title>
+      <link href="/posts/35596/"/>
+      <url>/posts/35596/</url>
+      
+        <content type="html"><![CDATA[<h2 align="center">🌴 2022.5.13 下午 实验</h2><h2 align="center">实验一 程序设计结构</h2><h2 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h2><p>从键盘输入3个数赋给变量a、b、c，按从大到小的顺序输出</p><h3>问题分析</h3><p>依次输入三个数，使用if判断，先将b和c跟a做比较，如果大于a就和a做交换，最后b和c做比较，如果c大于b就做交换</p><h3>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = <span class="built_in">input</span> ( <span class="string">&quot;please enter three number:(中间用空格隔开)&quot;</span> )</span><br><span class="line">a, b, c = x.split ( <span class="string">&quot; &quot;</span> )</span><br><span class="line"><span class="keyword">if</span> a &lt; b:</span><br><span class="line">    a,b=b,a</span><br><span class="line"><span class="keyword">if</span> a &lt; c:</span><br><span class="line">    a,c=c,a</span><br><span class="line"><span class="keyword">if</span> b &lt; c:</span><br><span class="line">    b,c=c,b</span><br><span class="line"><span class="built_in">print</span> ( a, b, c )</span><br></pre></td></tr></table></figure><h3>结果</h3><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C01.png" alt="Python实验01"></p><h2 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h2><p>给定一个不多于5位的正整数，要求：计算该正整数的位数；逆序打印出各位数字</p><h3>问题分析</h3><p>依次输入三个数，使用if判断，先将b和c跟a做比较，如果大于a就和a做交换，最后b和c做比较，如果c大于b就做交换</p><h3>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = (<span class="built_in">int</span> ( <span class="built_in">input</span> ( <span class="string">&#x27;Input a number:&#x27;</span> ) ))</span><br><span class="line">a = x//<span class="number">10000</span></span><br><span class="line">b = x%<span class="number">10000</span>//<span class="number">1000</span></span><br><span class="line">c = x%<span class="number">1000</span>//<span class="number">100</span></span><br><span class="line">d = x%<span class="number">100</span>//<span class="number">10</span></span><br><span class="line">e = x%<span class="number">10</span></span><br><span class="line"><span class="keyword">if</span> a != <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;五位数：&#x27;</span> + <span class="built_in">str</span> ( e ) + <span class="built_in">str</span> ( d ) + <span class="built_in">str</span> ( c ) + <span class="built_in">str</span> ( b ) + <span class="built_in">str</span> ( a ) )</span><br><span class="line"><span class="keyword">elif</span> b != <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;四位数：&#x27;</span> + <span class="built_in">str</span> ( e ) + <span class="built_in">str</span> ( d ) + <span class="built_in">str</span> ( c ) + <span class="built_in">str</span> ( b ) )</span><br><span class="line"><span class="keyword">elif</span> c != <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;三位数：&#x27;</span> + <span class="built_in">str</span> ( e ) + <span class="built_in">str</span> ( d ) + <span class="built_in">str</span> ( c ) )</span><br><span class="line"><span class="keyword">elif</span> d != <span class="number">0</span>:</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;二位数：&#x27;</span> + <span class="built_in">str</span> ( e ) + <span class="built_in">str</span> ( d ) )</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;个位数：&#x27;</span> + <span class="built_in">str</span> ( e ) )</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;简略版&#x27;&#x27;&#x27;</span></span><br><span class="line">num = <span class="built_in">input</span> ( <span class="string">&#x27;Input a number:&#x27;</span> )</span><br><span class="line">n=num[::-<span class="number">1</span>] <span class="comment">#切片逆序打印</span></span><br><span class="line"><span class="built_in">print</span>(n)    </span><br></pre></td></tr></table></figure><h3>结果</h3><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C02.png" alt="Python实验02"></p><h2 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h2><p>输入年份和月份，判断该月有多少天</p><h3>问题分析</h3><p>1、3、5、7、8、10、12月份有31天，4、6、9、11月份有30天。2月闰年有29天，非闰年有28天。所以只需要将月份分为三次if判断，其中二月比较特殊，需要if判断两次</p><h3>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">year = <span class="built_in">int</span> ( <span class="built_in">input</span> ( <span class="string">&#x27;请输⼊年份:&#x27;</span> ) )</span><br><span class="line">month = <span class="built_in">int</span> ( <span class="built_in">input</span> ( <span class="string">&#x27;请输⼊⽉份:&#x27;</span> ) )</span><br><span class="line"><span class="keyword">if</span> month == <span class="number">1</span> <span class="keyword">or</span> month == <span class="number">3</span> <span class="keyword">or</span> month == <span class="number">5</span> <span class="keyword">or</span> month == <span class="number">7</span> <span class="keyword">or</span> month == <span class="number">8</span> <span class="keyword">or</span> month == <span class="number">10</span> <span class="keyword">or</span> month == <span class="number">12</span>:</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;该⽉有31天&#x27;</span> )</span><br><span class="line"><span class="keyword">elif</span> month == <span class="number">4</span> <span class="keyword">or</span> month == <span class="number">6</span> <span class="keyword">or</span> month == <span class="number">9</span> <span class="keyword">or</span> month == <span class="number">11</span>:</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;该⽉有30天&#x27;</span> )</span><br><span class="line"><span class="keyword">elif</span> month == <span class="number">2</span> <span class="keyword">and</span> (year%<span class="number">400</span> == <span class="number">0</span> <span class="keyword">or</span> (year%<span class="number">4</span> == <span class="number">0</span> <span class="keyword">and</span> year%<span class="number">100</span> != <span class="number">0</span>)):</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;该⽉有29天&#x27;</span> )</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span> ( <span class="string">&#x27;该⽉有28天&#x27;</span> )</span><br></pre></td></tr></table></figure><h3>结果</h3><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C03.png" alt="Python实验03"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python语言基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>3ds Max 实验十六 综合运用</title>
       <link href="/posts/39722/"/>
       <url>/posts/39722/</url>
@@ -1497,9 +1522,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1524,9 +1549,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1551,9 +1576,9 @@
       
         <tags>
             
-            <tag> Mysql </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> Mysql </tag>
             
         </tags>
       
@@ -1682,9 +1707,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1767,9 +1792,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1848,9 +1873,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1950,9 +1975,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> SQL </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
