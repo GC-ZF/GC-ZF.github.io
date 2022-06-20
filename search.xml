@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Python 实验二 组合数据</title>
+      <link href="/posts/28884/"/>
+      <url>/posts/28884/</url>
+      
+        <content type="html"><![CDATA[<h2 align="center">🌴 2022.5.18 下午 实验</h2><h2 align="center">实验二 组合数据</h2><h2 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h2><p>使用两种方法将两个列表中的数据合并</p><h3>问题分析</h3><p>列表相加，可以利用+号或者extend（）方法</p><h3>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@Author:张时贰</span></span><br><span class="line"><span class="string">@Date:2022年05月18日</span></span><br><span class="line"><span class="string">@CSDN:张时贰</span></span><br><span class="line"><span class="string">@Blog:zhangshier.vip</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">leaders_1 = [ <span class="number">1</span>, <span class="number">2</span> ]</span><br><span class="line">leaders_2 = [ <span class="number">3</span>, <span class="number">4</span> ]</span><br><span class="line">full_leaders_list = leaders_1 + leaders_2</span><br><span class="line"><span class="built_in">print</span> ( full_leaders_list )</span><br><span class="line"></span><br><span class="line">leaders_1.extend ( leaders_2 )</span><br><span class="line"><span class="built_in">print</span> ( leaders_1 )</span><br></pre></td></tr></table></figure><h3>结果</h3><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C04.png" alt="Python实验04"></p><h2 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h2><p>set1&#x3D;{2，5，9，1，3}，set2&#x3D;{3，6，8，2，5}，调用集合操作符或函数完成以下功能：</p><ol><li>向set1中添加一个新的元素7</li><li>求set1和set2的并集</li><li>求set1和set2的交集</li><li>求set1和set2的差集</li><li>判断给定关键字key&#x3D;4是否在set1或set2中</li></ol><h3>问题分析</h3><p>使用<code>add()</code>方法添加新元素，利用集合的运算符 | 、&amp; 、- ，做并交差运算，<code>item in set</code>判断关键字</p><h3>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@Author:张时贰</span></span><br><span class="line"><span class="string">@Date:2022年05月18日</span></span><br><span class="line"><span class="string">@CSDN:张时贰</span></span><br><span class="line"><span class="string">@Blog:zhangshier.vip</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">set1 = &#123;<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">3</span>&#125;</span><br><span class="line">set2 = &#123;<span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">5</span>&#125;</span><br><span class="line">set1.add ( <span class="number">7</span> )</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;添加元素7后的集合为:&quot;</span>, set1 )</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;集合set1和set2的并集为:&quot;</span>, set1 | set2 )</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;集合set1和set2的交集为:&quot;</span>, set1 &amp; set2 )</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;集合set1和set2的差集为:&quot;</span>, set1 - set2 )</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;关键字key = 4 是否在集合中:&quot;</span>, (<span class="number">4</span> <span class="keyword">in</span> set1) <span class="keyword">or</span> (<span class="number">4</span> <span class="keyword">in</span> set2) )</span><br></pre></td></tr></table></figure><h3>结果</h3><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C05.png" alt="Python实验05"></p><h2 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h2><p>将某班学生的《Python程序设计》这门课程的成绩保存在字典中，学号为键(key)，分数为值（value）。实现如下功能：</p><ol><li>向字典中添加学生成绩</li><li>修改字典中指定学生成绩</li><li>删除指定学生成绩</li><li>查询指定学生成绩</li><li>统计学生成绩，如最高分、最低分、平均分等</li></ol><h3>问题分析</h3><p>直接利用内置函数</p><p>删除<code>list.pop()</code></p><p>查询<code>list.get()</code></p><p>最高分<code>max(list.valuse())</code></p><p>最低分<code>min(list.valuse())</code></p><p>平均分<code>max(list.valuse())/len(score)</code></p><h3>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@Author:张时贰</span></span><br><span class="line"><span class="string">@Date:2022年05月18日</span></span><br><span class="line"><span class="string">@CSDN:张时贰</span></span><br><span class="line"><span class="string">@Blog:zhangshier.vip</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">score = &#123;<span class="string">&#x27;001&#x27;</span>: <span class="number">96</span>, <span class="string">&#x27;002&#x27;</span>: <span class="number">98</span>, <span class="string">&#x27;003&#x27;</span>: <span class="number">92</span>, <span class="string">&#x27;004&#x27;</span>: <span class="number">93</span>, <span class="string">&#x27;005&#x27;</span>: <span class="number">94</span>&#125;</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;最初的学生成绩为:&quot;</span>, score )</span><br><span class="line"></span><br><span class="line">score[ <span class="string">&#x27;006&#x27;</span> ] = <span class="number">100</span>  <span class="comment"># 添加</span></span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;向字典中添加006号学生成绩为:&quot;</span>, score )</span><br><span class="line"></span><br><span class="line">m_num = <span class="built_in">input</span> ( <span class="string">&quot;修改成绩的学生学号&quot;</span> )</span><br><span class="line">m_score = <span class="built_in">int</span> ( <span class="built_in">input</span> ( <span class="string">&quot;修改为&quot;</span> ) )</span><br><span class="line">score[ m_num ] = m_score  <span class="comment"># 修改</span></span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;修改字典中学生成绩后:&quot;</span>, score )</span><br><span class="line"></span><br><span class="line">delete = <span class="built_in">input</span> ( <span class="string">&quot;输入删除学生学号&quot;</span> )</span><br><span class="line">score.pop ( delete )  <span class="comment"># 删除</span></span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;删除学生成绩后:&quot;</span>, score )</span><br><span class="line"></span><br><span class="line">query = <span class="built_in">input</span> ( <span class="string">&quot;输入查询学生的学号&quot;</span> )</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;编号为 %s 的分数为: %d &quot;</span>%(query, score.get ( query )) )  <span class="comment"># 查询</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;最高分为:&quot;</span>, <span class="built_in">max</span> ( score.values () ) )</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;最低分为:&quot;</span>, <span class="built_in">min</span> ( score.values () ) )</span><br><span class="line"><span class="built_in">print</span> ( <span class="string">&quot;平均分为:&quot;</span>, <span class="built_in">sum</span> ( score.values () )/<span class="built_in">len</span> ( score ) )</span><br></pre></td></tr></table></figure><h3>结果</h3><p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C06.png" alt="Python实验06"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python语言基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python 实验一 程序设计结构</title>
       <link href="/posts/35596/"/>
       <url>/posts/35596/</url>
@@ -1522,9 +1547,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1549,9 +1574,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1576,9 +1601,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> Mysql </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1707,9 +1732,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1792,9 +1817,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1873,9 +1898,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1975,9 +2000,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
