@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>实验五 模块、包和库 | 张时贰</title><meta name="keywords" content="Python"><meta name="author" content="张时贰"><meta name="copyright" content="张时贰"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="实验五🌴 2022.06.01 下午 实验  实验五 模块、包和库  题目一使用Datetime模块获取当前时间，并指出当前时间的年、月、日、周数，以及当天是该周的第几天 问题分析  利用datetime().now获取当前年月日 利用one_time保存当月一号时间， strftime(‘%W’)即可获得当日在本年的第几周，二者相减+1就是周数 当天是该周的第几天：datetime.now()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实验五 模块、包和库">
+<meta property="og:url" content="https://zhangshier.vip/posts/30627/index.html">
+<meta property="og:site_name" content="张时贰">
+<meta property="og:description" content="实验五🌴 2022.06.01 下午 实验  实验五 模块、包和库  题目一使用Datetime模块获取当前时间，并指出当前时间的年、月、日、周数，以及当天是该周的第几天 问题分析  利用datetime().now获取当前年月日 利用one_time保存当月一号时间， strftime(‘%W’)即可获得当日在本年的第几周，二者相减+1就是周数 当天是该周的第几天：datetime.now()">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picsum.photos/seed/kbkm/470/315">
+<meta property="article:published_time" content="2022-06-23T02:41:11.000Z">
+<meta property="article:modified_time" content="2022-06-23T02:42:08.614Z">
+<meta property="article:author" content="张时贰">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/seed/kbkm/470/315"><link rel="shortcut icon" href="/Hexo_img/favicon.jpg"><link rel="canonical" href="https://zhangshier.vip/posts/30627/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="zgfLi52Hs31mmzwTj5wrdYdvheH9gsfdcgPmMnXBsq0"/><meta name="baidu-site-verification" content="code-ooVe1Sezk2"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4e82ed360950e900d510d6a6051d5880";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 张时贰","link":"链接: ","source":"来源: 张时贰","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '实验五 模块、包和库',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-23 10:42:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/Hexo_img/avatar.jpg" onerror="onerror=null;src='/Hexo_img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/history/"><i class="fa-fw fa-regular fa-clock"></i><span> 建站史</span></a></div><div class="menus_item"><a class="site-page" href="/wall/"><i class="fa-fw fa-solid fa-money-bill-1-wave"></i><span> 赞助墙</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于&amp;留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/navigate/"><i class="fa-fw fa-solid fa-toolbox"></i><span> 工具箱</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picsum.photos/seed/mkbk/1920/942')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">张时贰</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/history/"><i class="fa-fw fa-regular fa-clock"></i><span> 建站史</span></a></div><div class="menus_item"><a class="site-page" href="/wall/"><i class="fa-fw fa-solid fa-money-bill-1-wave"></i><span> 赞助墙</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于&amp;留言</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/navigate/"><i class="fa-fw fa-solid fa-toolbox"></i><span> 工具箱</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">实验五 模块、包和库</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-23T02:41:11.000Z" title="发表于 2022-06-23 10:41:11">2022-06-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-06-23T02:42:08.614Z" title="更新于 2022-06-23 10:42:08">2022-06-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">Python语言基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="实验五 模块、包和库"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="实验五"><a href="#实验五" class="headerlink" title="实验五"></a>实验五</h1><h2 align="center">🌴 2022.06.01 下午 实验</h2>
+
+<h2 align="center">实验五 模块、包和库</h2>
+
+<h2 id="题目一"><a href="#题目一" class="headerlink" title="题目一"></a>题目一</h2><p>使用Datetime模块获取当前时间，并指出当前时间的年、月、日、周数，以及当天是该周的第几天</p>
+<h3>问题分析</h3>
+
+<p>利用<code>datetime().now</code>获取当前年月日</p>
+<p>利用one_time保存当月一号时间， <code>strftime(‘%W’)</code>即可获得当日在本年的第几周，二者相减+1就是周数</p>
+<p>当天是该周的第几天：<code>datetime.now().weekday()</code>或者<code>datetime.now().strftime（’%w’）</code>获得周数</p>
+<p>参考：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://t.csdn.cn/zVdkL">Python strftime( )函数</a></p>
+<h3>代码</h3>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@Author:张时贰</span></span><br><span class="line"><span class="string">@Date:2022年06月01日</span></span><br><span class="line"><span class="string">@CSDN:张时贰</span></span><br><span class="line"><span class="string">@Blog:zhangshier.vip</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line">now_time = datetime.now ()  <span class="comment">#当前时间</span></span><br><span class="line">one_time = now_time.replace(day=<span class="number">1</span>, hour=<span class="number">0</span>, minute=<span class="number">0</span>, second=<span class="number">0</span>, microsecond=<span class="number">0</span>)   <span class="comment">#置当月一号</span></span><br><span class="line">week_num=<span class="built_in">int</span>(now_time.strftime(<span class="string">&#x27;%W&#x27;</span>)) - <span class="built_in">int</span>(one_time.strftime(<span class="string">&#x27;%W&#x27;</span>))+<span class="number">1</span>  <span class="comment"># now-本月第一周+1=当前周数 strftime(&#x27;%W&#x27;)本年第几周</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;第<span class="subst">&#123;week_num&#125;</span>周&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> (<span class="string">f&quot;<span class="subst">&#123;now_time.year&#125;</span>年<span class="subst">&#123;now_time.month&#125;</span>月<span class="subst">&#123;now_time.day&#125;</span>日&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;该周的第<span class="subst">&#123;datetime.now().weekday()+<span class="number">1</span>&#125;</span>天&quot;</span>)     <span class="comment"># weekday返回0~6所以+1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;该周的第<span class="subst">&#123;datetime.now().strftime(<span class="string">&#x27;%w&#x27;</span>)&#125;</span>天&quot;</span>)  <span class="comment"># strftime返回在本周的天数</span></span><br></pre></td></tr></table></figure>
+
+<h3>结果</h3>
+
+<p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C12.png" alt="Python实验12"></p>
+<h2 id="题目二"><a href="#题目二" class="headerlink" title="题目二"></a>题目二</h2><p>使用Random模块和Numpy库生成一个3行4列的多维数组，数组中的每个元素为1~100之间的随机整数，然后求该数组所有元素的平均值</p>
+<h3>问题分析</h3>
+
+<p>利用<code>np.random.randint(范围,范围,(行,列))</code>生成1~1003行4列的多维数组</p>
+<h3>代码</h3>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@Author:张时贰</span></span><br><span class="line"><span class="string">@Date:2022年06月01日</span></span><br><span class="line"><span class="string">@CSDN:张时贰</span></span><br><span class="line"><span class="string">@Blog:zhangshier.vip</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a= np.random.randint(<span class="number">1</span>,<span class="number">100</span>,(<span class="number">3</span>,<span class="number">4</span>))    <span class="comment">#1~100 三行四列数组</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">sum</span>=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">        <span class="built_in">sum</span>+=a[i][j]</span><br><span class="line">average=<span class="built_in">sum</span>/<span class="number">12</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;平均数为: %.2f&quot;</span> %average)</span><br></pre></td></tr></table></figure>
+
+<h3>结果</h3>
+
+<p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C13.png" alt="Python实验13"></p>
+<h2 id="题目三"><a href="#题目三" class="headerlink" title="题目三"></a>题目三</h2><p>使用Matplotlib库绘制y&#x3D;2x+1和y&#x3D;x2 的图形，并设置坐标轴的名称和图列</p>
+<h3>问题分析</h3>
+
+<p>利用numpy定义x范围在1~50，用Matplotlib库，<code>plot(函数,颜色,粗细)</code>定义函数，<code>legend()</code>定义图例</p>
+<h3>代码</h3>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@Author:张时贰</span></span><br><span class="line"><span class="string">@Date:2022年06月01日</span></span><br><span class="line"><span class="string">@CSDN:张时贰</span></span><br><span class="line"><span class="string">@Blog:zhangshier.vip</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 可以输出结果即可，红色报错是库的问题</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.arange(<span class="number">1</span>,<span class="number">50</span>)</span><br><span class="line">plt.plot(x,<span class="number">2</span>*x+<span class="number">1</span>,<span class="string">&#x27;red&#x27;</span>,lw=<span class="number">2</span>)</span><br><span class="line">plt.plot(x,x**<span class="number">2</span>,<span class="string">&#x27;b&#x27;</span>,linestyle=<span class="string">&#x27;dashed&#x27;</span>,lw=<span class="number">2</span>)</span><br><span class="line">plt.legend([<span class="string">&#x27;2*x+1&#x27;</span>, <span class="string">&#x27;x**2&#x27;</span>])     	         <span class="comment">#设置图例</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3>结果</h3>
+
+<p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C14.png" alt="Python实验14"></p>
+<h2 id="题目四"><a href="#题目四" class="headerlink" title="题目四"></a>题目四</h2><p>编写一个程序，实现对一篇中文文章进行分词和统计，结果使用词云图展示</p>
+<h3>问题分析</h3>
+
+<p>事先准备好一份测试文件，保存需要处理的数据，以及一张图片作为云图的背景。将文件读入后利用<code>jieba.lcut()</code>对字符串分词，之后通过<code>wordcloud</code>模块生成云图</p>
+<p>参考：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://t.csdn.cn/nZWoi">wordcloud参数详解</a>，巨详细</p>
+<h3>代码</h3>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">@Author:张时贰</span></span><br><span class="line"><span class="string">@Date:2022年06月01日</span></span><br><span class="line"><span class="string">@CSDN:张时贰</span></span><br><span class="line"><span class="string">@Blog:zhangshier.vip</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 需要的库</span></span><br><span class="line"><span class="comment"># pip install wordcloud</span></span><br><span class="line"><span class="comment"># pip install jieba</span></span><br><span class="line"><span class="comment"># pip install imageio</span></span><br><span class="line"><span class="comment"># 在代码目录下新建一个txt文本，Experiment 5.4_open.txt：党的十八大提出，倡导富强、民主、文明、和谐，倡导自由、平等、公正、法治，倡导爱国、敬业、诚信、友善，积极培育和践行社会主义核心价值观。富强、民主、文明、和谐是国家层面的价值目标，自由、平等、公正、法治是社会层面的价值取向，爱国、敬业、诚信、友善是公民个人层面的价值准则，这24个字是社会主义核心价值观的基本内容。</span></span><br><span class="line"><span class="comment"># 准备一张背景图，修改38行，WordCloud会去除白色部分作为轮廓</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"><span class="keyword">import</span> imageio.v2 <span class="keyword">as</span> imageio</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;Experiment 5.4_open.txt&quot;</span>, <span class="string">&quot;r&quot;</span>,encoding=<span class="string">&#x27;UTF-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    allSentence = f.read()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(allSentence)</span><br><span class="line"></span><br><span class="line">re_move = [<span class="string">&#x27;，&#x27;</span>, <span class="string">&#x27;。&#x27;</span>, <span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;\xa0&#x27;</span>, <span class="string">&#x27;-&#x27;</span>, <span class="string">&#x27;(&#x27;</span>, <span class="string">&#x27;)&#x27;</span>]  <span class="comment"># 无效数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除无关数据</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> re_move:</span><br><span class="line">    allSentence = allSentence.replace(i, <span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">pureWord = jieba.lcut(allSentence)</span><br><span class="line"><span class="comment"># Experiment 5.4_out.txt保存分词结果</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;Experiment 5.4_out.txt&quot;</span>, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">     <span class="keyword">for</span> i <span class="keyword">in</span> pureWord:</span><br><span class="line">         f.write(<span class="built_in">str</span>(i)+<span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;Experiment 5.4_out.txt&quot;</span>, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pureWord = f.read()</span><br><span class="line"></span><br><span class="line">mask = imageio.imread(<span class="string">&quot;Experiment 5.4_bg.png&quot;</span>)</span><br><span class="line">word = WordCloud(background_color=<span class="string">&quot;white&quot;</span>,</span><br><span class="line">                 width=<span class="number">800</span>,height=<span class="number">800</span>,</span><br><span class="line">                 font_path=<span class="string">&#x27;simhei.ttf&#x27;</span>,</span><br><span class="line">                 mask=mask,).generate(pureWord)</span><br><span class="line"><span class="comment"># 生成云图 Experiment 5.4_outphoto.png</span></span><br><span class="line">word.to_file(<span class="string">&#x27;Experiment 5.4_outphoto.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3>结果</h3>
+
+<p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C15.png" alt="Python实验15"></p>
+<h2 id="题目五"><a href="#题目五" class="headerlink" title="题目五"></a>题目五</h2><p> 自定义一个模块，然后在其他源文件中进行调用、测试</p>
+<h3>问题分析</h3>
+
+<p>在Experiment_5_test.py文件中编写一段函数，在Experiment 5.5.py中通过import Experiment_5_test（或import Experiment_5_test as test）导入库，然后调用并测试</p>
+<h3>代码</h3>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#Experiment_5_test.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func_test</span>():</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;测试A55模块中的func_test()函数&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 别名</span></span><br><span class="line"><span class="keyword">import</span> Experiment_5_test <span class="keyword">as</span> test</span><br><span class="line"><span class="built_in">print</span>(test.func_test())</span><br><span class="line"><span class="comment"># 直接导库</span></span><br><span class="line"><span class="keyword">import</span> Experiment_5_test</span><br><span class="line"><span class="built_in">print</span>(Experiment_5_test.func_test())</span><br></pre></td></tr></table></figure>
+
+<h3>结果</h3>
+
+<p><img src="https://fastly.jsdelivr.net/gh/GC-ZF/Typora-Img/Python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/Python%E5%AE%9E%E9%AA%8C16.png" alt="Python实验16"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">张时贰</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zhangshier.vip/posts/30627/">https://zhangshier.vip/posts/30627/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zhangshier.vip" target="_blank">张时贰</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"><div class="social-share" data-image="https://picsum.photos/seed/kbkm/470/315" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/Hexo_img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/Hexo_img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/Hexo_img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/Hexo_img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/13388/"><img class="next-cover" src="https://picsum.photos/seed/jsxcxdxm/470/315" onerror="onerror=null;src='/Hexo_img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python 实验四 面向对象程序设计</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/28884/" title="Python 实验二 组合数据"><img class="cover" src="https://picsum.photos/seed/jshz/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-20</div><div class="title">Python 实验二 组合数据</div></div></a></div><div><a href="/posts/35596/" title="Python 实验一 程序设计结构"><img class="cover" src="https://picsum.photos/seed/gjjxsc/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-15</div><div class="title">Python 实验一 程序设计结构</div></div></a></div><div><a href="/posts/1167/" title="Python 实验三 函数"><img class="cover" src="https://picsum.photos/seed/sh/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-21</div><div class="title">Python 实验三 函数</div></div></a></div><div><a href="/posts/13388/" title="Python 实验四 面向对象程序设计"><img class="cover" src="https://picsum.photos/seed/jsxcxdxm/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-22</div><div class="title">Python 实验四 面向对象程序设计</div></div></a></div><div><a href="/posts/62046/" title="pip安装第三方库【PyCharm】无法识别解决方案"><img class="cover" src="https://picsum.photos/seed/pipjj/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-11</div><div class="title">pip安装第三方库【PyCharm】无法识别解决方案</div></div></a></div><div><a href="/posts/29786/" title="Python上课笔记汇总"><img class="cover" src="https://picsum.photos/seed/zhjbksnohtyp/470/315" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-09</div><div class="title">Python上课笔记汇总</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/Hexo_img/avatar.jpg" onerror="this.onerror=null;this.src='/Hexo_img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">张时贰</div><div class="author-info__description">环转码，热爱敲代码的小张！</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/GC-ZF"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/GC-ZF" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_49488584" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fa-solid fa-c"></i></a><a class="social-icon" href="https://juejin.cn/user/2872373005264216" rel="external nofollow noreferrer" target="_blank" title="稀土掘金"><i class="fa-solid fa-angles-down"></i></a><a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1310446718&amp;site=qq&amp;menu=yes" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="mailto:1310446718@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope-open-text"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎访问小张的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%94"><span class="toc-text">实验五</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">🌴 2022.06.01 下午 实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text">实验五 模块、包和库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80"><span class="toc-text">题目一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C"><span class="toc-text">题目二</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%89"><span class="toc-text">题目三</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%9B%9B"><span class="toc-text">题目四</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%94"><span class="toc-text">题目五</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text">结果</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/30627/" title="实验五 模块、包和库"><img src="https://picsum.photos/seed/kbkm/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="实验五 模块、包和库"/></a><div class="content"><a class="title" href="/posts/30627/" title="实验五 模块、包和库">实验五 模块、包和库</a><time datetime="2022-06-23T02:41:11.000Z" title="发表于 2022-06-23 10:41:11">2022-06-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/13388/" title="Python 实验四 面向对象程序设计"><img src="https://picsum.photos/seed/jsxcxdxm/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="Python 实验四 面向对象程序设计"/></a><div class="content"><a class="title" href="/posts/13388/" title="Python 实验四 面向对象程序设计">Python 实验四 面向对象程序设计</a><time datetime="2022-06-22T02:29:39.000Z" title="发表于 2022-06-22 10:29:39">2022-06-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1167/" title="Python 实验三 函数"><img src="https://picsum.photos/seed/sh/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="Python 实验三 函数"/></a><div class="content"><a class="title" href="/posts/1167/" title="Python 实验三 函数">Python 实验三 函数</a><time datetime="2022-06-21T00:26:58.000Z" title="发表于 2022-06-21 08:26:58">2022-06-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/28884/" title="Python 实验二 组合数据"><img src="https://picsum.photos/seed/jshz/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="Python 实验二 组合数据"/></a><div class="content"><a class="title" href="/posts/28884/" title="Python 实验二 组合数据">Python 实验二 组合数据</a><time datetime="2022-06-20T07:30:58.000Z" title="发表于 2022-06-20 15:30:58">2022-06-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/35596/" title="Python 实验一 程序设计结构"><img src="https://picsum.photos/seed/gjjxsc/470/315" onerror="this.onerror=null;this.src='/Hexo_img/404.jpg'" alt="Python 实验一 程序设计结构"/></a><div class="content"><a class="title" href="/posts/35596/" title="Python 实验一 程序设计结构">Python 实验一 程序设计结构</a><time datetime="2022-06-15T01:24:49.000Z" title="发表于 2022-06-15 09:24:49">2022-06-15</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://picsum.photos/seed/mkbk/1920/942')"><div id="footer-wrap"><div class="copyright">&copy;2022  <i id="heartbeat" class="fa fas fa-heartbeat"></i> 张时贰</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div>满地都是六便士 我想抬头看月亮</div><div><a onclick="window.open('url')" class="footer-a">备:没服务器...</a></div></div></div><head><link rel="stylesheet external nofollow noreferrer" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-flame-rho.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.vemoji)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-flame-rho.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      document.getElementById('twikoo-count').innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="7041302176" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="鬼,才,小,张,同,学" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?GC-ZF";
+            var git_color =['#ebedf0', '#f1f8ff', '#dbedff', '#c8e1ff', '#79b8ff', '#2188ff', '#0366d6', '#005cc5', '#044289', '#032f62', '#05264c'];
+            var git_user ="GC-ZF";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
