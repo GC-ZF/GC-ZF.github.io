@@ -93,7 +93,7 @@ for (let i = 0; i < count; i++) {
 context.strokeStyle = "#BFBFBF";
 
 let logo = new Image();
-logo.src = "img/logo.jpg";
+logo.src = "img/logo.png";
 logo.onload = function () {
     context.drawImage(logo, 0, 0, chess.width, chess.height);
     drawChessBoard();
