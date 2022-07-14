@@ -8,7 +8,7 @@
       <link href="/posts/24750/"/>
       <url>/posts/24750/</url>
       
-        <content type="html"><![CDATA[<h2 align="center">🌴 2022.5.12 早八 实验二</h2><h2 align="center">实验二 输入输出实验</h2><h2 id="1-1-实验要求"><a href="#1-1-实验要求" class="headerlink" title="1.1 实验要求"></a>1.1 实验要求</h2><p>熟悉emu8086仿真系统，实现控制台输入输出，实现两位十进制数猜数字游戏(基本要求:输入两位数和预设值比较，对于输出&gt;小于输出&lt;对于输出&#x3D;并退出)</p><h2 id="1-2-理论分析"><a href="#1-2-理论分析" class="headerlink" title="1.2 理论分析"></a>1.2 理论分析</h2><p>输入的两位数分别利用DOS 1号输入功能，高位(第一次输入)暂存到DH，低位(第二次输入)放到AL，利用AAD指令，将AX寄存器中非压缩型BCD码转换成为真正的二进制数，并存放在AL，之后用CMP指令与设定的数值比较，之后利用JE、JA判断大小并跳转。</p><p>扩展：如果大于或小于，利用DOS 2号功能输出0A(换行)、0D(回车)，实现每次输出都换行。</p><h2 id="1-3-汇编语言"><a href="#1-3-汇编语言" class="headerlink" title="1.3 汇编语言"></a>1.3 汇编语言</h2><blockquote><p>💻提示：所有实验源码已在<a href="https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/Microcomputer%20principle/Experient">Github</a> 整理<br><img src="http://img.zhangshier.vip/%E5%B0%8F%E5%BC%A0Blog/2022/Acwing01.png"></p></blockquote><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">BGN:</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;调用DOS 1号输入功能</span><br><span class="line">AND AL,15   ;与运算,将高位清零,假设输入3D=33H,将高位清零</span><br><span class="line">MOV DH,AL   ;第一个数暂存到DH</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;调用DOS 1号输入第二个数</span><br><span class="line">AND AL,15   ;高位清零</span><br><span class="line">MOV AH,DH   ;第一个数做为高位给AH，第二个数在AL不变</span><br><span class="line">AAD         ;AAD指令 AL=AH*0AH+AL AH=0.实质上是将AX寄存器中非压缩型BCD码转换成为真正的二进制数，并存放在AL寄存器中</span><br><span class="line">CMP AL,N    ;若大于CF=0，小于CF=1，等于CF=1.ZF=1</span><br><span class="line">JE JEND     ;零标志位ZF=1转移</span><br><span class="line">MOV DL,&#x27;&gt;&#x27;</span><br><span class="line">JA J1       ;高于或者不低于转移,CF=0</span><br><span class="line">MOV DL,&#x27;&lt;&#x27; </span><br><span class="line"></span><br><span class="line">J1:    </span><br><span class="line">MOV AH,2 </span><br><span class="line">INT 21H     ;调用2号输出&gt;</span><br><span class="line">JMP BGN     ;猜的结果大/小，继续返回BGN</span><br><span class="line"></span><br><span class="line">JEND:</span><br><span class="line">MOV DL,&#x27;=&#x27;</span><br><span class="line">MOV AH,2</span><br><span class="line">INT 21H </span><br><span class="line">MOV AH,4CH</span><br><span class="line">INT 21H     ;调用DOC 4CH中断程序</span><br><span class="line"></span><br><span class="line">N DB 35      ;赋初值，猜的数为十进制35</span><br></pre></td></tr></table></figure><blockquote><p>扩展，每次输出都换行</p></blockquote><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">BGN:</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;调用DOS 1号输入功能</span><br><span class="line">AND AL,15   ;与运算,将高位清零,假设输入3D=33H,将高位清零</span><br><span class="line">MOV DH,AL   ;第一个数暂存到DH</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;调用DOS 1号输入第二个数</span><br><span class="line">AND AL,15   ;高位清零</span><br><span class="line">MOV AH,DH   ;第一个数做为高位给AH，第二个数在AL不变</span><br><span class="line">AAD         ;AAD指令 AL=AH*0AH+AL AH=0.实质上是将AX寄存器中非压缩型BCD码转换成为真正的二进制数，并存放在AL寄存器中</span><br><span class="line">CMP AL,N    ;若大于CF=0，小于CF=1，等于CF=1.ZF=1</span><br><span class="line">JE JEND     ;零标志位ZF=1转移</span><br><span class="line">MOV DL,&#x27;&gt;&#x27;</span><br><span class="line">JA J1       ;高于或者不低于转移,CF=0</span><br><span class="line">MOV DL,&#x27;&lt;&#x27; </span><br><span class="line"></span><br><span class="line">J1:    </span><br><span class="line">MOV AH,2 </span><br><span class="line">INT 21H     ;调用2号输出&gt;</span><br><span class="line">MOV DL,0AH</span><br><span class="line">INT 21H     ;调用2号换行</span><br><span class="line">MOV DL,0DH</span><br><span class="line">INT 21H     ;调用2号回车</span><br><span class="line">JMP BGN     ;猜的结果大/小，继续返回BGN</span><br><span class="line"></span><br><span class="line">JEND:</span><br><span class="line">MOV DL,&#x27;=&#x27;</span><br><span class="line">MOV AH,2</span><br><span class="line">INT 21H </span><br><span class="line">MOV AH,4CH</span><br><span class="line">INT 21H     ;调用DOC 4CH中断程序</span><br><span class="line"></span><br><span class="line">N DB 35      ;赋初值，猜的数为十进制35</span><br></pre></td></tr></table></figure><h2 id="1-4-实验结果"><a href="#1-4-实验结果" class="headerlink" title="1.4 实验结果"></a>1.4 实验结果</h2><p><img src="http://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF04.png" alt="微机原理与接口技术04"></p><p>不换行单步运行</p><p><img src="http://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF02.gif" alt="微机原理与接口技术02"></p><p>换行单步运行</p><p><img src="http://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF03.gif" alt="微机原理与接口技术03"></p><p><strong>思考内容</strong></p><ol><li>控制符的显示输出<br>控制字符可以使用DOS 2号功能，如本实验的扩展要求，通过查ASCII表，得到换行和回车的十六进制数，保存到DL中，调用DOS INT 21后输出</li><li>类似分支功能有哪些不同指令的实现方法<br>无条件转移JMP，条件转移JC&#x2F;JNC，条件转移指令JZ&#x2F;JNZ(判断CF位)，JZ&#x2F;JNZ(判断ZF位),JO&#x2F;JNO(判断OF位)，JP&#x2F;JPE、JNP&#x2F;JPO(判断PF位)，JS&#x2F;JNS(判断SF位),JA&#x2F;JAE&#x2F;JB&#x2F;JBE(判断CF或CF+ZF位),JG&#x2F;JGE&#x2F;JL&#x2F;JLE(判断SF+OF或SF+OF+ZF)</li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 align="center">🌴 2022.5.12 早八 实验二</h2><h2 align="center">实验二 输入输出实验</h2><h2 id="1-1-实验要求"><a href="#1-1-实验要求" class="headerlink" title="1.1 实验要求"></a>1.1 实验要求</h2><p>熟悉emu8086仿真系统，实现控制台输入输出，实现两位十进制数猜数字游戏(基本要求:输入两位数和预设值比较，对于输出&gt;小于输出&lt;对于输出&#x3D;并退出)</p><h2 id="1-2-理论分析"><a href="#1-2-理论分析" class="headerlink" title="1.2 理论分析"></a>1.2 理论分析</h2><p>输入的两位数分别利用DOS 1号输入功能，高位(第一次输入)暂存到DH，低位(第二次输入)放到AL，利用AAD指令，将AX寄存器中非压缩型BCD码转换成为真正的二进制数，并存放在AL，之后用CMP指令与设定的数值比较，之后利用JE、JA判断大小并跳转。</p><p>扩展：如果大于或小于，利用DOS 2号功能输出0A(换行)、0D(回车)，实现每次输出都换行。</p><h2 id="1-3-汇编语言"><a href="#1-3-汇编语言" class="headerlink" title="1.3 汇编语言"></a>1.3 汇编语言</h2><blockquote><p>💻提示：所有实验源码已在<a href="https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/Microcomputer%20principle/Experient">Github</a> 整理<br><img src="https://img.zhangshier.vip/%E5%B0%8F%E5%BC%A0Blog/web%E5%BC%80%E5%8F%9102.jpg"></p></blockquote><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">BGN:</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;调用DOS 1号输入功能</span><br><span class="line">AND AL,15   ;与运算,将高位清零,假设输入3D=33H,将高位清零</span><br><span class="line">MOV DH,AL   ;第一个数暂存到DH</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;调用DOS 1号输入第二个数</span><br><span class="line">AND AL,15   ;高位清零</span><br><span class="line">MOV AH,DH   ;第一个数做为高位给AH，第二个数在AL不变</span><br><span class="line">AAD         ;AAD指令 AL=AH*0AH+AL AH=0.实质上是将AX寄存器中非压缩型BCD码转换成为真正的二进制数，并存放在AL寄存器中</span><br><span class="line">CMP AL,N    ;若大于CF=0，小于CF=1，等于CF=1.ZF=1</span><br><span class="line">JE JEND     ;零标志位ZF=1转移</span><br><span class="line">MOV DL,&#x27;&gt;&#x27;</span><br><span class="line">JA J1       ;高于或者不低于转移,CF=0</span><br><span class="line">MOV DL,&#x27;&lt;&#x27; </span><br><span class="line"></span><br><span class="line">J1:    </span><br><span class="line">MOV AH,2 </span><br><span class="line">INT 21H     ;调用2号输出&gt;</span><br><span class="line">JMP BGN     ;猜的结果大/小，继续返回BGN</span><br><span class="line"></span><br><span class="line">JEND:</span><br><span class="line">MOV DL,&#x27;=&#x27;</span><br><span class="line">MOV AH,2</span><br><span class="line">INT 21H </span><br><span class="line">MOV AH,4CH</span><br><span class="line">INT 21H     ;调用DOC 4CH中断程序</span><br><span class="line"></span><br><span class="line">N DB 35      ;赋初值，猜的数为十进制35</span><br></pre></td></tr></table></figure><blockquote><p>扩展，每次输出都换行</p></blockquote><figure class="highlight tex"><table><tr><td class="code"><pre><span class="line">BGN:</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;调用DOS 1号输入功能</span><br><span class="line">AND AL,15   ;与运算,将高位清零,假设输入3D=33H,将高位清零</span><br><span class="line">MOV DH,AL   ;第一个数暂存到DH</span><br><span class="line">MOV AH,1</span><br><span class="line">INT 21H     ;调用DOS 1号输入第二个数</span><br><span class="line">AND AL,15   ;高位清零</span><br><span class="line">MOV AH,DH   ;第一个数做为高位给AH，第二个数在AL不变</span><br><span class="line">AAD         ;AAD指令 AL=AH*0AH+AL AH=0.实质上是将AX寄存器中非压缩型BCD码转换成为真正的二进制数，并存放在AL寄存器中</span><br><span class="line">CMP AL,N    ;若大于CF=0，小于CF=1，等于CF=1.ZF=1</span><br><span class="line">JE JEND     ;零标志位ZF=1转移</span><br><span class="line">MOV DL,&#x27;&gt;&#x27;</span><br><span class="line">JA J1       ;高于或者不低于转移,CF=0</span><br><span class="line">MOV DL,&#x27;&lt;&#x27; </span><br><span class="line"></span><br><span class="line">J1:    </span><br><span class="line">MOV AH,2 </span><br><span class="line">INT 21H     ;调用2号输出&gt;</span><br><span class="line">MOV DL,0AH</span><br><span class="line">INT 21H     ;调用2号换行</span><br><span class="line">MOV DL,0DH</span><br><span class="line">INT 21H     ;调用2号回车</span><br><span class="line">JMP BGN     ;猜的结果大/小，继续返回BGN</span><br><span class="line"></span><br><span class="line">JEND:</span><br><span class="line">MOV DL,&#x27;=&#x27;</span><br><span class="line">MOV AH,2</span><br><span class="line">INT 21H </span><br><span class="line">MOV AH,4CH</span><br><span class="line">INT 21H     ;调用DOC 4CH中断程序</span><br><span class="line"></span><br><span class="line">N DB 35      ;赋初值，猜的数为十进制35</span><br></pre></td></tr></table></figure><h2 id="1-4-实验结果"><a href="#1-4-实验结果" class="headerlink" title="1.4 实验结果"></a>1.4 实验结果</h2><p><img src="http://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF04.png" alt="微机原理与接口技术04"></p><p>不换行单步运行</p><p><img src="http://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF02.gif" alt="微机原理与接口技术02"></p><p>换行单步运行</p><p><img src="http://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF03.gif" alt="微机原理与接口技术03"></p><p><strong>思考内容</strong></p><ol><li>控制符的显示输出<br>控制字符可以使用DOS 2号功能，如本实验的扩展要求，通过查ASCII表，得到换行和回车的十六进制数，保存到DL中，调用DOS INT 21后输出</li><li>类似分支功能有哪些不同指令的实现方法<br>无条件转移JMP，条件转移JC&#x2F;JNC，条件转移指令JZ&#x2F;JNZ(判断CF位)，JZ&#x2F;JNZ(判断ZF位),JO&#x2F;JNO(判断OF位)，JP&#x2F;JPE、JNP&#x2F;JPO(判断PF位)，JS&#x2F;JNS(判断SF位),JA&#x2F;JAE&#x2F;JB&#x2F;JBE(判断CF或CF+ZF位),JG&#x2F;JGE&#x2F;JL&#x2F;JLE(判断SF+OF或SF+OF+ZF)</li></ol>]]></content>
       
       
       <categories>
@@ -1706,9 +1706,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1733,9 +1733,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1760,9 +1760,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> Mysql </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1891,9 +1891,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1976,9 +1976,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -2057,9 +2057,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -2159,9 +2159,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
