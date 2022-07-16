@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>微机原理与技术接口 实验五 基本IO操作温度控制实验</title>
+      <link href="/posts/57600/"/>
+      <url>/posts/57600/</url>
+      
+        <content type="html"><![CDATA[<h2 align="center">🌴 2022.5.12 早八 实验</h2><h2 align="center">实验五 基本IO操作温度控制实验</h2><h2 id="1-1-实验要求"><a href="#1-1-实验要求" class="headerlink" title="1.1 实验要求"></a>1.1 实验要求</h2><p>熟悉emu8086仿真系统</p><ol><li><p>掌握基本IO操作和EMU8086使用外置仿真设备的方法</p></li><li><p>使用IO方式实现温度采集和加热控制</p></li><li><p>控制温度保持在75℃到80℃并维持两分钟</p></li></ol><h2 id="1-2-理论分析"><a href="#1-2-理论分析" class="headerlink" title="1.2 理论分析"></a>1.2 理论分析</h2><p>实现对温度计的控制(打开 <strong>\emu8086\DEVICES\Thermometer.exe</strong>)，IN 125指从125读取数据，OUT 127指向127发送数据使用延时程序控制温度计。编写延时子程序，通过15H中断的86H子功能编写1s延时程序。</p><ol><li><p>127端口持续输出1，使用循环将装置加热到75°C </p></li><li><p>通过125端口读入装置温度，判断温度是否在75°C - 80°C，并作出相应的处理</p></li><li><p>通过循环，3执行2分钟</p></li></ol><h2 id="1-3-汇编语言"><a href="#1-3-汇编语言" class="headerlink" title="1.3 汇编语言"></a>1.3 汇编语言</h2><blockquote><p>💻提示：所有实验源码已在<a href="https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/Microcomputer%20principle/Experient">Github</a>整理</p></blockquote><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">;IN 125,OUT 127指\emu8086\DEVICES\Thermometer.exe，从125读取数据，向127发送数据</span><br><span class="line"></span><br><span class="line">MOV AL,1</span><br><span class="line">OUT 127,AL  ;打开加热，然后在LP0循环一直到大于75</span><br><span class="line">   </span><br><span class="line">LP0:</span><br><span class="line">IN AL,125</span><br><span class="line">CMP AL,75</span><br><span class="line">JL LP0      ;&lt;75跳转LP0继续加热</span><br><span class="line">   </span><br><span class="line">MOV CX,120  ;一次1s,两分钟为120次</span><br><span class="line">LP:</span><br><span class="line">IN AL,125   ;125指\emu8086\DEVICES\Thermometer.exe，从125读取数据，向127发送数据</span><br><span class="line">CMP AL,75</span><br><span class="line">JL LOW      ;&lt;75跳转LOW</span><br><span class="line">CMP AL,80</span><br><span class="line">JLE OK      ;&lt;80跳转OK，否则顺序执行HIGH</span><br><span class="line"></span><br><span class="line">HIGH:       </span><br><span class="line">MOV AL，0</span><br><span class="line">OUT 127,AL  ;温高关加热</span><br><span class="line">JMP OK</span><br><span class="line"></span><br><span class="line">LOW:</span><br><span class="line">MOV AL,1</span><br><span class="line">OUT 127,AL  ;温低开加热</span><br><span class="line">JMP OK</span><br><span class="line"></span><br><span class="line">OK:             ;1秒延时判断</span><br><span class="line">PUSH CX         ;压栈保护记录两分钟的CX，因为延时程序也用CX</span><br><span class="line">CALL DELAY5MS   ;75℃到80℃</span><br><span class="line">POP CX</span><br><span class="line">LOOP LP</span><br><span class="line"></span><br><span class="line">DELAY5MS PROC NEAR  ;延时，15H中断的86H子功能</span><br><span class="line">    ;wait 1 seconds (1 million microsecpnds)</span><br><span class="line">    ;000F4240H = 1,000,000 = CX,DX 微秒</span><br><span class="line">    MOV CX,15</span><br><span class="line">    MOV DX,4240H</span><br><span class="line">    MOV AH,86H</span><br><span class="line">    INT 15H</span><br><span class="line">    RET</span><br><span class="line">DELAY5MS ENDP</span><br></pre></td></tr></table></figure><h2 id="1-4-实验结果"><a href="#1-4-实验结果" class="headerlink" title="1.4 实验结果"></a>1.4 实验结果</h2><p><img src="https://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF11.gif" alt="微机原理与接口技术11"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微机原理与技术接口 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微机原理 </tag>
+            
+            <tag> 汇编语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微机原理与技术接口 实验四 子程序及中断实验</title>
       <link href="/posts/22897/"/>
       <url>/posts/22897/</url>
@@ -1550,11 +1577,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1868,11 +1895,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -1916,11 +1943,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -2001,11 +2028,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -2057,11 +2084,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
@@ -2265,11 +2292,11 @@
       
         <tags>
             
-            <tag> JAVA </tag>
-            
             <tag> 操作系统 </tag>
             
             <tag> 算法 </tag>
+            
+            <tag> JAVA </tag>
             
         </tags>
       
