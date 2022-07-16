@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>微机原理与技术接口 实验四 子程序及中断实验</title>
+      <link href="/posts/22897/"/>
+      <url>/posts/22897/</url>
+      
+        <content type="html"><![CDATA[<h2 align="center">🌴 2022.6.9 早八 实验四</h2><h2 align="center">实验四 子程序及中断实验</h2><h2 id="1-1-实验要求"><a href="#1-1-实验要求" class="headerlink" title="1.1 实验要求"></a>1.1 实验要求</h2><p>熟悉emu8086仿真系统</p><ol><li><p>实现子程序和中断服务子程序的设计</p></li><li><p>编写子程序设置40H中断为自定义中断服务子程序</p></li><li><p>编写中断服务子程序实现AX&#x3D;AX+BX</p></li><li><p>编写主程序调用子程序和中断</p></li></ol><h2 id="1-2-理论分析"><a href="#1-2-理论分析" class="headerlink" title="1.2 理论分析"></a>1.2 理论分析</h2><p>编写子程序设置40h为自定义中断服务子程序，修改中断向量表存放中断服务程序的偏移地址和段地址。之后通过INT 40H跳转中断服务程序计算AX+BX的值</p><h2 id="1-3-汇编语言"><a href="#1-3-汇编语言" class="headerlink" title="1.3 汇编语言"></a>1.3 汇编语言</h2><blockquote><p>💻提示：所有实验源码已在<a href="https://github.com/GC-ZF/TG-Learn/tree/main/Second-semester-of-junior-year/Microcomputer%20principle/Experient">Github</a>整理</p></blockquote><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">;AX+BX</span><br><span class="line">CALL P  ;跳转P</span><br><span class="line">MOV AX,1</span><br><span class="line">MOV BX,2</span><br><span class="line">INT 40H     ;跳转中断服务程序</span><br><span class="line">HLT ;JMP $</span><br><span class="line"></span><br><span class="line">;子程序P 修改中断向量</span><br><span class="line">P PROC NEAR</span><br><span class="line">    MOV AX,0</span><br><span class="line">    MOV ES,AX       ;段地址</span><br><span class="line">    MOV DI,40H*4    ;偏移地址</span><br><span class="line">    MOV AX,OFFSET INT40H</span><br><span class="line">    MOV ES:[DI],AX</span><br><span class="line">    MOV AX,CS</span><br><span class="line">    MOV ES:[DI+2],AX</span><br><span class="line">    RET</span><br><span class="line">P ENDP</span><br><span class="line"></span><br><span class="line">;中断服务子程序</span><br><span class="line">INT40H PROC FAR</span><br><span class="line">    ADD AX,BX</span><br><span class="line">    IRET</span><br><span class="line">INT40H ENDP    </span><br></pre></td></tr></table></figure><h2 id="1-4-实验结果"><a href="#1-4-实验结果" class="headerlink" title="1.4 实验结果"></a>1.4 实验结果</h2><p><img src="https://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF09.gif" alt="微机原理与接口技术09"></p><p>AX&#x3D;01,BX&#x3D;02。执行ADD后，AX&#x3D;3</p><p><img src="https://img.zhangshier.vip/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF10.png" alt="微机原理与接口技术10"></p><p>思考内容：</p><ol><li><p>中断向量表结构优缺点</p><p>硬件电路实现中断优先权排队的优点是中断响应快，使用灵活。每个中断源都有自己的中断服务子程序，不会相互影响，增加或者减少中断源都很方便。</p><p>缺点是接口电路比较复杂。特别是每个中断源需要有自己的标识，在8086CPU系统中这个标识称为中断类型号，还必须建立这个中断类型号和中断服务子程序的一一对应关系。</p></li><li><p>中断服务子程序调试方法</p><p>调用前，设置中断向量，将已经编写好的中断服务程序的入口地址写入中断向量表中。利用DOS功能调用</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微机原理与技术接口 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微机原理 </tag>
+            
+            <tag> 汇编语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微机原理与技术接口 实验三 循环结构</title>
       <link href="/posts/14327/"/>
       <url>/posts/14327/</url>
@@ -1733,9 +1760,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1760,9 +1787,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -1787,9 +1814,9 @@
       
         <tags>
             
-            <tag> 数据库 </tag>
-            
             <tag> Mysql </tag>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -1918,9 +1945,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -2003,9 +2030,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -2084,9 +2111,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
@@ -2186,9 +2213,9 @@
       
         <tags>
             
-            <tag> SQL </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> SQL </tag>
             
         </tags>
       
