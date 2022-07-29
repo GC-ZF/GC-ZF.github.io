@@ -7,3 +7,15 @@
 /*#footer-a{*/
 /*    color: #0d0d0d;*/
 /*}*/
+
+/*!* 文章页背景 *!*/
+/*.layout_post>#post {*/
+/*    !* 以下代表透明度为0.5 可以自行修改*!*/
+/*    background: rgba(255,255,255,.5);*/
+/*}*/
+
+/*!* 所有页面背景 *!*/
+/*.cardHover:hover, .error404 #error-wrap .error-content:hover, .layout > div:first-child:not(.recent-posts):hover, #recent-posts > .recent-post-item:hover, #aside-content .card-widget:hover, .layout > .recent-posts .pagination > *:not(.space):hover{*/
+/*    !* 以下代表透明度为0.5 *!*/
+/*    background: rgba(255,255,255,.5);*/
+/*}*/
