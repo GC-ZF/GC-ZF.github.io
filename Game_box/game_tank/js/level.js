@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>
 /**
  * 地图数组
  * 1：水泥墙 2：铁墙 3：草 4：水 5：冰 9：家

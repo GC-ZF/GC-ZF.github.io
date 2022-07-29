@@ -1,4 +1,4 @@
-// 这里需要改楼层名，请和文件名及下面的floorId保持完全一致
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>// 这里需要改楼层名，请和文件名及下面的floorId保持完全一致
 // 楼层唯一标识符仅能由字母、数字、下划线组成，且不能由数字开头
 // 推荐用法：第20层就用MT20，第38层就用MT38，地下6层就用MT_6（用下划线代替负号），隐藏3层用MT3h（h表示隐藏），等等
 main.floors.MT11 = {

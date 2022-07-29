@@ -1,4 +1,4 @@
-var arr = []; //声明全局变量保存一下每次重新加载的方块类；
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>var arr = []; //声明全局变量保存一下每次重新加载的方块类；
 function getId(id) {
     return document.getElementById(id);
 } //封装ID

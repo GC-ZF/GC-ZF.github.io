@@ -1,4 +1,4 @@
-//生成选关下拉列表
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>//生成选关下拉列表
 let chooser = document.getElementById('chooser');
 for (let i = 0; i < levels.length; i++) {
     let option = document.createElement('option');

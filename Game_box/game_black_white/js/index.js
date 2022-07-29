@@ -1,4 +1,4 @@
-// 工具封装
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>// 工具封装
 // 根据id来获取元素
 function $(id) {
   return document.getElementById(id);

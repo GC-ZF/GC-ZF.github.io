@@ -1,4 +1,4 @@
-let B_Array = [0];  //障碍物(待优化:没有shift()
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>let B_Array = [0];  //障碍物(待优化:没有shift()
 //画布宽高
 let cw = 1000;
 let ch = 700;

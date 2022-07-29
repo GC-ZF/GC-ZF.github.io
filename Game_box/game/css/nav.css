@@ -1,4 +1,4 @@
-html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0;font-size:16px;color:#3e3e3e;line-height:1.6;word-spacing:0;letter-spacing:0;background:#adb5bd; }
 p{margin:1.5em 0}h1,h2,h3,h4,h5,h6{margin:1em 0;font-weight:700}
 h1{font-size:1.8em}

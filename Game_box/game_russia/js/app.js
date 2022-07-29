@@ -1,4 +1,4 @@
-(function(document){   //document通过参数获得，避免作用域链一层层搜索
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>(function(document){   //document通过参数获得，避免作用域链一层层搜索
 	var gameInst;
 	function DomObject(dom){
 		this.dom =dom;

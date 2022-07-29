@@ -1,4 +1,4 @@
-window.onload = function () {
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>window.onload = function () {
 };
 let grid=30;    //格点边长(px)
 let scale=20;   //边长数量

@@ -1,4 +1,4 @@
-const log = console.log;
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>const log = console.log;
 const pop = alert;
 const QS = name => document.querySelector(name);
 const QSA = name => document.querySelectorAll(name);
