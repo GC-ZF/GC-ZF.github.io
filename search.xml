@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>无密码测试</title>
+      <link href="/posts/47314/"/>
+      <url>/posts/47314/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>测试页面</p></blockquote><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% dplayer &quot;url=http://rv.zhangshier.vip/Blog_Video/002.mp4&quot; &quot;width=180px&quot; &quot;autoplay=false&quot; %&#125;</span><br></pre></td></tr></table></figure><div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:180px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"video":{"url":"http://rv.zhangshier.vip/Blog_Video/002.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;iframe height=320 width=180 src=&#x27;http://rv.zhangshier.vip/Blog_Video/002.mp4&#x27; frameborder=0 &#x27;allowfullscreen&#x27; sandbox=&quot;&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure><iframe height=320 width=180 src='http://rv.zhangshier.vip/Blog_Video/002.mp4' frameborder=0 'allowfullscreen' sandbox=""></iframe>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>加密测试</title>
       <link href="/posts/40406/"/>
       <url>/posts/40406/</url>
