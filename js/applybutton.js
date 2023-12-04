@@ -1,0 +1,1 @@
+function linkCom(e){var n=document.querySelector(".el-textarea__inner");"bf"==e?(n.value="```yml\n",n.value+="- name: \n  link: \n  avatar: \n  descr:  ",n.value+="\n```",n.setSelectionRange(15,15)):(n.value="```yml\n",n.value+="站点名称：\n站点地址：\n头像链接：\n站点描述：",n.value+="\n```",n.setSelectionRange(5,5)),n.focus()}

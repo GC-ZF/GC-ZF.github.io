@@ -1,0 +1,1 @@
+var titleTime,OriginTitile=document.title;document.addEventListener("visibilitychange",(function(){document.hidden?(document.title="404 Not Found",clearTimeout(titleTime)):(document.title="ヾ(≧▽≦*)o上当了吧嘿嘿",titleTime=setTimeout((function(){document.title=OriginTitile}),3e3))}));
